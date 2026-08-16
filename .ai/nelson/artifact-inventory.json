@@ -1,0 +1,71 @@
+{
+  "repo_name": "GeraDoc",
+  "scan_date": "2026-08-16",
+  "artifacts": {
+    "required": {
+      "README.md": {
+        "status": "placeholder",
+        "location": "/README.md",
+        "description": "Repository orientation and quick start"
+      },
+      "CONTRIBUTING.md": {
+        "status": "placeholder", 
+        "location": "/CONTRIBUTING.md",
+        "description": "Contribution guidelines and delivery governance"
+      },
+      "SECURITY.md": {
+        "status": "placeholder",
+        "location": "/SECURITY.md", 
+        "description": "Security and compliance documentation"
+      },
+      "CODEOWNERS": {
+        "status": "placeholder",
+        "location": "/CODEOWNERS",
+        "description": "Ownership and escalation paths"
+      },
+      "CHANGELOG.md": {
+        "status": "placeholder",
+        "location": "/CHANGELOG.md",
+        "description": "Change history and version tracking"
+      },
+      "ARCHITECTURE.md": {
+        "status": "placeholder",
+        "location": "/docs/ARCHITECTURE.md",
+        "description": "System context, dependencies, boundaries, data flow"
+      },
+      "CURRENT_STATE.md": {
+        "status": "placeholder",
+        "location": "/docs/CURRENT_STATE.md",
+        "description": "Current state visibility and project status"
+      },
+      "ONBOARDING.md": {
+        "status": "placeholder",
+        "location": "/docs/ONBOARDING.md",
+        "description": "Developer onboarding and environment setup"
+      },
+      "RUNBOOK.md": {
+        "status": "placeholder",
+        "location": "/docs/RUNBOOK.md",
+        "description": "Operational runbooks and support guidance"
+      },
+      "ROLLBACK.md": {
+        "status": "placeholder",
+        "location": "/docs/ROLLBACK.md",
+        "description": "Rollback and recovery procedures"
+      },
+      "TEST_STRATEGY.md": {
+        "status": "placeholder",
+        "location": "/docs/TEST_STRATEGY.md",
+        "description": "Test strategy and validation approach"
+      }
+    },
+    "adr": {
+      "status": "placeholder",
+      "location": "/docs/adr/",
+      "description": "Architecture Decision Records"
+    }
+  },
+  "missing_artifacts": [],
+  "stale_artifacts": [],
+  "non_canonical_duplicates": []
+}

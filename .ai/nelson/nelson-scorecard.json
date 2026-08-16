@@ -1,0 +1,63 @@
+{
+  "repo_name": "GeraDoc",
+  "scan_date": "2026-08-16",
+  "nelson_score": 0,
+  "score_breakdown": {
+    "repository_orientation": {
+      "score": 0,
+      "max_score": 10,
+      "evidence": "Placeholder artifacts created - awaiting actual content"
+    },
+    "architecture": {
+      "score": 0,
+      "max_score": 15,
+      "evidence": "Architecture documentation placeholder - awaiting actual content"
+    },
+    "decision_records": {
+      "score": 0,
+      "max_score": 10,
+      "evidence": "ADR directory structure created - awaiting actual decisions"
+    },
+    "operational_readiness": {
+      "score": 0,
+      "max_score": 15,
+      "evidence": "Runbook and rollback placeholders - awaiting operational procedures"
+    },
+    "knowledge_transfer": {
+      "score": 0,
+      "max_score": 15,
+      "evidence": "Onboarding placeholder - awaiting developer guidance"
+    },
+    "ownership": {
+      "score": 0,
+      "max_score": 10,
+      "evidence": "CODEOWNERS placeholder - awaiting ownership assignment"
+    },
+    "delivery_governance": {
+      "score": 0,
+      "max_score": 10,
+      "evidence": "CONTRIBUTING placeholder - awaiting governance policies"
+    },
+    "security_and_compliance": {
+      "score": 0,
+      "max_score": 5,
+      "evidence": "SECURITY.md placeholder - awaiting security documentation"
+    },
+    "testability": {
+      "score": 0,
+      "max_score": 10,
+      "evidence": "TEST_STRATEGY placeholder - awaiting test approach"
+    }
+  },
+  "score_caps": [],
+  "gate_verdict": "operational_risk",
+  "gate_message": "Repository is in initial bootstrap state. All artifacts are placeholders awaiting actual content.",
+  "recommendations": [
+    "Populate README.md with project purpose and quick start",
+    "Define architecture and system context in ARCHITECTURE.md",
+    "Assign ownership in CODEOWNERS file",
+    "Create onboarding guidance in ONBOARDING.md",
+    "Document operational procedures in RUNBOOK.md",
+    "Establish test strategy in TEST_STRATEGY.md"
+  ]
+}
