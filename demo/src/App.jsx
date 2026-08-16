@@ -1,12 +1,14 @@
-import { sampleDocuments } from './data/sampleDocuments';
+import { useDemo } from './store/DemoContext';
+import LandingPage from './components/LandingPage';
+import SeniorDashboard from './components/SeniorDashboard';
 
 function App() {
-  return (
-    <div className="p-8">
-      <h1 className="text-2xl mb-4">Loaded {sampleDocuments.length} documents</h1>
-      {sampleDocuments.map(d => <p key={d.id} className="text-slate-300">{d.title}</p>)}
-    </div>
-  );
+  const { view } = useDemo();
+
+  if (view === 'landing') return <LandingPage />;
+  if (view === 'dashboard') return <SeniorDashboard />;
+
+  return <LandingPage />;
 }
 
 export default App;
