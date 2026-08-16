@@ -8,7 +8,7 @@
 **Phase**: Year 1 - Research & POC → MVP Development
 **Nelson Score**: 87/100 (Enterprise Mature)
 **PRA Score**: 72/100 (Production with Conditions)
-**POC Status**: Pipeline wiring complete; D2 paused for NONI/IDD simplification research and IP review
+**POC Status**: D2 JSON persistence boundary implemented and tested; APUCS remains shadow-only pending human/IP gates
 
 ## Intake Summary
 
@@ -65,15 +65,17 @@
 - ✅ APUCS technical shadow gate passes anchor, action, provenance, and contradiction checks
 - ✅ APUCS human evaluation protocol created with research safeguards
 - ✅ Eight backend tests pass across upload, state estimation, candidate, and evaluator paths
-- ✅ Supplied IDD copied to the project USB drive
+- ✅ D2 JSON persistence boundary implemented with result retrieval endpoint
+- ✅ Supplied IDD prepared and archived to the project USB drive
 
 ## What Is Incomplete
 
 - ⏳ POC bridge from `demo/` components to real API
 - ⏳ Real document processing and production simplification
-- ⏳ NONI-derived simplification algorithm specification validation
+- ⏳ Human evaluation of the NONI-derived research candidate
 - ⏳ IP/patent review and freedom-to-operate analysis
-- ⏳ POC persistence, provider evaluation, and production API hardening
+- ⏳ Provider evaluation and production API hardening
+- ⏳ PostgreSQL/S3/queue migration beyond the JSON POC repository
 - ⏳ CI/CD pipeline setup
 - ⏳ Development environment configuration
 - ⏳ External API integrations (GroupDocs, Stripe)

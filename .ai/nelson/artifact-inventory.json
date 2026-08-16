@@ -224,6 +224,12 @@
       "processed_date": "2026-08-16",
       "status": "protocol-ready",
       "description": "Blinded human evaluation protocol and research safeguards; evaluation not yet conducted"
+    },
+    "d2-persistence-boundary": {
+      "location": "/poc/backend/src/services/resultRepository.js",
+      "processed_date": "2026-08-16",
+      "status": "implemented-tested",
+      "description": "POC JSON persistence boundary with save, findById, and readAll operations; runtime data excluded from Git"
     }
     }
   },

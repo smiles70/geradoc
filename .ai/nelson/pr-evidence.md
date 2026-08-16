@@ -129,6 +129,13 @@ Build and lint verification passed. Formal senior usability testing and comprehe
 - Added interaction state estimator, APUCS v1 candidate, reproducibility digest, and human evaluation protocol.
 - Supplied IDD archived to the USB drive for traceability.
 
+## 2026-08-16 D2 Persistence Evidence
+
+- Added JSON result repository with `save`, `findById`, and `readAll` operations.
+- Processing route now persists results and exposes `GET /api/process/:id`.
+- Runtime results are excluded from Git.
+- Repository and route tests pass.
+
 ---
 
 *Generated with Process v9.5 - Nelson Repo Hygiene*

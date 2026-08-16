@@ -5,6 +5,7 @@ const extractor = process.env.POC_USE_REAL_PDF === 'true'
   ? require('../services/pdfExtractor')
   : require('../services/fixtureExtractor');
 const simplifier = require('../services/plainLanguageSimplifier');
+const resultRepository = require('../services/resultRepository');
 
 const router = express.Router();
 const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: 10 * 1024 * 1024 } });
@@ -18,9 +19,21 @@ router.post('/', upload.single('document'), async (req, res, next) => {
       fileName: req.file.originalname,
       mimeType: req.file.mimetype,
     });
-    res.status(200).json(result);
+    const saved = await resultRepository.save(result);
+    res.status(200).json(saved);
   } catch (error) {
     next(error);
   }
 });
+
+router.get('/:id', async (req, res, next) => {
+  try {
+    const result = await resultRepository.findById(req.params.id);
+    if (!result) return res.status(404).json({ error: 'Processing result not found.' });
+    res.json(result);
+  } catch (error) {
+    next(error);
+  }
+});
+
 module.exports = router;
