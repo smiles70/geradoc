@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ClarityDocDocumentResult",
+  "type": "object",
+  "required": ["id", "type", "title", "fileName", "pages", "summary", "keyInfo", "actions"],
+  "properties": {
+    "id": {"type": "string"},
+    "type": {"type": "string"},
+    "title": {"type": "string"},
+    "fileName": {"type": "string"},
+    "pages": {"type": "integer", "minimum": 1},
+    "summary": {"type": "object", "required": ["simple", "standard", "detailed"]},
+    "keyInfo": {"type": "array"},
+    "actions": {"type": "array"}
+  }
+}
