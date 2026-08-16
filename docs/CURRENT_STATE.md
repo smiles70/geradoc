@@ -204,6 +204,14 @@
 - Health plans expressing interest in partnerships
 - 70%+ of users report ≥50% comprehension improvement
 
+## POC Progress
+
+- ✅ POC branch established under Process v9.5 feature workflow
+- ✅ Real-document upload and processing boundary implemented in `poc/`
+- ✅ Mocked-demo-compatible document result contract defined
+- ✅ Adapter and contract-test strategy established
+- ⏳ Production OCR/provider selection, auth, database, queue, and cloud storage remain future work
+
 ---
 
 *Generated with Process v9.5 - Nelson Repo Hygiene*
