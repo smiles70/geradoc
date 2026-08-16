@@ -1,6 +1,7 @@
 import { useDemo } from '../store/DemoContext';
 import KeyInfoCards from './KeyInfoCards';
 import ActionItems from './ActionItems';
+import AccessibilityControls from './AccessibilityControls';
 
 export default function DocumentViewer() {
   const { selectedDoc, simplificationLevel, setSimplificationLevel } = useDemo();
@@ -15,6 +16,7 @@ export default function DocumentViewer() {
 
   return (
     <div className="min-h-screen p-6 bg-slate-950">
+      <AccessibilityControls />
       <div className="max-w-4xl mx-auto">
         <div className="mb-6">
           <div className="text-cyan-400 font-semibold">{selectedDoc.type}</div>

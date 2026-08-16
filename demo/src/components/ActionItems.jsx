@@ -3,32 +3,46 @@ import { useDemo } from '../store/DemoContext';
 export default function ActionItems({ actions }) {
   const { completedActions, markActionComplete } = useDemo();
 
-  return (
-    <div className="bg-slate-900 border border-slate-800 rounded-xl p-6">
-      <h3 className="text-xl font-bold text-white mb-4">Things to do</h3>
-      <div className="space-y-4">
-        {actions.map(action => {
-          const complete = completedActions.has(action.id);
+  const sorted = [...actions].sort((a, b) => {
+    const p = { high: 0, medium: 1, low: 2 };
+    return p[a.priority] - p[b.priority];
+  });
 
+  return (
+    <div>
+      <h3 className="text-xl font-bold text-white mb-3">Things to Do</h3>
+      <div className="space-y-3">
+        {sorted.map(action => {
+          const done = completedActions.has(action.id);
           return (
-            <div key={action.id} className="border border-slate-800 rounded-lg p-4">
-              <div className="flex items-start justify-between gap-4">
+            <div
+              key={action.id}
+              className={`p-4 rounded-xl border ${
+                done
+                  ? 'bg-emerald-900/30 border-emerald-500/50'
+                  : 'bg-slate-900 border-slate-800'
+              }`}
+            >
+              <div className="flex justify-between items-start gap-3">
                 <div>
-                  <div className="text-white font-semibold">{action.description}</div>
-                  <div className="text-sm text-slate-400">Due {action.deadline}</div>
+                  <div className="font-bold text-white">{action.description}</div>
+                  <div className="text-slate-400 text-sm">Deadline: {action.deadline || 'None'}</div>
+                  {done && <div className="text-emerald-400 mt-1">Completed! Great job.</div>}
                 </div>
-                <button
-                  onClick={() => markActionComplete(action.id)}
-                  className={`px-3 py-2 rounded-lg font-semibold ${
-                    complete ? 'bg-emerald-500 text-slate-950' : 'bg-slate-800 text-slate-200'
-                  }`}
-                >
-                  {complete ? 'Done' : 'Mark done'}
-                </button>
+                {!done && (
+                  <button
+                    onClick={() => markActionComplete(action.id)}
+                    className="px-4 py-2 bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold rounded-lg"
+                  >
+                    Done
+                  </button>
+                )}
               </div>
-              <ol className="list-decimal list-inside text-slate-300 mt-3 space-y-1">
-                {action.steps.map(step => <li key={step}>{step}</li>)}
-              </ol>
+              {!done && (
+                <ol className="mt-3 pl-5 list-decimal text-slate-300 text-sm">
+                  {action.steps.map((step, i) => <li key={i}>{step}</li>)}
+                </ol>
+              )}
             </div>
           );
         })}
