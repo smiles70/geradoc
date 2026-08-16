@@ -164,6 +164,18 @@
       "processed_date": "2026-08-16",
       "status": "processed",
       "description": "Comprehensive Business Requirements Document"
+    },
+    "functional-requirements-document.md": {
+      "location": "/.ai/production-readiness/functional-requirements-document.md",
+      "processed_date": "2026-08-16",
+      "status": "processed",
+      "description": "Formal Functional Requirements Document with use cases, business rules, and traceability"
+    },
+    "product-requirements-document.md": {
+      "location": "/.ai/production-readiness/product-requirements-document.md",
+      "processed_date": "2026-08-16",
+      "status": "processed",
+      "description": "Product Requirements Document with features, user journeys, roadmap, and GTM"
     }
   },
   "missing_artifacts": [],
