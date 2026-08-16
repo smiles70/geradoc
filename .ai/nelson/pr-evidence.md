@@ -122,6 +122,8 @@ Build and lint verification passed. Formal senior usability testing and comprehe
 - Added `apucs-evaluation.md` and synthetic corpus fixtures.
 - Added a shadow-only evaluator for anchor recall, readability, and divergence proxy metrics.
 - Tests pass: 2 test files, 5 tests.
+- Added a research-only APUCS candidate and generated a baseline-versus-candidate shadow report over four synthetic cases.
+- The shadow report preserves the user-visible placeholder and does not certify factuality or legal clearance.
 - Supplied IDD archived to the USB drive for traceability.
 
 ---

@@ -212,6 +212,12 @@
       "processed_date": "2026-08-16",
       "status": "test-fixture",
       "description": "Synthetic MVP document cases for anchor-preservation evaluation"
+    },
+    "apucs-shadow-report.json": {
+      "location": "/poc/research/apucs-shadow-report.json",
+      "processed_date": "2026-08-16",
+      "status": "research-evidence",
+      "description": "Baseline versus candidate APUCS shadow comparison; not a production quality certification"
     }
     }
   },

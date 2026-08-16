@@ -1,0 +1,349 @@
+{
+  "generatedAt": "2026-08-16T23:32:13.459Z",
+  "mode": "shadow-only",
+  "userVisibleSimplifierChanged": false,
+  "corpusSize": 4,
+  "results": [
+    {
+      "id": "insurance-renewal-001",
+      "documentType": "Insurance",
+      "levels": {
+        "simple": {
+          "baseline": {
+            "anchorRecall": 1,
+            "jsDivergence": 0,
+            "readability": {
+              "words": 26,
+              "sentences": 3,
+              "syllables": 38,
+              "fleschKincaidGrade": 5.036
+            },
+            "provenanceCoverage": "not_available",
+            "shadowOnly": true
+          },
+          "candidate": {
+            "anchorRecall": 1,
+            "jsDivergence": 0.05255,
+            "readability": {
+              "words": 25,
+              "sentences": 3,
+              "syllables": 34,
+              "fleschKincaidGrade": 3.708
+            },
+            "provenanceCoverage": "not_available",
+            "shadowOnly": true
+          }
+        },
+        "standard": {
+          "baseline": {
+            "anchorRecall": 1,
+            "jsDivergence": 0,
+            "readability": {
+              "words": 26,
+              "sentences": 3,
+              "syllables": 38,
+              "fleschKincaidGrade": 5.036
+            },
+            "provenanceCoverage": "not_available",
+            "shadowOnly": true
+          },
+          "candidate": {
+            "anchorRecall": 1,
+            "jsDivergence": 0.05255,
+            "readability": {
+              "words": 25,
+              "sentences": 3,
+              "syllables": 34,
+              "fleschKincaidGrade": 3.708
+            },
+            "provenanceCoverage": "not_available",
+            "shadowOnly": true
+          }
+        },
+        "detailed": {
+          "baseline": {
+            "anchorRecall": 1,
+            "jsDivergence": 0,
+            "readability": {
+              "words": 26,
+              "sentences": 3,
+              "syllables": 38,
+              "fleschKincaidGrade": 5.036
+            },
+            "provenanceCoverage": "not_available",
+            "shadowOnly": true
+          },
+          "candidate": {
+            "anchorRecall": 1,
+            "jsDivergence": 0,
+            "readability": {
+              "words": 26,
+              "sentences": 3,
+              "syllables": 38,
+              "fleschKincaidGrade": 5.036
+            },
+            "provenanceCoverage": "not_available",
+            "shadowOnly": true
+          }
+        }
+      }
+    },
+    {
+      "id": "financial-charge-001",
+      "documentType": "Financial",
+      "levels": {
+        "simple": {
+          "baseline": {
+            "anchorRecall": 1,
+            "jsDivergence": 0,
+            "readability": {
+              "words": 20,
+              "sentences": 2,
+              "syllables": 27,
+              "fleschKincaidGrade": 4.24
+            },
+            "provenanceCoverage": "not_available",
+            "shadowOnly": true
+          },
+          "candidate": {
+            "anchorRecall": 1,
+            "jsDivergence": 0,
+            "readability": {
+              "words": 20,
+              "sentences": 2,
+              "syllables": 27,
+              "fleschKincaidGrade": 4.24
+            },
+            "provenanceCoverage": "not_available",
+            "shadowOnly": true
+          }
+        },
+        "standard": {
+          "baseline": {
+            "anchorRecall": 1,
+            "jsDivergence": 0,
+            "readability": {
+              "words": 20,
+              "sentences": 2,
+              "syllables": 27,
+              "fleschKincaidGrade": 4.24
+            },
+            "provenanceCoverage": "not_available",
+            "shadowOnly": true
+          },
+          "candidate": {
+            "anchorRecall": 1,
+            "jsDivergence": 0,
+            "readability": {
+              "words": 20,
+              "sentences": 2,
+              "syllables": 27,
+              "fleschKincaidGrade": 4.24
+            },
+            "provenanceCoverage": "not_available",
+            "shadowOnly": true
+          }
+        },
+        "detailed": {
+          "baseline": {
+            "anchorRecall": 1,
+            "jsDivergence": 0,
+            "readability": {
+              "words": 20,
+              "sentences": 2,
+              "syllables": 27,
+              "fleschKincaidGrade": 4.24
+            },
+            "provenanceCoverage": "not_available",
+            "shadowOnly": true
+          },
+          "candidate": {
+            "anchorRecall": 1,
+            "jsDivergence": 0,
+            "readability": {
+              "words": 20,
+              "sentences": 2,
+              "syllables": 27,
+              "fleschKincaidGrade": 4.24
+            },
+            "provenanceCoverage": "not_available",
+            "shadowOnly": true
+          }
+        }
+      }
+    },
+    {
+      "id": "government-tax-001",
+      "documentType": "Government",
+      "levels": {
+        "simple": {
+          "baseline": {
+            "anchorRecall": 1,
+            "jsDivergence": 0,
+            "readability": {
+              "words": 21,
+              "sentences": 2,
+              "syllables": 36,
+              "fleschKincaidGrade": 8.734
+            },
+            "provenanceCoverage": "not_available",
+            "shadowOnly": true
+          },
+          "candidate": {
+            "anchorRecall": 1,
+            "jsDivergence": 0.041667,
+            "readability": {
+              "words": 21,
+              "sentences": 2,
+              "syllables": 35,
+              "fleschKincaidGrade": 8.172
+            },
+            "provenanceCoverage": "not_available",
+            "shadowOnly": true
+          }
+        },
+        "standard": {
+          "baseline": {
+            "anchorRecall": 1,
+            "jsDivergence": 0,
+            "readability": {
+              "words": 21,
+              "sentences": 2,
+              "syllables": 36,
+              "fleschKincaidGrade": 8.734
+            },
+            "provenanceCoverage": "not_available",
+            "shadowOnly": true
+          },
+          "candidate": {
+            "anchorRecall": 1,
+            "jsDivergence": 0.041667,
+            "readability": {
+              "words": 21,
+              "sentences": 2,
+              "syllables": 35,
+              "fleschKincaidGrade": 8.172
+            },
+            "provenanceCoverage": "not_available",
+            "shadowOnly": true
+          }
+        },
+        "detailed": {
+          "baseline": {
+            "anchorRecall": 1,
+            "jsDivergence": 0,
+            "readability": {
+              "words": 21,
+              "sentences": 2,
+              "syllables": 36,
+              "fleschKincaidGrade": 8.734
+            },
+            "provenanceCoverage": "not_available",
+            "shadowOnly": true
+          },
+          "candidate": {
+            "anchorRecall": 1,
+            "jsDivergence": 0,
+            "readability": {
+              "words": 21,
+              "sentences": 2,
+              "syllables": 36,
+              "fleschKincaidGrade": 8.734
+            },
+            "provenanceCoverage": "not_available",
+            "shadowOnly": true
+          }
+        }
+      }
+    },
+    {
+      "id": "legal-directive-001",
+      "documentType": "Legal",
+      "levels": {
+        "simple": {
+          "baseline": {
+            "anchorRecall": 1,
+            "jsDivergence": 0,
+            "readability": {
+              "words": 28,
+              "sentences": 3,
+              "syllables": 48,
+              "fleschKincaidGrade": 8.279
+            },
+            "provenanceCoverage": "not_available",
+            "shadowOnly": true
+          },
+          "candidate": {
+            "anchorRecall": 1,
+            "jsDivergence": 0.084672,
+            "readability": {
+              "words": 27,
+              "sentences": 3,
+              "syllables": 42,
+              "fleschKincaidGrade": 6.276
+            },
+            "provenanceCoverage": "not_available",
+            "shadowOnly": true
+          }
+        },
+        "standard": {
+          "baseline": {
+            "anchorRecall": 1,
+            "jsDivergence": 0,
+            "readability": {
+              "words": 28,
+              "sentences": 3,
+              "syllables": 48,
+              "fleschKincaidGrade": 8.279
+            },
+            "provenanceCoverage": "not_available",
+            "shadowOnly": true
+          },
+          "candidate": {
+            "anchorRecall": 1,
+            "jsDivergence": 0.084672,
+            "readability": {
+              "words": 27,
+              "sentences": 3,
+              "syllables": 42,
+              "fleschKincaidGrade": 6.276
+            },
+            "provenanceCoverage": "not_available",
+            "shadowOnly": true
+          }
+        },
+        "detailed": {
+          "baseline": {
+            "anchorRecall": 1,
+            "jsDivergence": 0,
+            "readability": {
+              "words": 28,
+              "sentences": 3,
+              "syllables": 48,
+              "fleschKincaidGrade": 8.279
+            },
+            "provenanceCoverage": "not_available",
+            "shadowOnly": true
+          },
+          "candidate": {
+            "anchorRecall": 1,
+            "jsDivergence": 0,
+            "readability": {
+              "words": 28,
+              "sentences": 3,
+              "syllables": 48,
+              "fleschKincaidGrade": 8.279
+            },
+            "provenanceCoverage": "not_available",
+            "shadowOnly": true
+          }
+        }
+      }
+    }
+  ],
+  "interpretation": [
+    "Metrics are screening signals, not proof of factual correctness.",
+    "Provenance is unavailable in the current string-only contract.",
+    "Human review and IP/legal review are required before production use."
+  ]
+}

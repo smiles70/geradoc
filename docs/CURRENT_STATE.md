@@ -61,6 +61,7 @@
 - ✅ NONI/IDD document simplification research memo created
 - ✅ APUCS shadow evaluation specification and synthetic corpus created
 - ✅ Shadow evaluator implemented without changing user-visible simplification
+- ✅ Baseline-versus-candidate shadow report generated over four synthetic cases
 - ✅ Five backend tests pass across upload and simplifier evaluation
 - ✅ Supplied IDD copied to the project USB drive
 
