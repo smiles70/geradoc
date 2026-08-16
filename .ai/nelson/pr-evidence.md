@@ -112,6 +112,14 @@ Build and lint verification passed. Formal senior usability testing and comprehe
 3. Replace mock data through `poc/frontend/documentApi.js` rather than rewriting the UI.
 4. Re-run Nelson and PRA evidence after the bridge integration.
 
+## 2026-08-16 POC Simplification Research Evidence
+
+- Reviewed the supplied IDD and NONI technical patterns.
+- Documented APUCS as a proposed anchor-preserving, uncertainty-constrained simplification research direction.
+- Recorded the distinction between source concepts, proposed adaptation, and unresolved patent/IP questions.
+- Paused D2 persistence implementation until simplification evaluation, legal/IP review, and acceptance gates are defined.
+- Current simplifier remains explicitly provisional truncation logic.
+
 ---
 
 *Generated with Process v9.5 - Nelson Repo Hygiene*

@@ -8,6 +8,7 @@
 **Phase**: Year 1 - Research & POC → MVP Development
 **Nelson Score**: 87/100 (Enterprise Mature)
 **PRA Score**: 72/100 (Production with Conditions)
+**POC Status**: Pipeline wiring complete; D2 paused for NONI/IDD simplification research and IP review
 
 ## Intake Summary
 
@@ -54,11 +55,18 @@
 - ✅ Demo README and walkthrough completed
 - ✅ Demo lint/build validation completed
 - ✅ Six-epic demo-to-POC bridge plan created
+- ✅ POC branch and backend upload boundary created
+- ✅ POC document result contract defined
+- ✅ POC fixture and PDF extraction adapters created
+- ✅ NONI/IDD document simplification research memo created
 
 ## What Is Incomplete
 
 - ⏳ POC bridge from `demo/` components to real API
 - ⏳ Real document processing and production simplification
+- ⏳ NONI-derived simplification algorithm specification validation
+- ⏳ IP/patent review and freedom-to-operate analysis
+- ⏳ POC persistence, provider evaluation, and production API hardening
 - ⏳ CI/CD pipeline setup
 - ⏳ Development environment configuration
 - ⏳ External API integrations (GroupDocs, Stripe)

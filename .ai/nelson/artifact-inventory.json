@@ -194,6 +194,13 @@
       "processed_date": "2026-08-19",
       "status": "ready-for-development",
       "description": "Six-epic Process v9.5 plan for promoting completed demo UX into the real-document POC"
+    },
+    "noni-document-simplification-research.md": {
+      "location": "/.ai/production-readiness/noni-document-simplification-research.md",
+      "processed_date": "2026-08-16",
+      "status": "research",
+      "description": "NONI/IDD-derived mathematical research proposal for anchor-preserving, uncertainty-constrained document simplification; not validated or legally cleared"
+    }
     }
   },
   "missing_artifacts": [],
