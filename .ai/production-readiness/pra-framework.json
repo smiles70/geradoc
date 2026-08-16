@@ -1,0 +1,98 @@
+{
+  "pra_version": "v9.5",
+  "assessment_date": "2026-08-16",
+  "repo_name": "GeraDoc",
+  "framework": {
+    "domains": [
+      {
+        "name": "code_quality",
+        "weight": 15,
+        "description": "Code quality, maintainability, and technical debt",
+        "criteria": [
+          "Code follows established style guidelines",
+          "No critical linting issues",
+          "Test coverage meets requirements",
+          "No known security vulnerabilities",
+          "Dependencies are up-to-date and secure"
+        ]
+      },
+      {
+        "name": "architecture",
+        "weight": 15,
+        "description": "Architecture alignment and design decisions",
+        "criteria": [
+          "Architecture is documented and current",
+          "Design patterns are consistently applied",
+          "Component boundaries are clear",
+          "Data flow is documented",
+          "Scalability considerations are addressed"
+        ]
+      },
+      {
+        "name": "testing",
+        "weight": 20,
+        "description": "Test coverage and quality assurance",
+        "criteria": [
+          "Unit test coverage meets threshold",
+          "Integration tests exist for critical paths",
+          "E2E tests for user workflows",
+          "Performance tests where applicable",
+          "Test data management is defined"
+        ]
+      },
+      {
+        "name": "security",
+        "weight": 15,
+        "description": "Security posture and compliance",
+        "criteria": [
+          "Security review completed",
+          "No critical vulnerabilities",
+          "Secrets management is proper",
+          "Authentication/authorization is sound",
+          "Compliance requirements are met"
+        ]
+      },
+      {
+        "name": "operational_readiness",
+        "weight": 15,
+        "description": "Operations and monitoring readiness",
+        "criteria": [
+          "Monitoring and alerting configured",
+          "Logging is comprehensive",
+          "Runbooks exist for operations",
+          "Rollback procedures documented",
+          "Support escalation path defined"
+        ]
+      },
+      {
+        "name": "documentation",
+        "weight": 10,
+        "description": "Documentation completeness and accuracy",
+        "criteria": [
+          "README is comprehensive",
+          "API documentation exists",
+          "Architecture is documented",
+          "Onboarding guide exists",
+          "Current state is visible"
+        ]
+      },
+      {
+        "name": "deployment",
+        "weight": 10,
+        "description": "Deployment pipeline and automation",
+        "criteria": [
+          "CI/CD pipeline is functional",
+          "Automated testing in pipeline",
+          "Deployment process is documented",
+          "Environment parity maintained",
+          "Release process is defined"
+        ]
+      }
+    ],
+    "gates": {
+      "production_ready": ">= 85",
+      "production_with_conditions": "70-84",
+      "not_ready": "< 70"
+    }
+  }
+}

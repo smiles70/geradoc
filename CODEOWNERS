@@ -2,19 +2,158 @@
 
 ## Project Owners
 
-[TODO: Define project owners and their responsibilities]
+**Strategic Owner**
+- **Kimberly Miles** - Founder/CEO
+  - Final decision authority on strategic direction
+  - Product vision and market positioning
+  - Overall business and technical decisions
+  - Emergency escalation contact
+
+**Technical Owner** (To be hired)
+- Technical Lead position
+  - Architecture decisions
+  - Technical standards and practices
+  - Security and compliance implementation
+  - Infrastructure and deployment decisions
 
 ## Domain Owners
 
-[TODO: Define domain-specific ownership]
+**Frontend/UI Domain** (To be hired)
+- UX/Senior Designer and Full-Stack Developer
+- `src/components/`
+- `src/pages/`
+- Accessibility and WCAG compliance
+- Geragogy design implementation
+
+**Backend/API Domain** (To be hired)
+- Technical Lead and Backend Developer
+- `src/api/`
+- `src/services/`
+- API design and documentation
+- Database schema and migrations
+
+**Infrastructure/DevOps Domain** (To be hired)
+- Operations Manager or DevOps Engineer
+- AWS infrastructure
+- CI/CD pipelines
+- Security configuration
+- Monitoring and alerting
+
+**AI/ML Domain** (To be hired)
+- Technical Lead or AI Engineer
+- Document processing pipeline
+- OpenAI integration
+- Text simplification algorithms
+- ML model evaluation
+
+**Security Domain** (To be hired)
+- Security Lead or Security Engineer
+- Security policies implementation
+- Compliance monitoring (GDPR, SOC 2, WCAG)
+- Incident response
+- Security training
+
+**QA/Testing Domain** (To be hired)
+- QA/Testing Lead
+- Test strategy implementation
+- Accessibility testing
+- Senior user testing coordination
+- Quality standards
 
 ## Escalation Path
 
-[TODO: Define escalation path for different types of issues]
+**Technical Issues**
+1. Domain Owner → Technical Owner → CEO
+2. Expected response: 24 hours for urgent, 48 hours for standard
+
+**Security Issues**
+1. Security Domain Owner → Technical Owner → CEO
+2. Expected response: 1 hour for critical, 4 hours for high
+
+**Product/Feature Decisions**
+1. Product Manager → CEO
+2. Expected response: 48 hours
+
+**Accessibility Issues**
+1. Frontend/UI Domain Owner → Technical Owner → CEO
+2. Expected response: 24 hours (high priority for senior users)
+
+**Senior User Issues**
+1. Customer Success → Product Manager → CEO
+2. Expected response: 4 hours for urgent, 24 hours for standard
+
+**Business/Strategic Issues**
+1. Direct to CEO
+2. Expected response: 24 hours
 
 ## Support Contacts
 
-[TODO: Define support contacts and availability]
+**Emergency Contacts**
+- **CEO (Kimberly Miles)**: kimberly@claritydoc.com (to be established)
+- **Technical Lead**: [To be hired]
+- **Security Lead**: [To be hired]
+
+**Business Hours Support**
+- **Product Manager**: [To be hired]
+- **Customer Success**: [To be hired]
+- **Operations Manager**: [To be hired]
+
+**After-Hours Support**
+- Critical issues only
+- Rotate on-call schedule among technical team
+- Senior user issues prioritized
+
+**External Support**
+- **AWS Support**: Enterprise support contract
+- **Stripe Support**: Premier support contract
+- **Legal Counsel**: [To be retained]
+- **Accessibility Consultant**: [To be engaged]
+
+## Approval Requirements
+
+**Code Changes**
+- Single domain: Domain owner approval
+- Cross-domain: All affected domain owners + Technical Owner
+- Architecture changes: Technical Owner + CEO
+- Security changes: Security Domain Owner + Technical Owner
+
+**Documentation Changes**
+- Standard updates: Domain owner approval
+- ADR changes: Technical Owner + CEO
+- Security documentation: Security Domain Owner + Technical Owner
+
+**Infrastructure Changes**
+- Standard changes: Infrastructure Domain Owner
+- Security changes: Security Domain Owner + Infrastructure Domain Owner
+- Major changes: All domain owners + CEO
+
+## On-Call Rotation
+
+**Current Status**: To be established when team is hired
+
+**Planned Structure**:
+- Weekday on-call: Technical team rotation
+- Weekend on-call: Rotation with reduced coverage
+- Emergency escalation: CEO always available for critical issues
+
+**Coverage Goals**:
+- Response time: 15 minutes for critical, 1 hour for high priority
+- Senior user issues: Always treated as high priority
+- Security issues: Always treated as critical
+
+## Governance Updates
+
+**Review Schedule**
+- CODEOWNERS review: Quarterly
+- Domain owner assignments: As team grows
+- Escalation path updates: As processes mature
+- Contact information updates: As team changes
+
+**Update Process**
+1. Propose changes via PR
+2. Review by current domain owners
+3. Approval by CEO
+4. Communication to all team members
 
 ---
 

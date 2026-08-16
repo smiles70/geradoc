@@ -1,27 +1,32 @@
 {
   "repo_name": "GeraDoc",
   "scan_date": "2026-08-16",
+  "last_intake_update": "2026-08-16",
   "artifacts": {
     "required": {
       "README.md": {
-        "status": "placeholder",
+        "status": "populated",
         "location": "/README.md",
-        "description": "Repository orientation and quick start"
+        "description": "Repository orientation and quick start",
+        "content": "ClarityDoc project overview, technical stack (React/Node.js/PostgreSQL), compliance requirements, roadmap"
       },
       "CONTRIBUTING.md": {
-        "status": "placeholder", 
+        "status": "populated", 
         "location": "/CONTRIBUTING.md",
-        "description": "Contribution guidelines and delivery governance"
+        "description": "Contribution guidelines and delivery governance",
+        "content": "Comprehensive DOR/DOD, testing requirements, senior-first development guidelines, git standards"
       },
       "SECURITY.md": {
-        "status": "placeholder",
+        "status": "populated",
         "location": "/SECURITY.md", 
-        "description": "Security and compliance documentation"
+        "description": "Security and compliance documentation",
+        "content": "GDPR/SOC2/WCAG compliance, threat model, senior-specific security considerations, incident response"
       },
       "CODEOWNERS": {
-        "status": "placeholder",
+        "status": "populated",
         "location": "/CODEOWNERS",
-        "description": "Ownership and escalation paths"
+        "description": "Ownership and escalation paths",
+        "content": "Domain structure defined, escalation paths established, positions to be hired"
       },
       "CHANGELOG.md": {
         "status": "placeholder",
@@ -31,41 +36,86 @@
       "ARCHITECTURE.md": {
         "status": "placeholder",
         "location": "/docs/ARCHITECTURE.md",
-        "description": "System context, dependencies, boundaries, data flow"
+        "description": "System context, dependencies, boundaries, data flow",
+        "priority": "high"
       },
       "CURRENT_STATE.md": {
-        "status": "placeholder",
+        "status": "populated",
         "location": "/docs/CURRENT_STATE.md",
-        "description": "Current state visibility and project status"
+        "description": "Current state visibility and project status",
+        "content": "Project status, intake summary, scope definition, next steps, risks and mitigations"
       },
       "ONBOARDING.md": {
         "status": "placeholder",
         "location": "/docs/ONBOARDING.md",
-        "description": "Developer onboarding and environment setup"
+        "description": "Developer onboarding and environment setup",
+        "priority": "high"
       },
       "RUNBOOK.md": {
         "status": "placeholder",
         "location": "/docs/RUNBOOK.md",
-        "description": "Operational runbooks and support guidance"
+        "description": "Operational runbooks and support guidance",
+        "priority": "high"
       },
       "ROLLBACK.md": {
         "status": "placeholder",
         "location": "/docs/ROLLBACK.md",
-        "description": "Rollback and recovery procedures"
+        "description": "Rollback and recovery procedures",
+        "priority": "medium"
       },
       "TEST_STRATEGY.md": {
         "status": "placeholder",
         "location": "/docs/TEST_STRATEGY.md",
-        "description": "Test strategy and validation approach"
+        "description": "Test strategy and validation approach",
+        "priority": "high"
       }
     },
     "adr": {
-      "status": "placeholder",
+      "status": "partially_populated",
       "location": "/docs/adr/",
-      "description": "Architecture Decision Records"
+      "description": "Architecture Decision Records",
+      "records": {
+        "ADR-0001-purpose.md": {
+          "status": "accepted",
+          "date": "2026-08-16",
+          "topic": "Project Purpose and Scope"
+        },
+        "ADR-0002-framework.md": {
+          "status": "accepted", 
+          "date": "2026-08-16",
+          "topic": "Technology Framework Selection"
+        },
+        "ADR-0003-deployment.md": {
+          "status": "proposed",
+          "topic": "Deployment Strategy"
+        },
+        "ADR-0004-security.md": {
+          "status": "proposed",
+          "topic": "Security Architecture"
+        }
+      }
     }
   },
-  "missing_artifacts": [],
+  "intake_artifacts": {
+    "application-charter-claritydoc.md": {
+      "location": "/.ai/intake/application-charter-claritydoc.md",
+      "processed_date": "2026-08-16",
+      "status": "processed"
+    }
+  },
+  "missing_artifacts": [
+    "ARCHITECTURE.md content",
+    "ONBOARDING.md content", 
+    "RUNBOOK.md content",
+    "TEST_STRATEGY.md content"
+  ],
   "stale_artifacts": [],
-  "non_canonical_duplicates": []
+  "non_canonical_duplicates": [],
+  "next_priorities": [
+    "Populate ARCHITECTURE.md with React/Node.js/PostgreSQL system design",
+    "Create operational runbooks in RUNBOOK.md with AWS deployment procedures",
+    "Develop onboarding guidance in ONBOARDING.md with stack-specific setup",
+    "Establish test strategy in TEST_STRATEGY.md with geragogy validation approach",
+    "Complete ADR-0003 (Deployment Strategy) and ADR-0004 (Security Architecture)"
+  ]
 }
