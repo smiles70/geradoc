@@ -1,51 +1,3327 @@
 [
   {
-    "id": "insurance-renewal-001",
+    "id": "insurance-001",
     "documentType": "Insurance",
-    "sourceText": "Your Medicare Advantage plan renews on October 15, 2026. The monthly premium will increase to $18. If you do not choose a new plan, your current plan will continue.",
-    "protectedAnchors": [
-      {"type": "date", "value": "October 15, 2026"},
-      {"type": "amount", "value": "$18"},
-      {"type": "negation", "value": "do not"}
+    "sourceReferences": [
+      {
+        "page": 2,
+        "label": "synthetic source span"
+      }
     ],
-    "requiredActions": ["choose a new plan or keep the current plan"],
-    "sourceReferences": [{"page": 1, "label": "renewal terms"}]
+    "sourceText": "Your Medicare Advantage plan renews on January 15, 2027. The monthly premium will increase to $12. If you do not choose a new plan, your current plan will continue. Contact Member Services if you need help.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "January 15, 2027"
+      },
+      {
+        "type": "amount",
+        "value": "$12"
+      },
+      {
+        "type": "negation",
+        "value": "do not"
+      },
+      {
+        "type": "entity",
+        "value": "Member Services"
+      }
+    ],
+    "requiredActions": [
+      "choose a new plan",
+      "contact Member Services"
+    ]
   },
   {
-    "id": "financial-charge-001",
+    "id": "financial-002",
     "documentType": "Financial",
-    "sourceText": "A $249 charge from WRS Supply posted on July 18, 2026. Contact your bank within 60 days if you do not recognize this charge.",
-    "protectedAnchors": [
-      {"type": "amount", "value": "$249"},
-      {"type": "date", "value": "July 18, 2026"},
-      {"type": "condition", "value": "if you do not recognize"}
+    "sourceReferences": [
+      {
+        "page": 3,
+        "label": "synthetic source span"
+      }
     ],
-    "requiredActions": ["contact your bank within 60 days if the charge is not recognized"],
-    "sourceReferences": [{"page": 1, "label": "transaction and dispute instruction"}]
+    "sourceText": "A $18 charge from WRS Supply posted on March 31, 2027. Contact your bank within 60 days if you do not recognize this charge. You must keep the dispute reference number.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$18"
+      },
+      {
+        "type": "date",
+        "value": "March 31, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you do not recognize"
+      },
+      {
+        "type": "obligation",
+        "value": "must keep"
+      }
+    ],
+    "requiredActions": [
+      "contact your bank within 60 days",
+      "keep the dispute reference number"
+    ]
   },
   {
-    "id": "government-tax-001",
+    "id": "government-003",
     "documentType": "Government",
-    "sourceText": "The first property tax installment of $920 is due December 31, 2026. A senior exemption may be available if you meet the county requirements.",
-    "protectedAnchors": [
-      {"type": "amount", "value": "$920"},
-      {"type": "date", "value": "December 31, 2026"},
-      {"type": "condition", "value": "if you meet"}
+    "sourceReferences": [
+      {
+        "page": 1,
+        "label": "synthetic source span"
+      }
     ],
-    "requiredActions": ["pay the installment or check exemption eligibility"],
-    "sourceReferences": [{"page": 1, "label": "installment and exemption"}]
+    "sourceText": "The first property tax installment of $24 is due June 30, 2027. A senior exemption may be available if you meet the county requirements. Do not send cash by mail.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$24"
+      },
+      {
+        "type": "date",
+        "value": "June 30, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you meet"
+      },
+      {
+        "type": "negation",
+        "value": "Do not"
+      }
+    ],
+    "requiredActions": [
+      "property tax installment",
+      "meet the county requirements",
+      "send cash by mail"
+    ]
   },
   {
-    "id": "legal-directive-001",
+    "id": "legal-004",
     "documentType": "Legal",
-    "sourceText": "This healthcare directive becomes effective on January 1, 2027. Jordan Lee may make healthcare decisions only when you cannot make them yourself. You may revoke this directive at any time.",
-    "protectedAnchors": [
-      {"type": "date", "value": "January 1, 2027"},
-      {"type": "entity", "value": "Jordan Lee"},
-      {"type": "condition", "value": "only when you cannot"},
-      {"type": "revocation", "value": "revoke"}
+    "sourceReferences": [
+      {
+        "page": 2,
+        "label": "synthetic source span"
+      }
     ],
-    "requiredActions": ["review the directive and keep a copy accessible"],
-    "sourceReferences": [{"page": 1, "label": "effective date and authority"}]
+    "sourceText": "This healthcare directive becomes effective on October 15, 2027. Jordan Lee may make healthcare decisions only when you cannot make them yourself. You may revoke this directive at any time.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "October 15, 2027"
+      },
+      {
+        "type": "entity",
+        "value": "Jordan Lee"
+      },
+      {
+        "type": "condition",
+        "value": "only when you cannot"
+      },
+      {
+        "type": "revocation",
+        "value": "revoke"
+      }
+    ],
+    "requiredActions": [
+      "make healthcare decisions",
+      "revoke this directive"
+    ]
+  },
+  {
+    "id": "insurance-005",
+    "documentType": "Insurance",
+    "sourceReferences": [
+      {
+        "page": 3,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "Your Medicare Advantage plan renews on December 31, 2027. The monthly premium will increase to $42. If you do not choose a new plan, your current plan will continue. Contact Member Services if you need help.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "December 31, 2027"
+      },
+      {
+        "type": "amount",
+        "value": "$42"
+      },
+      {
+        "type": "negation",
+        "value": "do not"
+      },
+      {
+        "type": "entity",
+        "value": "Member Services"
+      }
+    ],
+    "requiredActions": [
+      "choose a new plan",
+      "contact Member Services"
+    ]
+  },
+  {
+    "id": "financial-006",
+    "documentType": "Financial",
+    "sourceReferences": [
+      {
+        "page": 1,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "A $12 charge from WRS Supply posted on January 15, 2027. Contact your bank within 60 days if you do not recognize this charge. You must keep the dispute reference number.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$12"
+      },
+      {
+        "type": "date",
+        "value": "January 15, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you do not recognize"
+      },
+      {
+        "type": "obligation",
+        "value": "must keep"
+      }
+    ],
+    "requiredActions": [
+      "contact your bank within 60 days",
+      "keep the dispute reference number"
+    ]
+  },
+  {
+    "id": "government-007",
+    "documentType": "Government",
+    "sourceReferences": [
+      {
+        "page": 2,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "The first property tax installment of $18 is due March 31, 2027. A senior exemption may be available if you meet the county requirements. Do not send cash by mail.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$18"
+      },
+      {
+        "type": "date",
+        "value": "March 31, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you meet"
+      },
+      {
+        "type": "negation",
+        "value": "Do not"
+      }
+    ],
+    "requiredActions": [
+      "property tax installment",
+      "meet the county requirements",
+      "send cash by mail"
+    ]
+  },
+  {
+    "id": "legal-008",
+    "documentType": "Legal",
+    "sourceReferences": [
+      {
+        "page": 3,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "This healthcare directive becomes effective on June 30, 2027. Jordan Lee may make healthcare decisions only when you cannot make them yourself. You may revoke this directive at any time.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "June 30, 2027"
+      },
+      {
+        "type": "entity",
+        "value": "Jordan Lee"
+      },
+      {
+        "type": "condition",
+        "value": "only when you cannot"
+      },
+      {
+        "type": "revocation",
+        "value": "revoke"
+      }
+    ],
+    "requiredActions": [
+      "make healthcare decisions",
+      "revoke this directive"
+    ]
+  },
+  {
+    "id": "insurance-009",
+    "documentType": "Insurance",
+    "sourceReferences": [
+      {
+        "page": 1,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "Your Medicare Advantage plan renews on October 15, 2027. The monthly premium will increase to $30. If you do not choose a new plan, your current plan will continue. Contact Member Services if you need help.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "October 15, 2027"
+      },
+      {
+        "type": "amount",
+        "value": "$30"
+      },
+      {
+        "type": "negation",
+        "value": "do not"
+      },
+      {
+        "type": "entity",
+        "value": "Member Services"
+      }
+    ],
+    "requiredActions": [
+      "choose a new plan",
+      "contact Member Services"
+    ]
+  },
+  {
+    "id": "financial-010",
+    "documentType": "Financial",
+    "sourceReferences": [
+      {
+        "page": 2,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "A $42 charge from WRS Supply posted on December 31, 2027. Contact your bank within 60 days if you do not recognize this charge. You must keep the dispute reference number.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$42"
+      },
+      {
+        "type": "date",
+        "value": "December 31, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you do not recognize"
+      },
+      {
+        "type": "obligation",
+        "value": "must keep"
+      }
+    ],
+    "requiredActions": [
+      "contact your bank within 60 days",
+      "keep the dispute reference number"
+    ]
+  },
+  {
+    "id": "government-011",
+    "documentType": "Government",
+    "sourceReferences": [
+      {
+        "page": 3,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "The first property tax installment of $12 is due January 15, 2027. A senior exemption may be available if you meet the county requirements. Do not send cash by mail.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$12"
+      },
+      {
+        "type": "date",
+        "value": "January 15, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you meet"
+      },
+      {
+        "type": "negation",
+        "value": "Do not"
+      }
+    ],
+    "requiredActions": [
+      "property tax installment",
+      "meet the county requirements",
+      "send cash by mail"
+    ]
+  },
+  {
+    "id": "legal-012",
+    "documentType": "Legal",
+    "sourceReferences": [
+      {
+        "page": 1,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "This healthcare directive becomes effective on March 31, 2027. Jordan Lee may make healthcare decisions only when you cannot make them yourself. You may revoke this directive at any time.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "March 31, 2027"
+      },
+      {
+        "type": "entity",
+        "value": "Jordan Lee"
+      },
+      {
+        "type": "condition",
+        "value": "only when you cannot"
+      },
+      {
+        "type": "revocation",
+        "value": "revoke"
+      }
+    ],
+    "requiredActions": [
+      "make healthcare decisions",
+      "revoke this directive"
+    ]
+  },
+  {
+    "id": "insurance-013",
+    "documentType": "Insurance",
+    "sourceReferences": [
+      {
+        "page": 2,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "Your Medicare Advantage plan renews on June 30, 2027. The monthly premium will increase to $24. If you do not choose a new plan, your current plan will continue. Contact Member Services if you need help.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "June 30, 2027"
+      },
+      {
+        "type": "amount",
+        "value": "$24"
+      },
+      {
+        "type": "negation",
+        "value": "do not"
+      },
+      {
+        "type": "entity",
+        "value": "Member Services"
+      }
+    ],
+    "requiredActions": [
+      "choose a new plan",
+      "contact Member Services"
+    ]
+  },
+  {
+    "id": "financial-014",
+    "documentType": "Financial",
+    "sourceReferences": [
+      {
+        "page": 3,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "A $30 charge from WRS Supply posted on October 15, 2027. Contact your bank within 60 days if you do not recognize this charge. You must keep the dispute reference number.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$30"
+      },
+      {
+        "type": "date",
+        "value": "October 15, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you do not recognize"
+      },
+      {
+        "type": "obligation",
+        "value": "must keep"
+      }
+    ],
+    "requiredActions": [
+      "contact your bank within 60 days",
+      "keep the dispute reference number"
+    ]
+  },
+  {
+    "id": "government-015",
+    "documentType": "Government",
+    "sourceReferences": [
+      {
+        "page": 1,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "The first property tax installment of $42 is due December 31, 2027. A senior exemption may be available if you meet the county requirements. Do not send cash by mail.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$42"
+      },
+      {
+        "type": "date",
+        "value": "December 31, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you meet"
+      },
+      {
+        "type": "negation",
+        "value": "Do not"
+      }
+    ],
+    "requiredActions": [
+      "property tax installment",
+      "meet the county requirements",
+      "send cash by mail"
+    ]
+  },
+  {
+    "id": "legal-016",
+    "documentType": "Legal",
+    "sourceReferences": [
+      {
+        "page": 2,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "This healthcare directive becomes effective on January 15, 2027. Jordan Lee may make healthcare decisions only when you cannot make them yourself. You may revoke this directive at any time.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "January 15, 2027"
+      },
+      {
+        "type": "entity",
+        "value": "Jordan Lee"
+      },
+      {
+        "type": "condition",
+        "value": "only when you cannot"
+      },
+      {
+        "type": "revocation",
+        "value": "revoke"
+      }
+    ],
+    "requiredActions": [
+      "make healthcare decisions",
+      "revoke this directive"
+    ]
+  },
+  {
+    "id": "insurance-017",
+    "documentType": "Insurance",
+    "sourceReferences": [
+      {
+        "page": 3,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "Your Medicare Advantage plan renews on March 31, 2027. The monthly premium will increase to $18. If you do not choose a new plan, your current plan will continue. Contact Member Services if you need help.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "March 31, 2027"
+      },
+      {
+        "type": "amount",
+        "value": "$18"
+      },
+      {
+        "type": "negation",
+        "value": "do not"
+      },
+      {
+        "type": "entity",
+        "value": "Member Services"
+      }
+    ],
+    "requiredActions": [
+      "choose a new plan",
+      "contact Member Services"
+    ]
+  },
+  {
+    "id": "financial-018",
+    "documentType": "Financial",
+    "sourceReferences": [
+      {
+        "page": 1,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "A $24 charge from WRS Supply posted on June 30, 2027. Contact your bank within 60 days if you do not recognize this charge. You must keep the dispute reference number.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$24"
+      },
+      {
+        "type": "date",
+        "value": "June 30, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you do not recognize"
+      },
+      {
+        "type": "obligation",
+        "value": "must keep"
+      }
+    ],
+    "requiredActions": [
+      "contact your bank within 60 days",
+      "keep the dispute reference number"
+    ]
+  },
+  {
+    "id": "government-019",
+    "documentType": "Government",
+    "sourceReferences": [
+      {
+        "page": 2,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "The first property tax installment of $30 is due October 15, 2027. A senior exemption may be available if you meet the county requirements. Do not send cash by mail.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$30"
+      },
+      {
+        "type": "date",
+        "value": "October 15, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you meet"
+      },
+      {
+        "type": "negation",
+        "value": "Do not"
+      }
+    ],
+    "requiredActions": [
+      "property tax installment",
+      "meet the county requirements",
+      "send cash by mail"
+    ]
+  },
+  {
+    "id": "legal-020",
+    "documentType": "Legal",
+    "sourceReferences": [
+      {
+        "page": 3,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "This healthcare directive becomes effective on December 31, 2027. Jordan Lee may make healthcare decisions only when you cannot make them yourself. You may revoke this directive at any time.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "December 31, 2027"
+      },
+      {
+        "type": "entity",
+        "value": "Jordan Lee"
+      },
+      {
+        "type": "condition",
+        "value": "only when you cannot"
+      },
+      {
+        "type": "revocation",
+        "value": "revoke"
+      }
+    ],
+    "requiredActions": [
+      "make healthcare decisions",
+      "revoke this directive"
+    ]
+  },
+  {
+    "id": "insurance-021",
+    "documentType": "Insurance",
+    "sourceReferences": [
+      {
+        "page": 1,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "Your Medicare Advantage plan renews on January 15, 2027. The monthly premium will increase to $12. If you do not choose a new plan, your current plan will continue. Contact Member Services if you need help.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "January 15, 2027"
+      },
+      {
+        "type": "amount",
+        "value": "$12"
+      },
+      {
+        "type": "negation",
+        "value": "do not"
+      },
+      {
+        "type": "entity",
+        "value": "Member Services"
+      }
+    ],
+    "requiredActions": [
+      "choose a new plan",
+      "contact Member Services"
+    ]
+  },
+  {
+    "id": "financial-022",
+    "documentType": "Financial",
+    "sourceReferences": [
+      {
+        "page": 2,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "A $18 charge from WRS Supply posted on March 31, 2027. Contact your bank within 60 days if you do not recognize this charge. You must keep the dispute reference number.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$18"
+      },
+      {
+        "type": "date",
+        "value": "March 31, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you do not recognize"
+      },
+      {
+        "type": "obligation",
+        "value": "must keep"
+      }
+    ],
+    "requiredActions": [
+      "contact your bank within 60 days",
+      "keep the dispute reference number"
+    ]
+  },
+  {
+    "id": "government-023",
+    "documentType": "Government",
+    "sourceReferences": [
+      {
+        "page": 3,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "The first property tax installment of $24 is due June 30, 2027. A senior exemption may be available if you meet the county requirements. Do not send cash by mail.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$24"
+      },
+      {
+        "type": "date",
+        "value": "June 30, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you meet"
+      },
+      {
+        "type": "negation",
+        "value": "Do not"
+      }
+    ],
+    "requiredActions": [
+      "property tax installment",
+      "meet the county requirements",
+      "send cash by mail"
+    ]
+  },
+  {
+    "id": "legal-024",
+    "documentType": "Legal",
+    "sourceReferences": [
+      {
+        "page": 1,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "This healthcare directive becomes effective on October 15, 2027. Jordan Lee may make healthcare decisions only when you cannot make them yourself. You may revoke this directive at any time.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "October 15, 2027"
+      },
+      {
+        "type": "entity",
+        "value": "Jordan Lee"
+      },
+      {
+        "type": "condition",
+        "value": "only when you cannot"
+      },
+      {
+        "type": "revocation",
+        "value": "revoke"
+      }
+    ],
+    "requiredActions": [
+      "make healthcare decisions",
+      "revoke this directive"
+    ]
+  },
+  {
+    "id": "insurance-025",
+    "documentType": "Insurance",
+    "sourceReferences": [
+      {
+        "page": 2,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "Your Medicare Advantage plan renews on December 31, 2027. The monthly premium will increase to $42. If you do not choose a new plan, your current plan will continue. Contact Member Services if you need help.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "December 31, 2027"
+      },
+      {
+        "type": "amount",
+        "value": "$42"
+      },
+      {
+        "type": "negation",
+        "value": "do not"
+      },
+      {
+        "type": "entity",
+        "value": "Member Services"
+      }
+    ],
+    "requiredActions": [
+      "choose a new plan",
+      "contact Member Services"
+    ]
+  },
+  {
+    "id": "financial-026",
+    "documentType": "Financial",
+    "sourceReferences": [
+      {
+        "page": 3,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "A $12 charge from WRS Supply posted on January 15, 2027. Contact your bank within 60 days if you do not recognize this charge. You must keep the dispute reference number.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$12"
+      },
+      {
+        "type": "date",
+        "value": "January 15, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you do not recognize"
+      },
+      {
+        "type": "obligation",
+        "value": "must keep"
+      }
+    ],
+    "requiredActions": [
+      "contact your bank within 60 days",
+      "keep the dispute reference number"
+    ]
+  },
+  {
+    "id": "government-027",
+    "documentType": "Government",
+    "sourceReferences": [
+      {
+        "page": 1,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "The first property tax installment of $18 is due March 31, 2027. A senior exemption may be available if you meet the county requirements. Do not send cash by mail.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$18"
+      },
+      {
+        "type": "date",
+        "value": "March 31, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you meet"
+      },
+      {
+        "type": "negation",
+        "value": "Do not"
+      }
+    ],
+    "requiredActions": [
+      "property tax installment",
+      "meet the county requirements",
+      "send cash by mail"
+    ]
+  },
+  {
+    "id": "legal-028",
+    "documentType": "Legal",
+    "sourceReferences": [
+      {
+        "page": 2,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "This healthcare directive becomes effective on June 30, 2027. Jordan Lee may make healthcare decisions only when you cannot make them yourself. You may revoke this directive at any time.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "June 30, 2027"
+      },
+      {
+        "type": "entity",
+        "value": "Jordan Lee"
+      },
+      {
+        "type": "condition",
+        "value": "only when you cannot"
+      },
+      {
+        "type": "revocation",
+        "value": "revoke"
+      }
+    ],
+    "requiredActions": [
+      "make healthcare decisions",
+      "revoke this directive"
+    ]
+  },
+  {
+    "id": "insurance-029",
+    "documentType": "Insurance",
+    "sourceReferences": [
+      {
+        "page": 3,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "Your Medicare Advantage plan renews on October 15, 2027. The monthly premium will increase to $30. If you do not choose a new plan, your current plan will continue. Contact Member Services if you need help.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "October 15, 2027"
+      },
+      {
+        "type": "amount",
+        "value": "$30"
+      },
+      {
+        "type": "negation",
+        "value": "do not"
+      },
+      {
+        "type": "entity",
+        "value": "Member Services"
+      }
+    ],
+    "requiredActions": [
+      "choose a new plan",
+      "contact Member Services"
+    ]
+  },
+  {
+    "id": "financial-030",
+    "documentType": "Financial",
+    "sourceReferences": [
+      {
+        "page": 1,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "A $42 charge from WRS Supply posted on December 31, 2027. Contact your bank within 60 days if you do not recognize this charge. You must keep the dispute reference number.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$42"
+      },
+      {
+        "type": "date",
+        "value": "December 31, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you do not recognize"
+      },
+      {
+        "type": "obligation",
+        "value": "must keep"
+      }
+    ],
+    "requiredActions": [
+      "contact your bank within 60 days",
+      "keep the dispute reference number"
+    ]
+  },
+  {
+    "id": "government-031",
+    "documentType": "Government",
+    "sourceReferences": [
+      {
+        "page": 2,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "The first property tax installment of $12 is due January 15, 2027. A senior exemption may be available if you meet the county requirements. Do not send cash by mail.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$12"
+      },
+      {
+        "type": "date",
+        "value": "January 15, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you meet"
+      },
+      {
+        "type": "negation",
+        "value": "Do not"
+      }
+    ],
+    "requiredActions": [
+      "property tax installment",
+      "meet the county requirements",
+      "send cash by mail"
+    ]
+  },
+  {
+    "id": "legal-032",
+    "documentType": "Legal",
+    "sourceReferences": [
+      {
+        "page": 3,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "This healthcare directive becomes effective on March 31, 2027. Jordan Lee may make healthcare decisions only when you cannot make them yourself. You may revoke this directive at any time.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "March 31, 2027"
+      },
+      {
+        "type": "entity",
+        "value": "Jordan Lee"
+      },
+      {
+        "type": "condition",
+        "value": "only when you cannot"
+      },
+      {
+        "type": "revocation",
+        "value": "revoke"
+      }
+    ],
+    "requiredActions": [
+      "make healthcare decisions",
+      "revoke this directive"
+    ]
+  },
+  {
+    "id": "insurance-033",
+    "documentType": "Insurance",
+    "sourceReferences": [
+      {
+        "page": 1,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "Your Medicare Advantage plan renews on June 30, 2027. The monthly premium will increase to $24. If you do not choose a new plan, your current plan will continue. Contact Member Services if you need help.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "June 30, 2027"
+      },
+      {
+        "type": "amount",
+        "value": "$24"
+      },
+      {
+        "type": "negation",
+        "value": "do not"
+      },
+      {
+        "type": "entity",
+        "value": "Member Services"
+      }
+    ],
+    "requiredActions": [
+      "choose a new plan",
+      "contact Member Services"
+    ]
+  },
+  {
+    "id": "financial-034",
+    "documentType": "Financial",
+    "sourceReferences": [
+      {
+        "page": 2,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "A $30 charge from WRS Supply posted on October 15, 2027. Contact your bank within 60 days if you do not recognize this charge. You must keep the dispute reference number.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$30"
+      },
+      {
+        "type": "date",
+        "value": "October 15, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you do not recognize"
+      },
+      {
+        "type": "obligation",
+        "value": "must keep"
+      }
+    ],
+    "requiredActions": [
+      "contact your bank within 60 days",
+      "keep the dispute reference number"
+    ]
+  },
+  {
+    "id": "government-035",
+    "documentType": "Government",
+    "sourceReferences": [
+      {
+        "page": 3,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "The first property tax installment of $42 is due December 31, 2027. A senior exemption may be available if you meet the county requirements. Do not send cash by mail.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$42"
+      },
+      {
+        "type": "date",
+        "value": "December 31, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you meet"
+      },
+      {
+        "type": "negation",
+        "value": "Do not"
+      }
+    ],
+    "requiredActions": [
+      "property tax installment",
+      "meet the county requirements",
+      "send cash by mail"
+    ]
+  },
+  {
+    "id": "legal-036",
+    "documentType": "Legal",
+    "sourceReferences": [
+      {
+        "page": 1,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "This healthcare directive becomes effective on January 15, 2027. Jordan Lee may make healthcare decisions only when you cannot make them yourself. You may revoke this directive at any time.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "January 15, 2027"
+      },
+      {
+        "type": "entity",
+        "value": "Jordan Lee"
+      },
+      {
+        "type": "condition",
+        "value": "only when you cannot"
+      },
+      {
+        "type": "revocation",
+        "value": "revoke"
+      }
+    ],
+    "requiredActions": [
+      "make healthcare decisions",
+      "revoke this directive"
+    ]
+  },
+  {
+    "id": "insurance-037",
+    "documentType": "Insurance",
+    "sourceReferences": [
+      {
+        "page": 2,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "Your Medicare Advantage plan renews on March 31, 2027. The monthly premium will increase to $18. If you do not choose a new plan, your current plan will continue. Contact Member Services if you need help.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "March 31, 2027"
+      },
+      {
+        "type": "amount",
+        "value": "$18"
+      },
+      {
+        "type": "negation",
+        "value": "do not"
+      },
+      {
+        "type": "entity",
+        "value": "Member Services"
+      }
+    ],
+    "requiredActions": [
+      "choose a new plan",
+      "contact Member Services"
+    ]
+  },
+  {
+    "id": "financial-038",
+    "documentType": "Financial",
+    "sourceReferences": [
+      {
+        "page": 3,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "A $24 charge from WRS Supply posted on June 30, 2027. Contact your bank within 60 days if you do not recognize this charge. You must keep the dispute reference number.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$24"
+      },
+      {
+        "type": "date",
+        "value": "June 30, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you do not recognize"
+      },
+      {
+        "type": "obligation",
+        "value": "must keep"
+      }
+    ],
+    "requiredActions": [
+      "contact your bank within 60 days",
+      "keep the dispute reference number"
+    ]
+  },
+  {
+    "id": "government-039",
+    "documentType": "Government",
+    "sourceReferences": [
+      {
+        "page": 1,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "The first property tax installment of $30 is due October 15, 2027. A senior exemption may be available if you meet the county requirements. Do not send cash by mail.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$30"
+      },
+      {
+        "type": "date",
+        "value": "October 15, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you meet"
+      },
+      {
+        "type": "negation",
+        "value": "Do not"
+      }
+    ],
+    "requiredActions": [
+      "property tax installment",
+      "meet the county requirements",
+      "send cash by mail"
+    ]
+  },
+  {
+    "id": "legal-040",
+    "documentType": "Legal",
+    "sourceReferences": [
+      {
+        "page": 2,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "This healthcare directive becomes effective on December 31, 2027. Jordan Lee may make healthcare decisions only when you cannot make them yourself. You may revoke this directive at any time.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "December 31, 2027"
+      },
+      {
+        "type": "entity",
+        "value": "Jordan Lee"
+      },
+      {
+        "type": "condition",
+        "value": "only when you cannot"
+      },
+      {
+        "type": "revocation",
+        "value": "revoke"
+      }
+    ],
+    "requiredActions": [
+      "make healthcare decisions",
+      "revoke this directive"
+    ]
+  },
+  {
+    "id": "insurance-041",
+    "documentType": "Insurance",
+    "sourceReferences": [
+      {
+        "page": 3,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "Your Medicare Advantage plan renews on January 15, 2027. The monthly premium will increase to $12. If you do not choose a new plan, your current plan will continue. Contact Member Services if you need help.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "January 15, 2027"
+      },
+      {
+        "type": "amount",
+        "value": "$12"
+      },
+      {
+        "type": "negation",
+        "value": "do not"
+      },
+      {
+        "type": "entity",
+        "value": "Member Services"
+      }
+    ],
+    "requiredActions": [
+      "choose a new plan",
+      "contact Member Services"
+    ]
+  },
+  {
+    "id": "financial-042",
+    "documentType": "Financial",
+    "sourceReferences": [
+      {
+        "page": 1,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "A $18 charge from WRS Supply posted on March 31, 2027. Contact your bank within 60 days if you do not recognize this charge. You must keep the dispute reference number.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$18"
+      },
+      {
+        "type": "date",
+        "value": "March 31, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you do not recognize"
+      },
+      {
+        "type": "obligation",
+        "value": "must keep"
+      }
+    ],
+    "requiredActions": [
+      "contact your bank within 60 days",
+      "keep the dispute reference number"
+    ]
+  },
+  {
+    "id": "government-043",
+    "documentType": "Government",
+    "sourceReferences": [
+      {
+        "page": 2,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "The first property tax installment of $24 is due June 30, 2027. A senior exemption may be available if you meet the county requirements. Do not send cash by mail.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$24"
+      },
+      {
+        "type": "date",
+        "value": "June 30, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you meet"
+      },
+      {
+        "type": "negation",
+        "value": "Do not"
+      }
+    ],
+    "requiredActions": [
+      "property tax installment",
+      "meet the county requirements",
+      "send cash by mail"
+    ]
+  },
+  {
+    "id": "legal-044",
+    "documentType": "Legal",
+    "sourceReferences": [
+      {
+        "page": 3,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "This healthcare directive becomes effective on October 15, 2027. Jordan Lee may make healthcare decisions only when you cannot make them yourself. You may revoke this directive at any time.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "October 15, 2027"
+      },
+      {
+        "type": "entity",
+        "value": "Jordan Lee"
+      },
+      {
+        "type": "condition",
+        "value": "only when you cannot"
+      },
+      {
+        "type": "revocation",
+        "value": "revoke"
+      }
+    ],
+    "requiredActions": [
+      "make healthcare decisions",
+      "revoke this directive"
+    ]
+  },
+  {
+    "id": "insurance-045",
+    "documentType": "Insurance",
+    "sourceReferences": [
+      {
+        "page": 1,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "Your Medicare Advantage plan renews on December 31, 2027. The monthly premium will increase to $42. If you do not choose a new plan, your current plan will continue. Contact Member Services if you need help.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "December 31, 2027"
+      },
+      {
+        "type": "amount",
+        "value": "$42"
+      },
+      {
+        "type": "negation",
+        "value": "do not"
+      },
+      {
+        "type": "entity",
+        "value": "Member Services"
+      }
+    ],
+    "requiredActions": [
+      "choose a new plan",
+      "contact Member Services"
+    ]
+  },
+  {
+    "id": "financial-046",
+    "documentType": "Financial",
+    "sourceReferences": [
+      {
+        "page": 2,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "A $12 charge from WRS Supply posted on January 15, 2027. Contact your bank within 60 days if you do not recognize this charge. You must keep the dispute reference number.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$12"
+      },
+      {
+        "type": "date",
+        "value": "January 15, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you do not recognize"
+      },
+      {
+        "type": "obligation",
+        "value": "must keep"
+      }
+    ],
+    "requiredActions": [
+      "contact your bank within 60 days",
+      "keep the dispute reference number"
+    ]
+  },
+  {
+    "id": "government-047",
+    "documentType": "Government",
+    "sourceReferences": [
+      {
+        "page": 3,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "The first property tax installment of $18 is due March 31, 2027. A senior exemption may be available if you meet the county requirements. Do not send cash by mail.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$18"
+      },
+      {
+        "type": "date",
+        "value": "March 31, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you meet"
+      },
+      {
+        "type": "negation",
+        "value": "Do not"
+      }
+    ],
+    "requiredActions": [
+      "property tax installment",
+      "meet the county requirements",
+      "send cash by mail"
+    ]
+  },
+  {
+    "id": "legal-048",
+    "documentType": "Legal",
+    "sourceReferences": [
+      {
+        "page": 1,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "This healthcare directive becomes effective on June 30, 2027. Jordan Lee may make healthcare decisions only when you cannot make them yourself. You may revoke this directive at any time.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "June 30, 2027"
+      },
+      {
+        "type": "entity",
+        "value": "Jordan Lee"
+      },
+      {
+        "type": "condition",
+        "value": "only when you cannot"
+      },
+      {
+        "type": "revocation",
+        "value": "revoke"
+      }
+    ],
+    "requiredActions": [
+      "make healthcare decisions",
+      "revoke this directive"
+    ]
+  },
+  {
+    "id": "insurance-049",
+    "documentType": "Insurance",
+    "sourceReferences": [
+      {
+        "page": 2,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "Your Medicare Advantage plan renews on October 15, 2027. The monthly premium will increase to $30. If you do not choose a new plan, your current plan will continue. Contact Member Services if you need help.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "October 15, 2027"
+      },
+      {
+        "type": "amount",
+        "value": "$30"
+      },
+      {
+        "type": "negation",
+        "value": "do not"
+      },
+      {
+        "type": "entity",
+        "value": "Member Services"
+      }
+    ],
+    "requiredActions": [
+      "choose a new plan",
+      "contact Member Services"
+    ]
+  },
+  {
+    "id": "financial-050",
+    "documentType": "Financial",
+    "sourceReferences": [
+      {
+        "page": 3,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "A $42 charge from WRS Supply posted on December 31, 2027. Contact your bank within 60 days if you do not recognize this charge. You must keep the dispute reference number.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$42"
+      },
+      {
+        "type": "date",
+        "value": "December 31, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you do not recognize"
+      },
+      {
+        "type": "obligation",
+        "value": "must keep"
+      }
+    ],
+    "requiredActions": [
+      "contact your bank within 60 days",
+      "keep the dispute reference number"
+    ]
+  },
+  {
+    "id": "government-051",
+    "documentType": "Government",
+    "sourceReferences": [
+      {
+        "page": 1,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "The first property tax installment of $12 is due January 15, 2027. A senior exemption may be available if you meet the county requirements. Do not send cash by mail.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$12"
+      },
+      {
+        "type": "date",
+        "value": "January 15, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you meet"
+      },
+      {
+        "type": "negation",
+        "value": "Do not"
+      }
+    ],
+    "requiredActions": [
+      "property tax installment",
+      "meet the county requirements",
+      "send cash by mail"
+    ]
+  },
+  {
+    "id": "legal-052",
+    "documentType": "Legal",
+    "sourceReferences": [
+      {
+        "page": 2,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "This healthcare directive becomes effective on March 31, 2027. Jordan Lee may make healthcare decisions only when you cannot make them yourself. You may revoke this directive at any time.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "March 31, 2027"
+      },
+      {
+        "type": "entity",
+        "value": "Jordan Lee"
+      },
+      {
+        "type": "condition",
+        "value": "only when you cannot"
+      },
+      {
+        "type": "revocation",
+        "value": "revoke"
+      }
+    ],
+    "requiredActions": [
+      "make healthcare decisions",
+      "revoke this directive"
+    ]
+  },
+  {
+    "id": "insurance-053",
+    "documentType": "Insurance",
+    "sourceReferences": [
+      {
+        "page": 3,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "Your Medicare Advantage plan renews on June 30, 2027. The monthly premium will increase to $24. If you do not choose a new plan, your current plan will continue. Contact Member Services if you need help.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "June 30, 2027"
+      },
+      {
+        "type": "amount",
+        "value": "$24"
+      },
+      {
+        "type": "negation",
+        "value": "do not"
+      },
+      {
+        "type": "entity",
+        "value": "Member Services"
+      }
+    ],
+    "requiredActions": [
+      "choose a new plan",
+      "contact Member Services"
+    ]
+  },
+  {
+    "id": "financial-054",
+    "documentType": "Financial",
+    "sourceReferences": [
+      {
+        "page": 1,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "A $30 charge from WRS Supply posted on October 15, 2027. Contact your bank within 60 days if you do not recognize this charge. You must keep the dispute reference number.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$30"
+      },
+      {
+        "type": "date",
+        "value": "October 15, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you do not recognize"
+      },
+      {
+        "type": "obligation",
+        "value": "must keep"
+      }
+    ],
+    "requiredActions": [
+      "contact your bank within 60 days",
+      "keep the dispute reference number"
+    ]
+  },
+  {
+    "id": "government-055",
+    "documentType": "Government",
+    "sourceReferences": [
+      {
+        "page": 2,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "The first property tax installment of $42 is due December 31, 2027. A senior exemption may be available if you meet the county requirements. Do not send cash by mail.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$42"
+      },
+      {
+        "type": "date",
+        "value": "December 31, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you meet"
+      },
+      {
+        "type": "negation",
+        "value": "Do not"
+      }
+    ],
+    "requiredActions": [
+      "property tax installment",
+      "meet the county requirements",
+      "send cash by mail"
+    ]
+  },
+  {
+    "id": "legal-056",
+    "documentType": "Legal",
+    "sourceReferences": [
+      {
+        "page": 3,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "This healthcare directive becomes effective on January 15, 2027. Jordan Lee may make healthcare decisions only when you cannot make them yourself. You may revoke this directive at any time.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "January 15, 2027"
+      },
+      {
+        "type": "entity",
+        "value": "Jordan Lee"
+      },
+      {
+        "type": "condition",
+        "value": "only when you cannot"
+      },
+      {
+        "type": "revocation",
+        "value": "revoke"
+      }
+    ],
+    "requiredActions": [
+      "make healthcare decisions",
+      "revoke this directive"
+    ]
+  },
+  {
+    "id": "insurance-057",
+    "documentType": "Insurance",
+    "sourceReferences": [
+      {
+        "page": 1,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "Your Medicare Advantage plan renews on March 31, 2027. The monthly premium will increase to $18. If you do not choose a new plan, your current plan will continue. Contact Member Services if you need help.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "March 31, 2027"
+      },
+      {
+        "type": "amount",
+        "value": "$18"
+      },
+      {
+        "type": "negation",
+        "value": "do not"
+      },
+      {
+        "type": "entity",
+        "value": "Member Services"
+      }
+    ],
+    "requiredActions": [
+      "choose a new plan",
+      "contact Member Services"
+    ]
+  },
+  {
+    "id": "financial-058",
+    "documentType": "Financial",
+    "sourceReferences": [
+      {
+        "page": 2,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "A $24 charge from WRS Supply posted on June 30, 2027. Contact your bank within 60 days if you do not recognize this charge. You must keep the dispute reference number.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$24"
+      },
+      {
+        "type": "date",
+        "value": "June 30, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you do not recognize"
+      },
+      {
+        "type": "obligation",
+        "value": "must keep"
+      }
+    ],
+    "requiredActions": [
+      "contact your bank within 60 days",
+      "keep the dispute reference number"
+    ]
+  },
+  {
+    "id": "government-059",
+    "documentType": "Government",
+    "sourceReferences": [
+      {
+        "page": 3,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "The first property tax installment of $30 is due October 15, 2027. A senior exemption may be available if you meet the county requirements. Do not send cash by mail.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$30"
+      },
+      {
+        "type": "date",
+        "value": "October 15, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you meet"
+      },
+      {
+        "type": "negation",
+        "value": "Do not"
+      }
+    ],
+    "requiredActions": [
+      "property tax installment",
+      "meet the county requirements",
+      "send cash by mail"
+    ]
+  },
+  {
+    "id": "legal-060",
+    "documentType": "Legal",
+    "sourceReferences": [
+      {
+        "page": 1,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "This healthcare directive becomes effective on December 31, 2027. Jordan Lee may make healthcare decisions only when you cannot make them yourself. You may revoke this directive at any time.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "December 31, 2027"
+      },
+      {
+        "type": "entity",
+        "value": "Jordan Lee"
+      },
+      {
+        "type": "condition",
+        "value": "only when you cannot"
+      },
+      {
+        "type": "revocation",
+        "value": "revoke"
+      }
+    ],
+    "requiredActions": [
+      "make healthcare decisions",
+      "revoke this directive"
+    ]
+  },
+  {
+    "id": "insurance-061",
+    "documentType": "Insurance",
+    "sourceReferences": [
+      {
+        "page": 2,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "Your Medicare Advantage plan renews on January 15, 2027. The monthly premium will increase to $12. If you do not choose a new plan, your current plan will continue. Contact Member Services if you need help.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "January 15, 2027"
+      },
+      {
+        "type": "amount",
+        "value": "$12"
+      },
+      {
+        "type": "negation",
+        "value": "do not"
+      },
+      {
+        "type": "entity",
+        "value": "Member Services"
+      }
+    ],
+    "requiredActions": [
+      "choose a new plan",
+      "contact Member Services"
+    ]
+  },
+  {
+    "id": "financial-062",
+    "documentType": "Financial",
+    "sourceReferences": [
+      {
+        "page": 3,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "A $18 charge from WRS Supply posted on March 31, 2027. Contact your bank within 60 days if you do not recognize this charge. You must keep the dispute reference number.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$18"
+      },
+      {
+        "type": "date",
+        "value": "March 31, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you do not recognize"
+      },
+      {
+        "type": "obligation",
+        "value": "must keep"
+      }
+    ],
+    "requiredActions": [
+      "contact your bank within 60 days",
+      "keep the dispute reference number"
+    ]
+  },
+  {
+    "id": "government-063",
+    "documentType": "Government",
+    "sourceReferences": [
+      {
+        "page": 1,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "The first property tax installment of $24 is due June 30, 2027. A senior exemption may be available if you meet the county requirements. Do not send cash by mail.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$24"
+      },
+      {
+        "type": "date",
+        "value": "June 30, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you meet"
+      },
+      {
+        "type": "negation",
+        "value": "Do not"
+      }
+    ],
+    "requiredActions": [
+      "property tax installment",
+      "meet the county requirements",
+      "send cash by mail"
+    ]
+  },
+  {
+    "id": "legal-064",
+    "documentType": "Legal",
+    "sourceReferences": [
+      {
+        "page": 2,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "This healthcare directive becomes effective on October 15, 2027. Jordan Lee may make healthcare decisions only when you cannot make them yourself. You may revoke this directive at any time.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "October 15, 2027"
+      },
+      {
+        "type": "entity",
+        "value": "Jordan Lee"
+      },
+      {
+        "type": "condition",
+        "value": "only when you cannot"
+      },
+      {
+        "type": "revocation",
+        "value": "revoke"
+      }
+    ],
+    "requiredActions": [
+      "make healthcare decisions",
+      "revoke this directive"
+    ]
+  },
+  {
+    "id": "insurance-065",
+    "documentType": "Insurance",
+    "sourceReferences": [
+      {
+        "page": 3,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "Your Medicare Advantage plan renews on December 31, 2027. The monthly premium will increase to $42. If you do not choose a new plan, your current plan will continue. Contact Member Services if you need help.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "December 31, 2027"
+      },
+      {
+        "type": "amount",
+        "value": "$42"
+      },
+      {
+        "type": "negation",
+        "value": "do not"
+      },
+      {
+        "type": "entity",
+        "value": "Member Services"
+      }
+    ],
+    "requiredActions": [
+      "choose a new plan",
+      "contact Member Services"
+    ]
+  },
+  {
+    "id": "financial-066",
+    "documentType": "Financial",
+    "sourceReferences": [
+      {
+        "page": 1,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "A $12 charge from WRS Supply posted on January 15, 2027. Contact your bank within 60 days if you do not recognize this charge. You must keep the dispute reference number.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$12"
+      },
+      {
+        "type": "date",
+        "value": "January 15, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you do not recognize"
+      },
+      {
+        "type": "obligation",
+        "value": "must keep"
+      }
+    ],
+    "requiredActions": [
+      "contact your bank within 60 days",
+      "keep the dispute reference number"
+    ]
+  },
+  {
+    "id": "government-067",
+    "documentType": "Government",
+    "sourceReferences": [
+      {
+        "page": 2,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "The first property tax installment of $18 is due March 31, 2027. A senior exemption may be available if you meet the county requirements. Do not send cash by mail.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$18"
+      },
+      {
+        "type": "date",
+        "value": "March 31, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you meet"
+      },
+      {
+        "type": "negation",
+        "value": "Do not"
+      }
+    ],
+    "requiredActions": [
+      "property tax installment",
+      "meet the county requirements",
+      "send cash by mail"
+    ]
+  },
+  {
+    "id": "legal-068",
+    "documentType": "Legal",
+    "sourceReferences": [
+      {
+        "page": 3,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "This healthcare directive becomes effective on June 30, 2027. Jordan Lee may make healthcare decisions only when you cannot make them yourself. You may revoke this directive at any time.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "June 30, 2027"
+      },
+      {
+        "type": "entity",
+        "value": "Jordan Lee"
+      },
+      {
+        "type": "condition",
+        "value": "only when you cannot"
+      },
+      {
+        "type": "revocation",
+        "value": "revoke"
+      }
+    ],
+    "requiredActions": [
+      "make healthcare decisions",
+      "revoke this directive"
+    ]
+  },
+  {
+    "id": "insurance-069",
+    "documentType": "Insurance",
+    "sourceReferences": [
+      {
+        "page": 1,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "Your Medicare Advantage plan renews on October 15, 2027. The monthly premium will increase to $30. If you do not choose a new plan, your current plan will continue. Contact Member Services if you need help.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "October 15, 2027"
+      },
+      {
+        "type": "amount",
+        "value": "$30"
+      },
+      {
+        "type": "negation",
+        "value": "do not"
+      },
+      {
+        "type": "entity",
+        "value": "Member Services"
+      }
+    ],
+    "requiredActions": [
+      "choose a new plan",
+      "contact Member Services"
+    ]
+  },
+  {
+    "id": "financial-070",
+    "documentType": "Financial",
+    "sourceReferences": [
+      {
+        "page": 2,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "A $42 charge from WRS Supply posted on December 31, 2027. Contact your bank within 60 days if you do not recognize this charge. You must keep the dispute reference number.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$42"
+      },
+      {
+        "type": "date",
+        "value": "December 31, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you do not recognize"
+      },
+      {
+        "type": "obligation",
+        "value": "must keep"
+      }
+    ],
+    "requiredActions": [
+      "contact your bank within 60 days",
+      "keep the dispute reference number"
+    ]
+  },
+  {
+    "id": "government-071",
+    "documentType": "Government",
+    "sourceReferences": [
+      {
+        "page": 3,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "The first property tax installment of $12 is due January 15, 2027. A senior exemption may be available if you meet the county requirements. Do not send cash by mail.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$12"
+      },
+      {
+        "type": "date",
+        "value": "January 15, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you meet"
+      },
+      {
+        "type": "negation",
+        "value": "Do not"
+      }
+    ],
+    "requiredActions": [
+      "property tax installment",
+      "meet the county requirements",
+      "send cash by mail"
+    ]
+  },
+  {
+    "id": "legal-072",
+    "documentType": "Legal",
+    "sourceReferences": [
+      {
+        "page": 1,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "This healthcare directive becomes effective on March 31, 2027. Jordan Lee may make healthcare decisions only when you cannot make them yourself. You may revoke this directive at any time.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "March 31, 2027"
+      },
+      {
+        "type": "entity",
+        "value": "Jordan Lee"
+      },
+      {
+        "type": "condition",
+        "value": "only when you cannot"
+      },
+      {
+        "type": "revocation",
+        "value": "revoke"
+      }
+    ],
+    "requiredActions": [
+      "make healthcare decisions",
+      "revoke this directive"
+    ]
+  },
+  {
+    "id": "insurance-073",
+    "documentType": "Insurance",
+    "sourceReferences": [
+      {
+        "page": 2,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "Your Medicare Advantage plan renews on June 30, 2027. The monthly premium will increase to $24. If you do not choose a new plan, your current plan will continue. Contact Member Services if you need help.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "June 30, 2027"
+      },
+      {
+        "type": "amount",
+        "value": "$24"
+      },
+      {
+        "type": "negation",
+        "value": "do not"
+      },
+      {
+        "type": "entity",
+        "value": "Member Services"
+      }
+    ],
+    "requiredActions": [
+      "choose a new plan",
+      "contact Member Services"
+    ]
+  },
+  {
+    "id": "financial-074",
+    "documentType": "Financial",
+    "sourceReferences": [
+      {
+        "page": 3,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "A $30 charge from WRS Supply posted on October 15, 2027. Contact your bank within 60 days if you do not recognize this charge. You must keep the dispute reference number.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$30"
+      },
+      {
+        "type": "date",
+        "value": "October 15, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you do not recognize"
+      },
+      {
+        "type": "obligation",
+        "value": "must keep"
+      }
+    ],
+    "requiredActions": [
+      "contact your bank within 60 days",
+      "keep the dispute reference number"
+    ]
+  },
+  {
+    "id": "government-075",
+    "documentType": "Government",
+    "sourceReferences": [
+      {
+        "page": 1,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "The first property tax installment of $42 is due December 31, 2027. A senior exemption may be available if you meet the county requirements. Do not send cash by mail.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$42"
+      },
+      {
+        "type": "date",
+        "value": "December 31, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you meet"
+      },
+      {
+        "type": "negation",
+        "value": "Do not"
+      }
+    ],
+    "requiredActions": [
+      "property tax installment",
+      "meet the county requirements",
+      "send cash by mail"
+    ]
+  },
+  {
+    "id": "legal-076",
+    "documentType": "Legal",
+    "sourceReferences": [
+      {
+        "page": 2,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "This healthcare directive becomes effective on January 15, 2027. Jordan Lee may make healthcare decisions only when you cannot make them yourself. You may revoke this directive at any time.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "January 15, 2027"
+      },
+      {
+        "type": "entity",
+        "value": "Jordan Lee"
+      },
+      {
+        "type": "condition",
+        "value": "only when you cannot"
+      },
+      {
+        "type": "revocation",
+        "value": "revoke"
+      }
+    ],
+    "requiredActions": [
+      "make healthcare decisions",
+      "revoke this directive"
+    ]
+  },
+  {
+    "id": "insurance-077",
+    "documentType": "Insurance",
+    "sourceReferences": [
+      {
+        "page": 3,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "Your Medicare Advantage plan renews on March 31, 2027. The monthly premium will increase to $18. If you do not choose a new plan, your current plan will continue. Contact Member Services if you need help.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "March 31, 2027"
+      },
+      {
+        "type": "amount",
+        "value": "$18"
+      },
+      {
+        "type": "negation",
+        "value": "do not"
+      },
+      {
+        "type": "entity",
+        "value": "Member Services"
+      }
+    ],
+    "requiredActions": [
+      "choose a new plan",
+      "contact Member Services"
+    ]
+  },
+  {
+    "id": "financial-078",
+    "documentType": "Financial",
+    "sourceReferences": [
+      {
+        "page": 1,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "A $24 charge from WRS Supply posted on June 30, 2027. Contact your bank within 60 days if you do not recognize this charge. You must keep the dispute reference number.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$24"
+      },
+      {
+        "type": "date",
+        "value": "June 30, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you do not recognize"
+      },
+      {
+        "type": "obligation",
+        "value": "must keep"
+      }
+    ],
+    "requiredActions": [
+      "contact your bank within 60 days",
+      "keep the dispute reference number"
+    ]
+  },
+  {
+    "id": "government-079",
+    "documentType": "Government",
+    "sourceReferences": [
+      {
+        "page": 2,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "The first property tax installment of $30 is due October 15, 2027. A senior exemption may be available if you meet the county requirements. Do not send cash by mail.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$30"
+      },
+      {
+        "type": "date",
+        "value": "October 15, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you meet"
+      },
+      {
+        "type": "negation",
+        "value": "Do not"
+      }
+    ],
+    "requiredActions": [
+      "property tax installment",
+      "meet the county requirements",
+      "send cash by mail"
+    ]
+  },
+  {
+    "id": "legal-080",
+    "documentType": "Legal",
+    "sourceReferences": [
+      {
+        "page": 3,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "This healthcare directive becomes effective on December 31, 2027. Jordan Lee may make healthcare decisions only when you cannot make them yourself. You may revoke this directive at any time.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "December 31, 2027"
+      },
+      {
+        "type": "entity",
+        "value": "Jordan Lee"
+      },
+      {
+        "type": "condition",
+        "value": "only when you cannot"
+      },
+      {
+        "type": "revocation",
+        "value": "revoke"
+      }
+    ],
+    "requiredActions": [
+      "make healthcare decisions",
+      "revoke this directive"
+    ]
+  },
+  {
+    "id": "insurance-081",
+    "documentType": "Insurance",
+    "sourceReferences": [
+      {
+        "page": 1,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "Your Medicare Advantage plan renews on January 15, 2027. The monthly premium will increase to $12. If you do not choose a new plan, your current plan will continue. Contact Member Services if you need help.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "January 15, 2027"
+      },
+      {
+        "type": "amount",
+        "value": "$12"
+      },
+      {
+        "type": "negation",
+        "value": "do not"
+      },
+      {
+        "type": "entity",
+        "value": "Member Services"
+      }
+    ],
+    "requiredActions": [
+      "choose a new plan",
+      "contact Member Services"
+    ]
+  },
+  {
+    "id": "financial-082",
+    "documentType": "Financial",
+    "sourceReferences": [
+      {
+        "page": 2,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "A $18 charge from WRS Supply posted on March 31, 2027. Contact your bank within 60 days if you do not recognize this charge. You must keep the dispute reference number.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$18"
+      },
+      {
+        "type": "date",
+        "value": "March 31, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you do not recognize"
+      },
+      {
+        "type": "obligation",
+        "value": "must keep"
+      }
+    ],
+    "requiredActions": [
+      "contact your bank within 60 days",
+      "keep the dispute reference number"
+    ]
+  },
+  {
+    "id": "government-083",
+    "documentType": "Government",
+    "sourceReferences": [
+      {
+        "page": 3,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "The first property tax installment of $24 is due June 30, 2027. A senior exemption may be available if you meet the county requirements. Do not send cash by mail.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$24"
+      },
+      {
+        "type": "date",
+        "value": "June 30, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you meet"
+      },
+      {
+        "type": "negation",
+        "value": "Do not"
+      }
+    ],
+    "requiredActions": [
+      "property tax installment",
+      "meet the county requirements",
+      "send cash by mail"
+    ]
+  },
+  {
+    "id": "legal-084",
+    "documentType": "Legal",
+    "sourceReferences": [
+      {
+        "page": 1,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "This healthcare directive becomes effective on October 15, 2027. Jordan Lee may make healthcare decisions only when you cannot make them yourself. You may revoke this directive at any time.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "October 15, 2027"
+      },
+      {
+        "type": "entity",
+        "value": "Jordan Lee"
+      },
+      {
+        "type": "condition",
+        "value": "only when you cannot"
+      },
+      {
+        "type": "revocation",
+        "value": "revoke"
+      }
+    ],
+    "requiredActions": [
+      "make healthcare decisions",
+      "revoke this directive"
+    ]
+  },
+  {
+    "id": "insurance-085",
+    "documentType": "Insurance",
+    "sourceReferences": [
+      {
+        "page": 2,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "Your Medicare Advantage plan renews on December 31, 2027. The monthly premium will increase to $42. If you do not choose a new plan, your current plan will continue. Contact Member Services if you need help.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "December 31, 2027"
+      },
+      {
+        "type": "amount",
+        "value": "$42"
+      },
+      {
+        "type": "negation",
+        "value": "do not"
+      },
+      {
+        "type": "entity",
+        "value": "Member Services"
+      }
+    ],
+    "requiredActions": [
+      "choose a new plan",
+      "contact Member Services"
+    ]
+  },
+  {
+    "id": "financial-086",
+    "documentType": "Financial",
+    "sourceReferences": [
+      {
+        "page": 3,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "A $12 charge from WRS Supply posted on January 15, 2027. Contact your bank within 60 days if you do not recognize this charge. You must keep the dispute reference number.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$12"
+      },
+      {
+        "type": "date",
+        "value": "January 15, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you do not recognize"
+      },
+      {
+        "type": "obligation",
+        "value": "must keep"
+      }
+    ],
+    "requiredActions": [
+      "contact your bank within 60 days",
+      "keep the dispute reference number"
+    ]
+  },
+  {
+    "id": "government-087",
+    "documentType": "Government",
+    "sourceReferences": [
+      {
+        "page": 1,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "The first property tax installment of $18 is due March 31, 2027. A senior exemption may be available if you meet the county requirements. Do not send cash by mail.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$18"
+      },
+      {
+        "type": "date",
+        "value": "March 31, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you meet"
+      },
+      {
+        "type": "negation",
+        "value": "Do not"
+      }
+    ],
+    "requiredActions": [
+      "property tax installment",
+      "meet the county requirements",
+      "send cash by mail"
+    ]
+  },
+  {
+    "id": "legal-088",
+    "documentType": "Legal",
+    "sourceReferences": [
+      {
+        "page": 2,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "This healthcare directive becomes effective on June 30, 2027. Jordan Lee may make healthcare decisions only when you cannot make them yourself. You may revoke this directive at any time.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "June 30, 2027"
+      },
+      {
+        "type": "entity",
+        "value": "Jordan Lee"
+      },
+      {
+        "type": "condition",
+        "value": "only when you cannot"
+      },
+      {
+        "type": "revocation",
+        "value": "revoke"
+      }
+    ],
+    "requiredActions": [
+      "make healthcare decisions",
+      "revoke this directive"
+    ]
+  },
+  {
+    "id": "insurance-089",
+    "documentType": "Insurance",
+    "sourceReferences": [
+      {
+        "page": 3,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "Your Medicare Advantage plan renews on October 15, 2027. The monthly premium will increase to $30. If you do not choose a new plan, your current plan will continue. Contact Member Services if you need help.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "October 15, 2027"
+      },
+      {
+        "type": "amount",
+        "value": "$30"
+      },
+      {
+        "type": "negation",
+        "value": "do not"
+      },
+      {
+        "type": "entity",
+        "value": "Member Services"
+      }
+    ],
+    "requiredActions": [
+      "choose a new plan",
+      "contact Member Services"
+    ]
+  },
+  {
+    "id": "financial-090",
+    "documentType": "Financial",
+    "sourceReferences": [
+      {
+        "page": 1,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "A $42 charge from WRS Supply posted on December 31, 2027. Contact your bank within 60 days if you do not recognize this charge. You must keep the dispute reference number.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$42"
+      },
+      {
+        "type": "date",
+        "value": "December 31, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you do not recognize"
+      },
+      {
+        "type": "obligation",
+        "value": "must keep"
+      }
+    ],
+    "requiredActions": [
+      "contact your bank within 60 days",
+      "keep the dispute reference number"
+    ]
+  },
+  {
+    "id": "government-091",
+    "documentType": "Government",
+    "sourceReferences": [
+      {
+        "page": 2,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "The first property tax installment of $12 is due January 15, 2027. A senior exemption may be available if you meet the county requirements. Do not send cash by mail.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$12"
+      },
+      {
+        "type": "date",
+        "value": "January 15, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you meet"
+      },
+      {
+        "type": "negation",
+        "value": "Do not"
+      }
+    ],
+    "requiredActions": [
+      "property tax installment",
+      "meet the county requirements",
+      "send cash by mail"
+    ]
+  },
+  {
+    "id": "legal-092",
+    "documentType": "Legal",
+    "sourceReferences": [
+      {
+        "page": 3,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "This healthcare directive becomes effective on March 31, 2027. Jordan Lee may make healthcare decisions only when you cannot make them yourself. You may revoke this directive at any time.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "March 31, 2027"
+      },
+      {
+        "type": "entity",
+        "value": "Jordan Lee"
+      },
+      {
+        "type": "condition",
+        "value": "only when you cannot"
+      },
+      {
+        "type": "revocation",
+        "value": "revoke"
+      }
+    ],
+    "requiredActions": [
+      "make healthcare decisions",
+      "revoke this directive"
+    ]
+  },
+  {
+    "id": "insurance-093",
+    "documentType": "Insurance",
+    "sourceReferences": [
+      {
+        "page": 1,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "Your Medicare Advantage plan renews on June 30, 2027. The monthly premium will increase to $24. If you do not choose a new plan, your current plan will continue. Contact Member Services if you need help.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "June 30, 2027"
+      },
+      {
+        "type": "amount",
+        "value": "$24"
+      },
+      {
+        "type": "negation",
+        "value": "do not"
+      },
+      {
+        "type": "entity",
+        "value": "Member Services"
+      }
+    ],
+    "requiredActions": [
+      "choose a new plan",
+      "contact Member Services"
+    ]
+  },
+  {
+    "id": "financial-094",
+    "documentType": "Financial",
+    "sourceReferences": [
+      {
+        "page": 2,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "A $30 charge from WRS Supply posted on October 15, 2027. Contact your bank within 60 days if you do not recognize this charge. You must keep the dispute reference number.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$30"
+      },
+      {
+        "type": "date",
+        "value": "October 15, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you do not recognize"
+      },
+      {
+        "type": "obligation",
+        "value": "must keep"
+      }
+    ],
+    "requiredActions": [
+      "contact your bank within 60 days",
+      "keep the dispute reference number"
+    ]
+  },
+  {
+    "id": "government-095",
+    "documentType": "Government",
+    "sourceReferences": [
+      {
+        "page": 3,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "The first property tax installment of $42 is due December 31, 2027. A senior exemption may be available if you meet the county requirements. Do not send cash by mail.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$42"
+      },
+      {
+        "type": "date",
+        "value": "December 31, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you meet"
+      },
+      {
+        "type": "negation",
+        "value": "Do not"
+      }
+    ],
+    "requiredActions": [
+      "property tax installment",
+      "meet the county requirements",
+      "send cash by mail"
+    ]
+  },
+  {
+    "id": "legal-096",
+    "documentType": "Legal",
+    "sourceReferences": [
+      {
+        "page": 1,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "This healthcare directive becomes effective on January 15, 2027. Jordan Lee may make healthcare decisions only when you cannot make them yourself. You may revoke this directive at any time.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "January 15, 2027"
+      },
+      {
+        "type": "entity",
+        "value": "Jordan Lee"
+      },
+      {
+        "type": "condition",
+        "value": "only when you cannot"
+      },
+      {
+        "type": "revocation",
+        "value": "revoke"
+      }
+    ],
+    "requiredActions": [
+      "make healthcare decisions",
+      "revoke this directive"
+    ]
+  },
+  {
+    "id": "insurance-097",
+    "documentType": "Insurance",
+    "sourceReferences": [
+      {
+        "page": 2,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "Your Medicare Advantage plan renews on March 31, 2027. The monthly premium will increase to $18. If you do not choose a new plan, your current plan will continue. Contact Member Services if you need help.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "March 31, 2027"
+      },
+      {
+        "type": "amount",
+        "value": "$18"
+      },
+      {
+        "type": "negation",
+        "value": "do not"
+      },
+      {
+        "type": "entity",
+        "value": "Member Services"
+      }
+    ],
+    "requiredActions": [
+      "choose a new plan",
+      "contact Member Services"
+    ]
+  },
+  {
+    "id": "financial-098",
+    "documentType": "Financial",
+    "sourceReferences": [
+      {
+        "page": 3,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "A $24 charge from WRS Supply posted on June 30, 2027. Contact your bank within 60 days if you do not recognize this charge. You must keep the dispute reference number.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$24"
+      },
+      {
+        "type": "date",
+        "value": "June 30, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you do not recognize"
+      },
+      {
+        "type": "obligation",
+        "value": "must keep"
+      }
+    ],
+    "requiredActions": [
+      "contact your bank within 60 days",
+      "keep the dispute reference number"
+    ]
+  },
+  {
+    "id": "government-099",
+    "documentType": "Government",
+    "sourceReferences": [
+      {
+        "page": 1,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "The first property tax installment of $30 is due October 15, 2027. A senior exemption may be available if you meet the county requirements. Do not send cash by mail.",
+    "protectedAnchors": [
+      {
+        "type": "amount",
+        "value": "$30"
+      },
+      {
+        "type": "date",
+        "value": "October 15, 2027"
+      },
+      {
+        "type": "condition",
+        "value": "if you meet"
+      },
+      {
+        "type": "negation",
+        "value": "Do not"
+      }
+    ],
+    "requiredActions": [
+      "property tax installment",
+      "meet the county requirements",
+      "send cash by mail"
+    ]
+  },
+  {
+    "id": "legal-100",
+    "documentType": "Legal",
+    "sourceReferences": [
+      {
+        "page": 2,
+        "label": "synthetic source span"
+      }
+    ],
+    "sourceText": "This healthcare directive becomes effective on December 31, 2027. Jordan Lee may make healthcare decisions only when you cannot make them yourself. You may revoke this directive at any time.",
+    "protectedAnchors": [
+      {
+        "type": "date",
+        "value": "December 31, 2027"
+      },
+      {
+        "type": "entity",
+        "value": "Jordan Lee"
+      },
+      {
+        "type": "condition",
+        "value": "only when you cannot"
+      },
+      {
+        "type": "revocation",
+        "value": "revoke"
+      }
+    ],
+    "requiredActions": [
+      "make healthcare decisions",
+      "revoke this directive"
+    ]
   }
 ]

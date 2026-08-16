@@ -23,7 +23,7 @@ describe('simplifierEvaluator', () => {
     const result = evaluateCandidate(source, source);
     expect(result.anchorRecall).toBe(1);
     expect(result.shadowOnly).toBe(true);
-    expect(result.provenanceCoverage).toBe('not_available');
+    expect(result.provenanceCoverage).toBe(1);
     expect(result.readability.words).toBeGreaterThan(0);
   });
 });

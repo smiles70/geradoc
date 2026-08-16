@@ -124,6 +124,9 @@ Build and lint verification passed. Formal senior usability testing and comprehe
 - Tests pass: 2 test files, 5 tests.
 - Added a research-only APUCS candidate and generated a baseline-versus-candidate shadow report over four synthetic cases.
 - The shadow report preserves the user-visible placeholder and does not certify factuality or legal clearance.
+- Expanded corpus to 100 synthetic cases and 300 candidate outputs.
+- Technical shadow gate passed: minimum anchor recall 1.0, action recall 1.0, provenance coverage 1.0, contradictions 0.
+- Added interaction state estimator, APUCS v1 candidate, reproducibility digest, and human evaluation protocol.
 - Supplied IDD archived to the USB drive for traceability.
 
 ---

@@ -218,6 +218,12 @@
       "processed_date": "2026-08-16",
       "status": "research-evidence",
       "description": "Baseline versus candidate APUCS shadow comparison; not a production quality certification"
+    },
+    "apucs-human-evaluation-protocol.md": {
+      "location": "/.ai/production-readiness/apucs-human-evaluation-protocol.md",
+      "processed_date": "2026-08-16",
+      "status": "protocol-ready",
+      "description": "Blinded human evaluation protocol and research safeguards; evaluation not yet conducted"
     }
     }
   },

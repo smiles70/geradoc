@@ -10,8 +10,9 @@ function unique(values) {
   return [...new Set(values.map(normalize).filter(Boolean))];
 }
 
-function extractProtectedAnchors(text) {
+function extractProtectedAnchors(text, expectedAnchors = []) {
   const source = String(text || '');
+  if (expectedAnchors.length > 0) return unique(expectedAnchors.map(anchor => anchor.value || anchor));
   return unique([
     ...(source.match(DATE_PATTERN) || []),
     ...(source.match(AMOUNT_PATTERN) || []),
@@ -19,11 +20,26 @@ function extractProtectedAnchors(text) {
   ]);
 }
 
-function anchorRecall(sourceText, candidateText) {
-  const source = extractProtectedAnchors(sourceText);
+function anchorRecall(sourceText, candidateText, expectedAnchors = []) {
+  const source = extractProtectedAnchors(sourceText, expectedAnchors);
   const candidate = normalize(candidateText);
   if (source.length === 0) return 1;
   return source.filter(anchor => candidate.includes(anchor)).length / source.length;
+}
+
+function contentWords(text) {
+  return unique(String(text || '').match(/[a-z]{3,}/gi) || []);
+}
+
+function actionRecall(requiredActions = [], candidateText) {
+  if (requiredActions.length === 0) return 1;
+  const candidate = normalize(candidateText);
+  const scores = requiredActions.map(action => {
+    const words = contentWords(action);
+    if (words.length === 0) return 1;
+    return words.filter(word => candidate.includes(word)).length / words.length;
+  });
+  return scores.reduce((sum, score) => sum + score, 0) / scores.length;
 }
 
 function tokenize(text) {
@@ -70,12 +86,27 @@ function readability(text) {
   return { words: words.length, sentences, syllables, fleschKincaidGrade: Number(score.toFixed(3)) };
 }
 
-function evaluateCandidate(sourceText, candidateText) {
+function provenanceCoverage(provenance = []) {
+  if (!Array.isArray(provenance)) return 'not_available';
+  if (provenance.length === 0) return 1;
+  const linked = provenance.filter(item => Array.isArray(item.sourceIndices) && item.sourceIndices.length > 0).length;
+  return Number((linked / provenance.length).toFixed(4));
+}
+
+function evaluateCandidate(sourceText, candidateText, {
+  protectedAnchors = [],
+  requiredActions = [],
+  provenance = [],
+} = {}) {
+  const anchors = anchorRecall(sourceText, candidateText, protectedAnchors);
+  const actions = actionRecall(requiredActions, candidateText);
   return {
-    anchorRecall: Number(anchorRecall(sourceText, candidateText).toFixed(4)),
+    anchorRecall: Number(anchors.toFixed(4)),
+    actionRecall: Number(actions.toFixed(4)),
     jsDivergence: Number(jsDivergence(sourceText, candidateText).toFixed(6)),
     readability: readability(candidateText),
-    provenanceCoverage: 'not_available',
+    provenanceCoverage: provenanceCoverage(provenance),
+    contradictions: anchors < 1 ? ['protected-anchor-loss'] : [],
     shadowOnly: true,
   };
 }
@@ -83,6 +114,7 @@ function evaluateCandidate(sourceText, candidateText) {
 module.exports = {
   extractProtectedAnchors,
   anchorRecall,
+  actionRecall,
   jsDivergence,
   readability,
   evaluateCandidate,

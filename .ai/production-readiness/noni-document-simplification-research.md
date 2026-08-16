@@ -415,8 +415,23 @@ The first safe implementation should be a **shadow evaluator** that scores candi
 
 ## 10. Status
 
-**Decision**: Pause D2 implementation until the simplification research direction, IP boundary, evaluation gates, and baseline-versus-proposed comparison are documented.
+**Research specification**: APUCS v1 frozen for research-only evaluation.
 
-**Current POC status**: Pipeline wiring is complete enough to support a shadow evaluator; production simplification is not ready.
+**Decision**: D2 may proceed behind the adapter boundary, but user-visible simplifier replacement remains blocked until the acceptance and legal/IP gates below pass.
 
-**Next session**: Create the research specification and evaluator interface, then implement tests against synthetic documents before changing user-visible simplification behavior.
+**Current POC status**: Pipeline wiring and shadow evaluation are implemented; production simplification is not ready.
+
+**User-visible provider**: The provisional baseline remains active.
+
+**Research candidate**: APUCS v1 may run in shadow mode only.
+
+### Remaining release gates
+
+- Synthetic/adversarial corpus coverage completed.
+- Protected anchors, actions, entities, conditions, negations, and contradictions evaluated.
+- Provenance representation implemented and measured.
+- Candidate output reviewed by qualified human evaluators.
+- Reproducibility and performance checks pass.
+- IP/patent ownership and freedom-to-operate review completed by the inventor/counsel.
+
+The last item cannot be closed by repository work alone. Until it is resolved, APUCS remains a research implementation and must not be represented as legally cleared, patentable, or production-approved.

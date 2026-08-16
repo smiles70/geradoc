@@ -61,8 +61,10 @@
 - ✅ NONI/IDD document simplification research memo created
 - ✅ APUCS shadow evaluation specification and synthetic corpus created
 - ✅ Shadow evaluator implemented without changing user-visible simplification
-- ✅ Baseline-versus-candidate shadow report generated over four synthetic cases
-- ✅ Five backend tests pass across upload and simplifier evaluation
+- ✅ Baseline-versus-candidate shadow report generated over 100 synthetic cases and 300 outputs
+- ✅ APUCS technical shadow gate passes anchor, action, provenance, and contradiction checks
+- ✅ APUCS human evaluation protocol created with research safeguards
+- ✅ Eight backend tests pass across upload, state estimation, candidate, and evaluator paths
 - ✅ Supplied IDD copied to the project USB drive
 
 ## What Is Incomplete
