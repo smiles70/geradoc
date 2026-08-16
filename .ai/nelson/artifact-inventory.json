@@ -176,6 +176,12 @@
       "processed_date": "2026-08-16",
       "status": "processed",
       "description": "Product Requirements Document with features, user journeys, roadmap, and GTM"
+    },
+    "epic-mocked-demo.md": {
+      "location": "/.ai/production-readiness/epic-mocked-demo.md",
+      "processed_date": "2026-08-16",
+      "status": "processed",
+      "description": "Epic for creating a mocked, interactive demo for fundraising and user validation"
     }
   },
   "missing_artifacts": [],
