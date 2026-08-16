@@ -1,0 +1,51 @@
+[
+  {
+    "id": "insurance-renewal-001",
+    "documentType": "Insurance",
+    "sourceText": "Your Medicare Advantage plan renews on October 15, 2026. The monthly premium will increase to $18. If you do not choose a new plan, your current plan will continue.",
+    "protectedAnchors": [
+      {"type": "date", "value": "October 15, 2026"},
+      {"type": "amount", "value": "$18"},
+      {"type": "negation", "value": "do not"}
+    ],
+    "requiredActions": ["choose a new plan or keep the current plan"],
+    "sourceReferences": [{"page": 1, "label": "renewal terms"}]
+  },
+  {
+    "id": "financial-charge-001",
+    "documentType": "Financial",
+    "sourceText": "A $249 charge from WRS Supply posted on July 18, 2026. Contact your bank within 60 days if you do not recognize this charge.",
+    "protectedAnchors": [
+      {"type": "amount", "value": "$249"},
+      {"type": "date", "value": "July 18, 2026"},
+      {"type": "condition", "value": "if you do not recognize"}
+    ],
+    "requiredActions": ["contact your bank within 60 days if the charge is not recognized"],
+    "sourceReferences": [{"page": 1, "label": "transaction and dispute instruction"}]
+  },
+  {
+    "id": "government-tax-001",
+    "documentType": "Government",
+    "sourceText": "The first property tax installment of $920 is due December 31, 2026. A senior exemption may be available if you meet the county requirements.",
+    "protectedAnchors": [
+      {"type": "amount", "value": "$920"},
+      {"type": "date", "value": "December 31, 2026"},
+      {"type": "condition", "value": "if you meet"}
+    ],
+    "requiredActions": ["pay the installment or check exemption eligibility"],
+    "sourceReferences": [{"page": 1, "label": "installment and exemption"}]
+  },
+  {
+    "id": "legal-directive-001",
+    "documentType": "Legal",
+    "sourceText": "This healthcare directive becomes effective on January 1, 2027. Jordan Lee may make healthcare decisions only when you cannot make them yourself. You may revoke this directive at any time.",
+    "protectedAnchors": [
+      {"type": "date", "value": "January 1, 2027"},
+      {"type": "entity", "value": "Jordan Lee"},
+      {"type": "condition", "value": "only when you cannot"},
+      {"type": "revocation", "value": "revoke"}
+    ],
+    "requiredActions": ["review the directive and keep a copy accessible"],
+    "sourceReferences": [{"page": 1, "label": "effective date and authority"}]
+  }
+]

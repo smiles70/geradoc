@@ -59,6 +59,10 @@
 - ✅ POC document result contract defined
 - ✅ POC fixture and PDF extraction adapters created
 - ✅ NONI/IDD document simplification research memo created
+- ✅ APUCS shadow evaluation specification and synthetic corpus created
+- ✅ Shadow evaluator implemented without changing user-visible simplification
+- ✅ Five backend tests pass across upload and simplifier evaluation
+- ✅ Supplied IDD copied to the project USB drive
 
 ## What Is Incomplete
 

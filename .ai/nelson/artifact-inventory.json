@@ -200,6 +200,18 @@
       "processed_date": "2026-08-16",
       "status": "research",
       "description": "NONI/IDD-derived mathematical research proposal for anchor-preserving, uncertainty-constrained document simplification; not validated or legally cleared"
+    },
+    "apucs-evaluation.md": {
+      "location": "/.ai/production-readiness/apucs-evaluation.md",
+      "processed_date": "2026-08-16",
+      "status": "research",
+      "description": "Shadow evaluation specification with synthetic corpus, metrics, human gates, and IP boundary"
+    },
+    "synthetic-corpus.json": {
+      "location": "/poc/research/synthetic-corpus.json",
+      "processed_date": "2026-08-16",
+      "status": "test-fixture",
+      "description": "Synthetic MVP document cases for anchor-preservation evaluation"
     }
     }
   },

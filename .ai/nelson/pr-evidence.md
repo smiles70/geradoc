@@ -119,6 +119,10 @@ Build and lint verification passed. Formal senior usability testing and comprehe
 - Recorded the distinction between source concepts, proposed adaptation, and unresolved patent/IP questions.
 - Paused D2 persistence implementation until simplification evaluation, legal/IP review, and acceptance gates are defined.
 - Current simplifier remains explicitly provisional truncation logic.
+- Added `apucs-evaluation.md` and synthetic corpus fixtures.
+- Added a shadow-only evaluator for anchor recall, readability, and divergence proxy metrics.
+- Tests pass: 2 test files, 5 tests.
+- Supplied IDD archived to the USB drive for traceability.
 
 ---
 
