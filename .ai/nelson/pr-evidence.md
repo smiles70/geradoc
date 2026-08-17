@@ -140,6 +140,7 @@ Build and lint verification passed. Formal senior usability testing and comprehe
 - v1.2 validation identified implementation-open items; the specification is research-ready but the added capabilities are not yet implemented.
 - v1.3 research update implemented six-dimensional state, self-efficacy bias correction, capability output, demand/load separation, and explicit user-agency override.
 - v1.3 tests pass: 8 test files, 21 tests; user-visible baseline remains unchanged and APUCS remains shadow-only.
+- Validated supplied v1.3 specification against implementation; clarified capability-gap versus semantic-divergence naming, H/telemetry mapping, Q/R calibration language, JS soft-signal conflict, and hard-constraint behavior for overrides.
 
 ## 2026-08-16 D2 Persistence Evidence
 
