@@ -136,6 +136,8 @@ Build and lint verification passed. Formal senior usability testing and comprehe
 - Added Application Charter technical functionality/capability status report, including legal, compliance, and human-validation boundaries.
 - Implemented technical gap closure in research mode: typed anchors, structured actions, uncertainty decomposition, hysteresis/REVIEW controller, advice boundary, audit chain, and versioned research metadata.
 - Technical verification: 7 test files, 17 tests passed; 100-case shadow corpus gate passed.
+- Validated APUCS v1.2 generalization upgrade: schema profiles, pluggable backends, multi-format/layout ingestion, English/Spanish boundary, modality decoupling, rendering separation, and calibration transfer.
+- v1.2 validation identified implementation-open items; the specification is research-ready but the added capabilities are not yet implemented.
 
 ## 2026-08-16 D2 Persistence Evidence
 
