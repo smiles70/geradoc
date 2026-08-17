@@ -254,6 +254,12 @@
       "processed_date": "2026-08-16",
       "status": "capability-assessment",
       "description": "Application Charter traceability report separating implemented, partial, research-only, deferred, and legally open capabilities"
+    },
+    "apucs-technical-closure": {
+      "location": "/poc/backend/src/services/technicalGates.test.js",
+      "processed_date": "2026-08-16",
+      "status": "research-technical-gates-passed",
+      "description": "Research-mode implementation of typed anchors, structured actions, uncertainty decomposition, hysteresis, REVIEW routing, advice boundaries, audit chain, and versioned metadata"
     }
     }
   },

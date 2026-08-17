@@ -380,3 +380,33 @@ Before treating v1.1 as normative, make these exact edits:
 10. Separate deterministic candidate hash from timestamped audit-chain hash.
 
 After these edits, the specification should be re-reviewed by engineering, accessibility/product, security, and patent counsel before implementation is promoted beyond research mode.
+
+---
+
+## 11. Technical Closure Update
+
+The following corrections are now implemented in the research branch:
+
+- Typed anchor canonicalization and reconciliation.
+- Structured action identity and recall.
+- Epistemic/aleatoric variance tracking in the bounded estimator.
+- Presentation controller with dual-threshold hysteresis and REVIEW routing.
+- Advice-boundary validation with safe rejection behavior.
+- Hash-chained audit records with verification.
+- Versioned `researchMetadata` output contract while preserving legacy summary fields.
+- Technical gate tests covering the new components.
+
+Current verification:
+
+```text
+Test files: 7 passed
+Tests:      17 passed
+Shadow corpus: 100 synthetic cases / 300 outputs
+Minimum anchor recall: 1.0
+Minimum action recall: 1.0
+Minimum provenance coverage: 1.0
+Contradictions: 0
+Technical shadow gate: PASS
+```
+
+The remaining non-code gates are human evaluation, real/degraded document validation, parameter calibration on approved interaction data, inventorship/ownership determination, and patent/FTO counsel review.

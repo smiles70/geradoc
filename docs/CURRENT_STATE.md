@@ -63,8 +63,10 @@
 - ✅ Shadow evaluator implemented without changing user-visible simplification
 - ✅ Baseline-versus-candidate shadow report generated over 100 synthetic cases and 300 outputs
 - ✅ APUCS technical shadow gate passes anchor, action, provenance, and contradiction checks
+- ✅ APUCS typed anchors, structured actions, uncertainty decomposition, hysteresis, REVIEW routing, advice boundary, and audit chain implemented in research mode
+- ✅ APUCS versioned researchMetadata contract added without breaking the legacy summary contract
 - ✅ APUCS human evaluation protocol created with research safeguards
-- ✅ Eight backend tests pass across upload, state estimation, candidate, and evaluator paths
+- ✅ Seventeen backend tests pass across upload, persistence, estimator, candidate, technical gates, and evaluator paths
 - ✅ D2 JSON persistence boundary implemented with result retrieval endpoint
 - ✅ Supplied IDD prepared and archived to the project USB drive
 - ✅ Comprehensive APUCS IDD v1.0 prepared with USPTO criteria mapping and prior-art research library
@@ -77,6 +79,7 @@
 - ⏳ POC bridge from `demo/` components to real API
 - ⏳ Real document processing and production simplification
 - ⏳ Human evaluation of the NONI-derived research candidate
+- ⏳ Real/degraded document validation and estimator parameter calibration
 - ⏳ IP/patent review and freedom-to-operate analysis
 - ⏳ Provider evaluation and production API hardening
 - ⏳ PostgreSQL/S3/queue migration beyond the JSON POC repository

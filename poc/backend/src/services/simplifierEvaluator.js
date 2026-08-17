@@ -89,7 +89,10 @@ function readability(text) {
 function provenanceCoverage(provenance = []) {
   if (!Array.isArray(provenance)) return 'not_available';
   if (provenance.length === 0) return 1;
-  const linked = provenance.filter(item => Array.isArray(item.sourceIndices) && item.sourceIndices.length > 0).length;
+  const linked = provenance.filter(item => (
+    (Array.isArray(item.sourceIndices) && item.sourceIndices.length > 0)
+    || item.sourceSpan
+  )).length;
   return Number((linked / provenance.length).toFixed(4));
 }
 

@@ -1,5 +1,9 @@
-const { extractProtectedAnchors, anchorRecall, actionRecall } = require('./simplifierEvaluator');
+const { extractAnchors, anchorRecall, canonicalize } = require('./typedAnchors');
+const { normalizeAction, actionRecall } = require('./structuredActions');
+const { validateAdvice } = require('./adviceBoundary');
 const { InteractionStateEstimator } = require('./interactionStateEstimator');
+const { PresentationController } = require('./presentationController');
+const { AuditChain } = require('./auditChain');
 
 const TRANSFORMS = [
   [/\bMedicare Advantage plan\b/g, 'Medicare plan'],
@@ -21,57 +25,114 @@ function transform(text) {
   return TRANSFORMS.reduce((result, [pattern, replacement]) => result.replace(pattern, replacement), normalize(text));
 }
 
+function expectedAnchors(items, sourceText) {
+  if (!items.length) return extractAnchors(sourceText);
+  return items.map(item => ({
+    ...item,
+    canonicalValue: item.canonicalValue || canonicalize(item.type || 'TEXT', item.value),
+  }));
+}
+
 function provenanceFor(sourceText, outputText) {
   const sourceSentences = sentences(sourceText);
   return sentences(outputText).map((output, index) => ({
-    outputIndex: index,
-    sourceIndices: sourceSentences[index] === undefined ? [] : [index],
-    sourceText: sourceSentences[index] || null,
+    outputSentenceId: `output-${index}`,
+    sourceSpan: sourceSentences[index] === undefined ? null : { sentenceIndex: index, text: sourceSentences[index] },
     outputText: output,
   }));
 }
 
-function safeLevel(sourceText, candidateText, threshold, expectedAnchors = [], requiredActions = []) {
-  const protected = expectedAnchors.length > 0 ? expectedAnchors : extractProtectedAnchors(sourceText);
-  const anchorsPass = anchorRecall(sourceText, candidateText, protected) >= threshold;
-  const actionsPass = actionRecall(requiredActions, candidateText) >= threshold;
-  return anchorsPass && actionsPass ? candidateText : normalize(sourceText);
+function validateCandidate(sourceText, candidateText, anchors, actions) {
+  const advice = validateAdvice(candidateText, sourceText);
+  const anchorScore = anchorRecall(anchors, candidateText);
+  const actionScore = actionRecall(actions, candidateText);
+  const provenance = provenanceFor(sourceText, candidateText);
+  const provenanceScore = provenance.length && provenance.every(item => item.sourceSpan) ? 1 : 0;
+  return {
+    anchorRecall: anchorScore,
+    actionRecall: actionScore,
+    provenanceCoverage: provenanceScore,
+    adviceViolations: advice.violations,
+    contradictions: anchorScore < 1 ? ['protected-anchor-loss'] : [],
+    pass: anchorScore === 1 && actionScore === 1 && provenanceScore === 1 && advice.violations === 0,
+    advice,
+    provenance,
+  };
 }
 
 const apucsSimplifierV1 = {
   async simplify(text, {
     interactionObservation = {},
-    anchorThreshold = 1,
     protectedAnchors = [],
     requiredActions = [],
+    anchorThreshold = 1,
   } = {}) {
     const estimator = new InteractionStateEstimator();
     const interactionState = estimator.update(interactionObservation);
-    const transformed = transform(text);
+    const anchors = expectedAnchors(protectedAnchors, text);
+    const actions = requiredActions.map(normalizeAction);
     const sourceSentences = sentences(text);
-    const simpleCandidate = sourceSentences.slice(0, 3).join(' ');
-    const standardCandidate = transformed;
-    const detailedCandidate = normalize(text);
-    const levels = {
-      simple: safeLevel(text, simpleCandidate, anchorThreshold, protectedAnchors, requiredActions),
-      standard: safeLevel(text, standardCandidate, anchorThreshold, protectedAnchors, requiredActions),
-      detailed: safeLevel(text, detailedCandidate, anchorThreshold, protectedAnchors, requiredActions),
+    const candidates = {
+      simple: sourceSentences.slice(0, 3).join(' '),
+      standard: transform(text),
+      detailed: normalize(text),
     };
+    const audit = new AuditChain();
+    const levels = {};
+    const constraints = {};
+    const provenance = {};
 
+    for (const [level, candidate] of Object.entries(candidates)) {
+      const validation = validateCandidate(text, candidate, anchors, actions);
+      const safe = validation.anchorRecall >= anchorThreshold && validation.pass;
+      levels[level] = safe ? candidate : normalize(text);
+      constraints[level] = { ...validation, fallbackUsed: !safe };
+      provenance[level] = safe ? validation.provenance : provenanceFor(text, normalize(text));
+      audit.append({ algorithm: 'APUCS-v1.1-research', level, candidate: levels[level], constraints: constraints[level] });
+    }
+
+    const controller = new PresentationController();
+    const hardPass = Object.values(constraints).every(item => item.pass);
+    const presentationState = controller.transition(interactionState.stability, {
+      hardConstraintsPass: hardPass,
+      epistemicHigh: interactionState.epistemicVariance.uncertainty > 0.35,
+      aleatoricHigh: interactionState.aleatoricVariance.strain > 0.2,
+    });
+
+    const reviewFlags = Object.values(constraints).flatMap(item => [
+      ...item.contradictions,
+      ...(item.adviceViolations > 0 ? ['advice-boundary-violation'] : []),
+      ...(item.fallbackUsed ? ['candidate-fallback'] : []),
+    ]);
+    const confidence = Math.min(
+      ...Object.values(constraints).map(item => Math.min(item.anchorRecall, item.actionRecall, item.provenanceCoverage)),
+    );
+    const metadata = {
+      algorithm: 'APUCS-v1.1-research',
+      mode: 'shadow-only',
+      presentationState,
+      interactionState,
+      protectedAnchors: anchors,
+      constraints,
+      provenance,
+      audit: audit.records,
+      auditVerified: audit.verify(),
+    };
     return {
       simple: levels.simple,
       standard: levels.standard,
       detailed: levels.detailed,
-      metadata: {
-        algorithm: 'APUCS-v1-research',
+      metadata,
+      researchMetadata: {
+        algorithmVersion: 'APUCS-v1.1-research',
         mode: 'shadow-only',
-        interactionState,
-        protectedAnchors: protectedAnchors.length > 0 ? protectedAnchors : extractProtectedAnchors(text),
-        provenance: {
-          simple: provenanceFor(text, levels.simple),
-          standard: provenanceFor(text, levels.standard),
-          detailed: provenanceFor(text, levels.detailed),
-        },
+        presentationState,
+        preservedAnchors: anchors,
+        confidence: Number(confidence.toFixed(4)),
+        sourceReferences: anchors.map(anchor => anchor.sourceSpan).filter(Boolean),
+        provenanceMap: provenance,
+        reviewFlags: [...new Set(reviewFlags)],
+        auditRecord: audit.records[audit.records.length - 1] || null,
       },
     };
   },
