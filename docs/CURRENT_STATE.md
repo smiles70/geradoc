@@ -75,6 +75,7 @@
 - ✅ APUCS Technical Specification v1.2 generalization upgrade validated
 - ✅ APUCS Technical Specification v1.3 state, demand, and agency upgrade implemented in research mode
 - ✅ APUCS Technical Specification v1.3 validation report created and reconciled with current code
+- ✅ APUCS v1.3 user journeys with worked illustrative math ingested and reconciled
 - ✅ Application Charter technical functionality and capability status report created
 
 ## What Is Incomplete

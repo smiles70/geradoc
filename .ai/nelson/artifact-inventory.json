@@ -272,6 +272,12 @@
       "processed_date": "2026-08-16",
       "status": "validation-report",
       "description": "Validation of six-dimensional state, self-efficacy correction, demand function, presentation load, and agency override"
+    },
+    "apucs-user-journeys-v1.3.md": {
+      "location": "/.ai/production-readiness/apucs-user-journeys-v1.3.md",
+      "processed_date": "2026-08-16",
+      "status": "research-walkthroughs",
+      "description": "Five end-to-end APUCS user journeys with illustrative math, review/override behavior, and implementation caveats"
     }
     }
   },
