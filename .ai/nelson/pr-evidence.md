@@ -121,13 +121,14 @@ Build and lint verification passed. Formal senior usability testing and comprehe
 - Current simplifier remains explicitly provisional truncation logic.
 - Added `apucs-evaluation.md` and synthetic corpus fixtures.
 - Added a shadow-only evaluator for anchor recall, readability, and divergence proxy metrics.
-- Tests pass: 2 test files, 5 tests.
-- Added a research-only APUCS candidate and generated a baseline-versus-candidate shadow report over four synthetic cases.
+- Tests pass: 6 test files, 12 tests.
+- Added a research-only APUCS candidate and generated a baseline-versus-candidate shadow report over 100 synthetic cases.
 - The shadow report preserves the user-visible placeholder and does not certify factuality or legal clearance.
 - Expanded corpus to 100 synthetic cases and 300 candidate outputs.
 - Technical shadow gate passed: minimum anchor recall 1.0, action recall 1.0, provenance coverage 1.0, contradictions 0.
 - Added interaction state estimator, APUCS v1 candidate, reproducibility digest, and human evaluation protocol.
 - Supplied IDD archived to the USB drive for traceability.
+- Comprehensive APUCS IDD prepared with USPTO criteria mapping, prior-art search library, claim themes, and unresolved counsel decisions.
 
 ## 2026-08-16 D2 Persistence Evidence
 

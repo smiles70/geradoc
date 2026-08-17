@@ -230,6 +230,12 @@
       "processed_date": "2026-08-16",
       "status": "implemented-tested",
       "description": "POC JSON persistence boundary with save, findById, and readAll operations; runtime data excluded from Git"
+    },
+    "comprehensive-idd-apucs.md": {
+      "location": "/.ai/production-readiness/comprehensive-idd-apucs.md",
+      "processed_date": "2026-08-16",
+      "status": "research-disclosure",
+      "description": "Detailed APUCS invention disclosure with USPTO criteria mapping, prior-art research library, claim themes, embodiments, and open legal decisions"
     }
     }
   },
