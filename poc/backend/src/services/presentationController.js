@@ -11,7 +11,22 @@ class PresentationController {
     this.downStreak = 0;
   }
 
-  transition(stability, { hardConstraintsPass = true, epistemicHigh = false, aleatoricHigh = false } = {}) {
+  transition(stability, {
+    hardConstraintsPass = true,
+    epistemicHigh = false,
+    aleatoricHigh = false,
+    userOverrideLevel = null,
+  } = {}) {
+    if (userOverrideLevel && LEVELS.includes(userOverrideLevel)) {
+      if (!hardConstraintsPass) {
+        this.state = 'REVIEW';
+        return this.state;
+      }
+      this.state = userOverrideLevel;
+      this.upStreak = 0;
+      this.downStreak = 0;
+      return this.state;
+    }
     if (!hardConstraintsPass || aleatoricHigh) {
       this.state = 'REVIEW';
       this.upStreak = 0;

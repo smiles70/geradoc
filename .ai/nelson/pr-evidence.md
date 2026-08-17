@@ -138,6 +138,8 @@ Build and lint verification passed. Formal senior usability testing and comprehe
 - Technical verification: 7 test files, 17 tests passed; 100-case shadow corpus gate passed.
 - Validated APUCS v1.2 generalization upgrade: schema profiles, pluggable backends, multi-format/layout ingestion, English/Spanish boundary, modality decoupling, rendering separation, and calibration transfer.
 - v1.2 validation identified implementation-open items; the specification is research-ready but the added capabilities are not yet implemented.
+- v1.3 research update implemented six-dimensional state, self-efficacy bias correction, capability output, demand/load separation, and explicit user-agency override.
+- v1.3 tests pass: 8 test files, 21 tests; user-visible baseline remains unchanged and APUCS remains shadow-only.
 
 ## 2026-08-16 D2 Persistence Evidence
 

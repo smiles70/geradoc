@@ -4,6 +4,7 @@ const { validateAdvice } = require('./adviceBoundary');
 const { InteractionStateEstimator } = require('./interactionStateEstimator');
 const { PresentationController } = require('./presentationController');
 const { AuditChain } = require('./auditChain');
+const { readabilityGap, presentationLoad } = require('./demandFunction');
 
 const TRANSFORMS = [
   [/\bMedicare Advantage plan\b/g, 'Medicare plan'],
@@ -66,6 +67,8 @@ const apucsSimplifierV1 = {
     protectedAnchors = [],
     requiredActions = [],
     anchorThreshold = 1,
+    domain = 'unknown',
+    userOverrideLevel = null,
   } = {}) {
     const estimator = new InteractionStateEstimator();
     const interactionState = estimator.update(interactionObservation);
@@ -88,15 +91,25 @@ const apucsSimplifierV1 = {
       levels[level] = safe ? candidate : normalize(text);
       constraints[level] = { ...validation, fallbackUsed: !safe };
       provenance[level] = safe ? validation.provenance : provenanceFor(text, normalize(text));
-      audit.append({ algorithm: 'APUCS-v1.1-research', level, candidate: levels[level], constraints: constraints[level] });
+      audit.append({ algorithm: 'APUCS-v1.3-research', level, candidate: levels[level], constraints: constraints[level] });
     }
 
+    const capability = interactionState.capability;
+    const demandByLevel = Object.fromEntries(Object.entries(levels).map(([level, value]) => [
+      level,
+      readabilityGap(value, capability, { domain, calibrated: false }),
+    ]));
+    const loadByLevel = Object.fromEntries(Object.entries(levels).map(([level, value]) => [
+      level,
+      presentationLoad({ contentUnits: sentences(value).length, simultaneousActions: actions.length }),
+    ]));
     const controller = new PresentationController();
     const hardPass = Object.values(constraints).every(item => item.pass);
     const presentationState = controller.transition(interactionState.stability, {
       hardConstraintsPass: hardPass,
       epistemicHigh: interactionState.epistemicVariance.uncertainty > 0.35,
       aleatoricHigh: interactionState.aleatoricVariance.strain > 0.2,
+      userOverrideLevel,
     });
 
     const reviewFlags = Object.values(constraints).flatMap(item => [
@@ -108,7 +121,7 @@ const apucsSimplifierV1 = {
       ...Object.values(constraints).map(item => Math.min(item.anchorRecall, item.actionRecall, item.provenanceCoverage)),
     );
     const metadata = {
-      algorithm: 'APUCS-v1.1-research',
+      algorithm: 'APUCS-v1.3-research',
       mode: 'shadow-only',
       presentationState,
       interactionState,
@@ -117,6 +130,11 @@ const apucsSimplifierV1 = {
       provenance,
       audit: audit.records,
       auditVerified: audit.verify(),
+      capability,
+      demandByLevel,
+      loadByLevel,
+      userOverrideLevel,
+      overrideHonored: Boolean(userOverrideLevel && presentationState === userOverrideLevel),
     };
     return {
       simple: levels.simple,
@@ -124,7 +142,7 @@ const apucsSimplifierV1 = {
       detailed: levels.detailed,
       metadata,
       researchMetadata: {
-        algorithmVersion: 'APUCS-v1.1-research',
+        algorithmVersion: 'APUCS-v1.3-research',
         mode: 'shadow-only',
         presentationState,
         preservedAnchors: anchors,
@@ -133,6 +151,11 @@ const apucsSimplifierV1 = {
         provenanceMap: provenance,
         reviewFlags: [...new Set(reviewFlags)],
         auditRecord: audit.records[audit.records.length - 1] || null,
+        capability,
+        demandByLevel,
+        loadByLevel,
+        userOverrideLevel,
+        overrideHonored: Boolean(userOverrideLevel && presentationState === userOverrideLevel),
       },
     };
   },
