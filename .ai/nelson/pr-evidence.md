@@ -131,6 +131,8 @@ Build and lint verification passed. Formal senior usability testing and comprehe
 - Comprehensive APUCS IDD prepared with USPTO criteria mapping, prior-art search library, claim themes, and unresolved counsel decisions.
 - APUCS IDD v1.1 adds concrete estimator structure, uncertainty decomposition, hysteresis, review state, audit-chain reproducibility, advice-boundary constraints, and expanded prior-art hypotheses.
 - v1.1 preserves open status for real-data calibration, human evaluation, inventorship, filing status, and freedom-to-operate.
+- Triple-check validation identified four normative corrections: covariance decomposition, observation mapping, JS soft/hard consistency, and versioned API compatibility.
+- Validation verdict: research implementation ready with corrections; not production-approved.
 
 ## 2026-08-16 D2 Persistence Evidence
 
