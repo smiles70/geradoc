@@ -182,6 +182,12 @@
       "processed_date": "2026-08-16",
       "status": "processed",
       "description": "Epic for creating a mocked, interactive demo for fundraising and user validation"
+    },
+    "demo-build": {
+      "location": "/demo",
+      "processed_date": "2026-08-16",
+      "status": "processed",
+      "description": "Mocked interactive React demo for senior and caregiver flows"
     }
   },
   "missing_artifacts": [],

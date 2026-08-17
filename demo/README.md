@@ -1,16 +1,30 @@
-# React + Vite
+# ClarityDoc Mocked Demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+## How to run
 
-Currently, two official plugins are available:
+1. Install dependencies: `npm install`
+2. Start: `npm run dev`
+3. Open `http://localhost:5173`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Demo flow
 
-## React Compiler
+1. Choose "Try as a Senior"
+2. Select the Medicare letter
+3. Watch the processing screen
+4. Read the simplified summary
+5. Toggle between Simple / Standard / Detailed
+6. View the key information cards
+7. Mark an action as complete
+8. Switch to "Try as a Caregiver"
+9. View the gentle alert and shared documents
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Build for static distribution
 
-## Expanding the Oxlint configuration
+```bash
+npm run build
+npx serve -s dist
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Notes
+
+This is a purely front-end demo. No real documents are processed or stored.
