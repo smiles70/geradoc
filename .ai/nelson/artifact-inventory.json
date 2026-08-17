@@ -234,8 +234,14 @@
     "comprehensive-idd-apucs.md": {
       "location": "/.ai/production-readiness/comprehensive-idd-apucs.md",
       "processed_date": "2026-08-16",
-      "status": "research-disclosure",
+      "status": "superseded-by-v1.1",
       "description": "Detailed APUCS invention disclosure with USPTO criteria mapping, prior-art research library, claim themes, embodiments, and open legal decisions"
+    },
+    "comprehensive-idd-apucs-v1.1.md": {
+      "location": "/.ai/production-readiness/comprehensive-idd-apucs-v1.1.md",
+      "processed_date": "2026-08-16",
+      "status": "research-disclosure-update",
+      "description": "Additive APUCS IDD update with gap-closure audit, revised mathematical specification, USPTO mapping, expanded novelty hypotheses, and open counsel items"
     }
     }
   },

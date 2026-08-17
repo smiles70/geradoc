@@ -67,7 +67,8 @@
 - ✅ Eight backend tests pass across upload, state estimation, candidate, and evaluator paths
 - ✅ D2 JSON persistence boundary implemented with result retrieval endpoint
 - ✅ Supplied IDD prepared and archived to the project USB drive
-- ✅ Comprehensive APUCS IDD prepared with USPTO criteria mapping and prior-art research library
+- ✅ Comprehensive APUCS IDD v1.0 prepared with USPTO criteria mapping and prior-art research library
+- ✅ APUCS IDD v1.1 prepared with gap-closure audit, revised math, expanded novelty analysis, and evidence log
 
 ## What Is Incomplete
 
