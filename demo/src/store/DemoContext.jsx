@@ -19,7 +19,7 @@ export function DemoProvider({ children }) {
     view, setView,
     selectedDoc, setSelectedDoc,
     simplificationLevel, setSimplificationLevel,
-    completedActions, markActionComplete,
+    completedActions, setCompletedActions, markActionComplete,
     persona, setPersona,
     fontSize, setFontSize,
     highContrast, setHighContrast,
