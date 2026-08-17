@@ -133,6 +133,7 @@ Build and lint verification passed. Formal senior usability testing and comprehe
 - v1.1 preserves open status for real-data calibration, human evaluation, inventorship, filing status, and freedom-to-operate.
 - Triple-check validation identified four normative corrections: covariance decomposition, observation mapping, JS soft/hard consistency, and versioned API compatibility.
 - Validation verdict: research implementation ready with corrections; not production-approved.
+- Added Application Charter technical functionality/capability status report, including legal, compliance, and human-validation boundaries.
 
 ## 2026-08-16 D2 Persistence Evidence
 

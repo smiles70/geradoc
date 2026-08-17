@@ -248,6 +248,12 @@
       "processed_date": "2026-08-16",
       "status": "validation-report",
       "description": "Triple-check review identifying mathematical, contract, safety, and implementation corrections for APUCS v1.1"
+    },
+    "charter-technical-capability-status.md": {
+      "location": "/.ai/production-readiness/charter-technical-capability-status.md",
+      "processed_date": "2026-08-16",
+      "status": "capability-assessment",
+      "description": "Application Charter traceability report separating implemented, partial, research-only, deferred, and legally open capabilities"
     }
     }
   },
