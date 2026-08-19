@@ -411,6 +411,12 @@
       "status": "api-first-closure-plan",
       "description": "API/interface plan for computational and research-solvable decomposition and production gaps"
     },
+    "ocr-provider-decision-research.md": {
+      "location": "/.ai/intake/ocr-provider-decision-research.md",
+      "processed_date": "2026-08-19",
+      "status": "technical-recommendation-paddleocr-primary",
+      "description": "Official-source comparison of free/local OCR options against ClarityDoc Charter and design constraints"
+    },
     "epic-poc-functional-closure-decomposition.md": {
       "location": "/.ai/production-readiness/epic-poc-functional-closure-decomposition.md",
       "processed_date": "2026-08-19",

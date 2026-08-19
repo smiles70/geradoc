@@ -59,6 +59,11 @@ Required metadata:
 
 ### API-003 — OCR adapter
 
+**Recommended primary local experiment**: PaddleOCR.
+**Native fast path**: `pdf-parse`.
+**Fallback/baseline**: Tesseract + OCRmyPDF.
+**Cloud services**: benchmark/contingency only after privacy, cost, and credential decisions.
+
 ```js
 class OcrAdapter {
   supports(input) {}

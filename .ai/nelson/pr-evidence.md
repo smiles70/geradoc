@@ -160,6 +160,7 @@ Build and lint verification passed. Formal senior usability testing and comprehe
 - SYN-001 through SYN-006 POC rubric execution complete: English/Spanish pair tests, idempotence, anchor preservation, and full suite passed; calibrated/production gates remain separate.
 - Created APUCS semantic condition-parsing intake and non-legal novelty/IP technical summary; searched current free dictionary/thesaurus options and deferred legal/IP, human-equivalence, calibration, and production-release approvals.
 - Updated Process v9.5 with API-first computational closure and added scope-tiering, atomic acceptance, persona/journey, state-machine, real-data, truthfulness, visual E2E, and graph closeout skills.
+- Researched official OCR options against Charter/design: PaddleOCR recommended as primary local structured OCR experiment; Tesseract/OCRmyPDF retained as baseline/fallback; cloud OCR benchmark-only.
 - UX-BUG-001-C integrated validation remains open until slow-network, keyboard, screen-reader, and senior-user scenarios are executed.
 - PDF upload/full-document behavior was validated against BRD/FRD/PRD; PDF-001 through PDF-003 are implemented and PDF-004 real/degraded-document validation remains required.
 - POC now returns complete source/page text and the viewer exposes Original, Simple, Standard, Detailed, and full-document-by-page views.
