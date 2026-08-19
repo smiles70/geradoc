@@ -25,16 +25,16 @@ The ontology confirms that the repository has a real working POC path, but it do
 ## 1. Graph baseline
 
 ```text
-Graph nodes:       47
-Graph edges:       35
+Graph nodes:       62
+Graph edges:       49
 Requirements:      12
-Capabilities:      13
+Capabilities:      22
 Artifacts:         10
-Gaps:              5 high-severity
+Gaps:              11 high-severity/medium
 Conflicts:         3 material
 ```
 
-The graph was refreshed for this assessment to include recent implementation additions such as:
+The graph was refreshed for this assessment and then deepened to include recent implementation additions and decomposed geragogy/user-outcome capabilities such as:
 
 - Async job endpoints
 - Job idempotency
