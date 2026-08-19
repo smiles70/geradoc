@@ -10,3 +10,11 @@ test('returns the mocked-demo-compatible document shape', async () => {
   expect(Array.isArray(result.keyInfo)).toBe(true);
   expect(Array.isArray(result.actions)).toBe(true);
 });
+
+test('rejects empty extraction instead of reporting completion', async () => {
+  const processor = new DocumentProcessor({
+    extractor: { extract: async () => ({ text: '   ' }) },
+    simplifier: fixtureSimplifier,
+  });
+  await expect(processor.process({ buffer: Buffer.from('x'), fileName: 'empty.pdf', mimeType: 'application/pdf' })).rejects.toMatchObject({ code: 'EMPTY_EXTRACTION' });
+});
