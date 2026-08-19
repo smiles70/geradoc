@@ -393,6 +393,18 @@
       "status": "poc-rubric-complete-production-pending",
       "description": "Execution evidence for SYN-001 through SYN-006 POC synonymity rubric"
     },
+    "apucs-semantic-condition-parsing-intake.md": {
+      "location": "/.ai/intake/apucs-semantic-condition-parsing-intake.md",
+      "processed_date": "2026-08-19",
+      "status": "intake-accepted-approval-gates-deferred",
+      "description": "Intake for semantic condition parsing, calibrated APUCS activation, and deferred human/legal/production gates"
+    },
+    "apucs-novelty-ip-technical-summary.md": {
+      "location": "/.ai/intake/apucs-novelty-ip-technical-summary.md",
+      "processed_date": "2026-08-19",
+      "status": "technical-summary-not-legal-opinion",
+      "description": "Non-legal technical summary of APUCS novelty hypothesis and external language-data options"
+    },
     "epic-poc-functional-closure-decomposition.md": {
       "location": "/.ai/production-readiness/epic-poc-functional-closure-decomposition.md",
       "processed_date": "2026-08-19",
