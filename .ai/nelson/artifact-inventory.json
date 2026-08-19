@@ -188,6 +188,12 @@
       "processed_date": "2026-08-18",
       "status": "verified-complete",
       "description": "Verified mocked React demo with senior/caregiver flows and static build"
+    },
+    "epic-demo-poc-bridge.md": {
+      "location": "/.ai/production-readiness/epic-demo-poc-bridge.md",
+      "processed_date": "2026-08-19",
+      "status": "ready-for-development",
+      "description": "Six-epic Process v9.5 plan for promoting completed demo UX into the real-document POC"
     }
   },
   "missing_artifacts": [],
