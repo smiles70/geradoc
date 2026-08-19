@@ -333,6 +333,12 @@
       "status": "validation-report",
       "description": "Validation of six-dimensional state, self-efficacy correction, demand function, presentation load, and agency override"
     },
+    "comprehensive-idd-apucs-v1.2-technical-closure.md": {
+      "location": "/.ai/production-readiness/comprehensive-idd-apucs-v1.2-technical-closure.md",
+      "processed_date": "2026-08-19",
+      "status": "technical-closure-addendum-not-legal-opinion",
+      "description": "APUCS operational-stability controls, residual limitations, and deferred approval gates"
+    },
     "apucs-user-journeys-v1.3.md": {
       "location": "/.ai/production-readiness/apucs-user-journeys-v1.3.md",
       "processed_date": "2026-08-16",

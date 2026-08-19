@@ -9,12 +9,13 @@ function diagonal(values, fallback = 0.1) {
 }
 
 class InteractionStateEstimator {
-  constructor({ decay = 0.9, processNoise = 0.01, aleatoricDecay = 0.8, gapThreshold = 0.2, windowSize = 3, capabilityWeights } = {}) {
+  constructor({ decay = 0.9, processNoise = 0.01, aleatoricDecay = 0.8, gapThreshold = 0.2, windowSize = 3, maxEfficacyAdjustment = 0.1, capabilityWeights } = {}) {
     this.decay = decay;
     this.processNoise = processNoise;
     this.aleatoricDecay = aleatoricDecay;
     this.gapThreshold = gapThreshold;
     this.windowSize = windowSize;
+    this.maxEfficacyAdjustment = maxEfficacyAdjustment;
     this.capabilityWeights = capabilityWeights || { comprehension: 1 / 3, efficacy: 1 / 3, strain: 1 / 3 };
     this.state = Object.fromEntries(DIMENSIONS.map(name => [name, 0.2]));
     this.epistemicVariance = diagonal({}, 0.1);
@@ -64,8 +65,10 @@ class InteractionStateEstimator {
     const success = this.successHistory.reduce((sum, value) => sum + value, 0) / this.successHistory.length;
     const gap = report - success;
     if (Math.abs(gap) >= this.gapThreshold) {
-      this.state.efficacy = clamp((this.state.efficacy + success) / 2);
-      this.adjustmentLog.push({ report, success, gap, adjustedEfficacy: this.state.efficacy });
+      const target = (this.state.efficacy + success) / 2;
+      const delta = Math.max(-this.maxEfficacyAdjustment, Math.min(this.maxEfficacyAdjustment, target - this.state.efficacy));
+      this.state.efficacy = clamp(this.state.efficacy + delta);
+      this.adjustmentLog.push({ report, success, gap, delta, adjustedEfficacy: this.state.efficacy });
     }
   }
 

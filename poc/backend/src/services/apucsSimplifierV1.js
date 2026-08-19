@@ -122,6 +122,9 @@ const apucsSimplifierV1 = {
     );
     const metadata = {
       algorithm: 'APUCS-v1.3-research',
+      algorithmVersion: 'APUCS-v1.3-research',
+      calibrationProfileVersion: 'uncalibrated-default-v1',
+      calibrationStatus: 'uncalibrated',
       mode: 'shadow-only',
       presentationState,
       interactionState,
@@ -135,6 +138,12 @@ const apucsSimplifierV1 = {
       loadByLevel,
       userOverrideLevel,
       overrideHonored: Boolean(userOverrideLevel && presentationState === userOverrideLevel),
+      monitoring: {
+        candidateCount: Object.keys(levels).length,
+        acceptedCount: Object.values(constraints).filter(item => item.pass).length,
+        rejectedCount: Object.values(constraints).filter(item => !item.pass).length,
+        adviceViolationCount: Object.values(constraints).reduce((sum, item) => sum + item.adviceViolations, 0),
+      },
     };
     return {
       simple: levels.simple,
@@ -143,6 +152,8 @@ const apucsSimplifierV1 = {
       metadata,
       researchMetadata: {
         algorithmVersion: 'APUCS-v1.3-research',
+        calibrationProfileVersion: 'uncalibrated-default-v1',
+        calibrationStatus: 'uncalibrated',
         mode: 'shadow-only',
         presentationState,
         preservedAnchors: anchors,
@@ -156,6 +167,7 @@ const apucsSimplifierV1 = {
         loadByLevel,
         userOverrideLevel,
         overrideHonored: Boolean(userOverrideLevel && presentationState === userOverrideLevel),
+        monitoring: metadata.monitoring,
       },
     };
   },
