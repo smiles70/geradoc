@@ -1,3 +1,4 @@
+const crypto = require('crypto');
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
@@ -7,6 +8,12 @@ const resultRepository = require('./services/resultRepository');
 const app = express();
 app.use(helmet());
 app.use(cors());
+app.use((req, res, next) => {
+  const requestId = req.get('X-Request-ID') || crypto.randomUUID();
+  res.set('X-Request-ID', requestId);
+  req.requestId = requestId;
+  next();
+});
 app.use(express.json({ limit: '1mb' }));
 app.get('/health', (_req, res) => res.json({ status: 'ok', service: 'claritydoc-poc' }));
 app.get('/ready', async (_req, res) => {

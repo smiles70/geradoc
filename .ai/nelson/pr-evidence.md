@@ -142,6 +142,8 @@ Build and lint verification passed. Formal senior usability testing and comprehe
 - Created eight-epic closure portfolio mapping all 25 risks to implementation stories, dependencies, acceptance criteria, and final journey gates.
 - Executed first closure tranche: durable async job API, idempotency, empty-extraction rejection, source persistence boundary, and browser-session recovery.
 - Execution validation: backend 10 test files/27 tests passed; frontend build and lint passed.
+- Second closure tranche added language/layout metadata, anchor normalization utilities, request correlation IDs, focus restoration, and document-tab semantics.
+- Second tranche validation: backend 12 test files/29 tests passed; frontend build and lint passed.
 - UX-BUG-001-C integrated validation remains open until slow-network, keyboard, screen-reader, and senior-user scenarios are executed.
 - PDF upload/full-document behavior was validated against BRD/FRD/PRD; PDF-001 through PDF-003 are implemented and PDF-004 real/degraded-document validation remains required.
 - POC now returns complete source/page text and the viewer exposes Original, Simple, Standard, Detailed, and full-document-by-page views.

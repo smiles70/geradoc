@@ -75,6 +75,7 @@
 - ✅ Top 25 senior-journey failure and edge-case risk register created
 - ✅ Eight-epic plan created to close all 25 senior-journey risks
 - ✅ First senior-journey closure tranche executed: async jobs, idempotency, empty-extraction gate, and browser-session recovery
+- ✅ Second closure tranche executed: language/layout metadata, correlation IDs, focus restoration, and document-tab semantics
 - ✅ NONI/IDD document simplification research memo created
 - ✅ APUCS shadow evaluation specification and synthetic corpus created
 - ✅ Shadow evaluator implemented without changing user-visible simplification

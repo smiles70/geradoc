@@ -1,4 +1,6 @@
 const { PDFParse } = require('pdf-parse');
+const { detectLanguage } = require('./languageProfiles');
+const { classifyLayout } = require('./layoutClassifier');
 
 const pdfExtractor = {
   async extract({ buffer, fileName }) {
@@ -14,6 +16,9 @@ const pdfExtractor = {
         title: fileName,
         pages: result.total || pages.length || 1,
         text: result.text,
+        language: detectLanguage(result.text),
+        layoutClass: classifyLayout({ text: result.text, pages }),
+        extractionConfidence: result.text?.trim() ? 1 : 0,
         fullText: result.text,
         pageText: pages,
         sourceReferences: pages.map(page => ({ page: page.page, label: `Page ${page.page}` })),

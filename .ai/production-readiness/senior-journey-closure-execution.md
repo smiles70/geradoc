@@ -2,7 +2,7 @@
 
 **Date**: August 19, 2026  
 **Branch**: `feature/senior-journey-risk-closure-execution`  
-**Status**: First execution tranche implemented
+**Status**: Second execution tranche implemented; production closure remains open
 
 ## Implemented in this tranche
 
@@ -18,11 +18,16 @@
 - Frontend now creates jobs and polls status before loading the result.
 - Local journey state persists in browser storage across refresh.
 - Processing state remains transient during Back navigation.
+- English/Spanish anchor normalization utilities added.
+- PDF language and layout metadata added.
+- Layout classifier added for prose, forms, tables, mixed, and multi-column routing.
+- Request correlation IDs added to API responses and job records.
+- Main-content focus restoration and document-tab semantics added.
 
 ## Validation
 
 ```text
-Backend: 10 test files / 27 tests passed
+Backend: 12 test files / 29 tests passed
 Frontend build: passed
 Frontend lint: passed with 0 warnings/errors
 git diff --check: passed
@@ -32,12 +37,11 @@ git diff --check: passed
 
 The following remain open and are not represented as complete:
 
-- OCR for scanned PDFs
-- Layout/table/form reconstruction
-- Full Spanish profile
+- OCR for scanned PDFs and production-grade layout reconstruction
+- Full Spanish extraction/candidate/advice profile
 - Durable production database and authorization
 - Production observability and deployment controls
-- Full focus/screen-reader/200% execution evidence
+- Full screen-reader/200% execution evidence
 - Complete action persistence
 - Integrated R01–R25 failure matrix
 
