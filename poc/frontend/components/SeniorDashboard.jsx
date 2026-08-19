@@ -4,7 +4,7 @@ import { sampleDocuments } from '../data/sampleDocuments';
 import { documentApi } from '../documentApi';
 
 const messages = {
-  FILE_SELECTED: 'Your file is ready to check.',
+  FILE_SELECTED: 'Your file is ready. Select Process this document when you are ready.',
   UPLOADING: 'Uploading your document...',
   PROCESSING: 'Your upload is complete. Now we are reading the document...',
   COMPLETE: 'Your document is ready.',
@@ -25,14 +25,21 @@ export default function SeniorDashboard() {
     setView('processing');
   };
 
-  const processFile = async (file) => {
+  const selectFile = (event) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
     setSelectedFile(file);
     setStatus('FILE_SELECTED');
     setError('');
+  };
+
+  const processFile = async () => {
+    if (!selectedFile) return;
     setStatus('UPLOADING');
+    setError('');
     const processingTimer = window.setTimeout(() => setStatus('PROCESSING'), 250);
     try {
-      const result = await documentApi.processDocument(file);
+      const result = await documentApi.processDocument(selectedFile);
       setStatus('COMPLETE');
       setSelectedDoc(result);
       window.setTimeout(() => setView('document'), 500);
@@ -41,21 +48,11 @@ export default function SeniorDashboard() {
       setError('We could not process this document. You can try again or choose another file.');
     } finally {
       window.clearTimeout(processingTimer);
-      const input = document.getElementById('poc-document-upload');
-      if (input) input.value = '';
     }
   };
 
-  const upload = (event) => {
-    const file = event.target.files?.[0];
-    if (file) processFile(file);
-  };
-
-  const retry = () => {
-    if (selectedFile) processFile(selectedFile);
-  };
-
-  const active = ['FILE_SELECTED', 'UPLOADING', 'PROCESSING'].includes(status);
+  const retry = () => processFile();
+  const active = ['UPLOADING', 'PROCESSING'].includes(status);
   const statusMessage = messages[status];
 
   return (
@@ -71,11 +68,16 @@ export default function SeniorDashboard() {
             id="poc-document-upload"
             type="file"
             accept="application/pdf,image/png,image/jpeg"
-            onChange={upload}
+            onChange={selectFile}
             disabled={active}
             aria-describedby="upload-status"
           />
           {selectedFile && <p className="mt-3 text-slate-200">Selected: <strong>{selectedFile.name}</strong></p>}
+          {status === 'FILE_SELECTED' && (
+            <button type="button" onClick={processFile} className="mt-3 min-h-11 px-5 py-2 rounded-lg bg-cyan-500 text-slate-950 font-bold">
+              Process this document
+            </button>
+          )}
           {statusMessage && (
             <div id="upload-status" className="mt-3" aria-live="polite">
               <p className={status === 'ERROR' ? 'text-rose-300' : 'text-cyan-300'}>{statusMessage}</p>
@@ -90,11 +92,7 @@ export default function SeniorDashboard() {
         <h3 className="text-xl font-bold text-white mb-3">Sample documents</h3>
         <div className="grid gap-4">
           {sampleDocuments.map(doc => (
-            <button
-              key={doc.id}
-              onClick={() => select(doc)}
-              className="text-left p-6 bg-slate-900 border border-slate-800 rounded-xl hover:border-cyan-500 transition"
-            >
+            <button key={doc.id} onClick={() => select(doc)} className="text-left p-6 bg-slate-900 border border-slate-800 rounded-xl hover:border-cyan-500 transition">
               <div className="text-cyan-400 font-semibold">{doc.type}</div>
               <div className="text-xl text-white font-bold">{doc.title}</div>
               <div className="text-slate-400">{doc.fileName}</div>
