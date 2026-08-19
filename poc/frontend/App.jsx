@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { useDemo } from './store/DemoContext';
 import LandingPage from './components/LandingPage';
 import SeniorDashboard from './components/SeniorDashboard';
@@ -8,7 +9,12 @@ import ContextualBackButton from './components/ContextualBackButton';
 
 function App() {
   const { view, resetDemo, persona, fontSize, highContrast } = useDemo();
+  const contentRef = useRef(null);
   const fontClass = { small: 'text-base', medium: 'text-lg', large: 'text-xl' }[fontSize] || 'text-lg';
+
+  useEffect(() => {
+    contentRef.current?.focus();
+  }, [view]);
 
   const reset = () => {
     if (window.confirm('Start over? Your current demo progress will be cleared.')) resetDemo();
@@ -38,7 +44,9 @@ function App() {
           </button>
         </div>
       )}
-      {render()}
+      <main ref={contentRef} tabIndex="-1" className="focus:outline-none">
+        {render()}
+      </main>
     </div>
   );
 }

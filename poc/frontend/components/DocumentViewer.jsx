@@ -57,11 +57,13 @@ export default function DocumentViewer() {
           </section>
         ) : (
           <>
-            <div className="flex flex-wrap gap-2 mb-4" aria-label="Choose document view">
+            <div className="flex flex-wrap gap-2 mb-4" role="tablist" aria-label="Choose document view">
               {tabs.map(tab => (
                 <button
                   key={tab.key}
                   type="button"
+                  role="tab"
+                  aria-selected={viewMode === tab.key}
                   onClick={() => { setViewMode(tab.key); if (tab.key !== 'original') setSimplificationLevel(tab.key); }}
                   className={`min-h-11 px-4 py-2 rounded-lg font-semibold ${
                     (viewMode === tab.key || (viewMode !== 'original' && level === tab.key))
