@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const processRouter = require('./routes/process');
+const operationalMetrics = require('./services/operationalMetrics');
 const resultRepository = require('./services/resultRepository');
 
 const app = express();
@@ -16,6 +17,7 @@ app.use((req, res, next) => {
 });
 app.use(express.json({ limit: '1mb' }));
 app.get('/health', (_req, res) => res.json({ status: 'ok', service: 'claritydoc-poc' }));
+app.get('/metrics', (_req, res) => res.json({ counters: operationalMetrics.snapshot() }));
 app.get('/ready', async (_req, res) => {
   try {
     await resultRepository.readAll();
