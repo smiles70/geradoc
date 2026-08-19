@@ -9,6 +9,7 @@ function sentenceBreaks(text) {
 }
 
 const plainLanguageSimplifier = {
+  version: 'synonymity-poc-v1',
   async simplify(text, { language = 'en', domain = 'general' } = {}) {
     const source = String(text || '').trim();
     const transformed = applyApprovedSynonyms(source, { language, domain }).text;

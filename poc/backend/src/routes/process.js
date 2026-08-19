@@ -9,6 +9,7 @@ const simplifier = require('../services/plainLanguageSimplifier');
 const resultRepository = require('../services/resultRepository');
 const sourceRepository = require('../services/sourceRepository');
 const jobRepository = require('../services/jobRepository');
+const operationalMetrics = require('../services/operationalMetrics');
 
 const router = express.Router();
 const upload = multer({
@@ -51,7 +52,9 @@ async function processUploadedFile(file, jobId = null, requestId = null) {
 router.post('/', upload.single('document'), async (req, res, next) => {
   try {
     if (!req.file) return res.status(400).json({ error: 'Upload a document.' });
+    operationalMetrics.increment('process.received');
     const saved = await processUploadedFile(req.file, null, req.requestId);
+    operationalMetrics.increment('process.complete');
     res.status(200).json(saved);
   } catch (error) {
     next(error);
@@ -61,9 +64,13 @@ router.post('/', upload.single('document'), async (req, res, next) => {
 router.post('/jobs', upload.single('document'), async (req, res, next) => {
   try {
     if (!req.file) return res.status(400).json({ error: 'Upload a document.' });
+    operationalMetrics.increment('jobs.received');
     const idempotencyKey = req.get('Idempotency-Key');
     const existing = await jobRepository.findByIdempotencyKey(idempotencyKey);
-    if (existing) return res.status(202).json(existing);
+    if (existing) {
+      operationalMetrics.increment('jobs.idempotent_replay');
+      return res.status(202).json(existing);
+    }
     const job = await jobRepository.save({
       id: `job-${crypto.randomUUID()}`,
       idempotencyKey: idempotencyKey || null,
@@ -76,12 +83,15 @@ router.post('/jobs', upload.single('document'), async (req, res, next) => {
     setImmediate(async () => {
       await jobRepository.update(job.id, { status: 'processing' });
       try {
+        operationalMetrics.increment('jobs.processing');
         const result = await processUploadedFile(req.file, job.id, req.requestId);
         const current = await jobRepository.findById(job.id);
         if (current?.status !== 'cancelled') {
+          operationalMetrics.increment('jobs.complete');
           await jobRepository.update(job.id, { status: 'complete', resultId: result.id, sourceUrl: result.sourceUrl });
         }
       } catch (error) {
+        operationalMetrics.increment(error.code === 'EMPTY_EXTRACTION' ? 'jobs.review' : 'jobs.failed');
         await jobRepository.update(job.id, { status: error.code === 'EMPTY_EXTRACTION' ? 'review' : 'failed', error: error.message, errorCode: error.code || 'PROCESSING_ERROR' });
       }
     });

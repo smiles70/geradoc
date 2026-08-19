@@ -3,6 +3,7 @@ const { detectLanguage } = require('./languageProfiles');
 const { classifyLayout } = require('./layoutClassifier');
 
 const pdfExtractor = {
+  version: 'pdf-parse-v2',
   async extract({ buffer, fileName }) {
     const parser = new PDFParse({ data: buffer });
     try {

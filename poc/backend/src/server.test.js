@@ -8,6 +8,12 @@ describe('service readiness', () => {
     expect(response.body.status).toBe('ok');
   });
 
+  it('reports operational metrics without document content', async () => {
+    const response = await request(app).get('/metrics');
+    expect(response.status).toBe(200);
+    expect(response.body.counters).toBeDefined();
+  });
+
   it('reports repository readiness', async () => {
     const response = await request(app).get('/ready');
     expect(response.status).toBe(200);

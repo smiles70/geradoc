@@ -45,6 +45,10 @@ adviceViolationCount
 
 The document viewer now provides source inspection and return-to-documents actions when research metadata routes a result to REVIEW.
 
+### Operational monitoring
+
+The POC now exposes non-content operational counters for received, processing, complete, failed, REVIEW, and idempotent replay job events. These counters exclude document text and secrets.
+
 ### Extraction error distinction
 
 The POC distinguishes:
