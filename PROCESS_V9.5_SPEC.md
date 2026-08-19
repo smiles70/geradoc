@@ -742,9 +742,64 @@ Reusable repository skills under `.devin/skills/` provide the operating procedur
 
 ---
 
-## 25. Final Operating Statement
+## 25. Deep Requirements Decomposition Gate
 
-The Process v9.5 turns UI alignment, repository hygiene, and requirements traceability into measurable, enforceable, continuously refreshed delivery quality systems.
+Process v9.5 requires every material requirement to decompose beyond a feature label or screen description. A requirement is not complete until the graph connects:
+
+```text
+Source requirement
+  → persona need
+  → journey entry/exit
+  → user-observable behavior
+  → domain capability
+  → API/data contract
+  → code module
+  → automated test
+  → runtime/evidence record
+  → owner
+  → failure state
+  → recovery state
+  → operational gate
+```
+
+### 25.1 Required decomposition questions
+
+For every primary persona and journey, Process must answer:
+
+- What does the user see?
+- What does the user understand?
+- What can the user do next?
+- What happens if the system is wrong?
+- What happens if the user stops?
+- What happens if the network fails?
+- What happens if content is incomplete?
+- What evidence proves the behavior?
+
+### 25.2 Anti-miss rule
+
+Sample fixtures, static screens, contracts, and passing build checks cannot satisfy a complete user-outcome requirement unless the uploaded/real-data path is also mapped and evidenced.
+
+### 25.3 Geragogy decomposition
+
+For a geragogy-based requirement, the graph must explicitly represent document-level capabilities, not only UI principles:
+
+- Orientation
+- Key-information extraction
+- Deadline extraction
+- Action extraction and prioritization
+- Plain-language transformation
+- Progressive disclosure
+- Reassurance and non-shaming feedback
+- Help escalation
+- Original-source verification
+
+Missing decomposition applies the graph evidence cap and prevents a `COMPLETE` verdict.
+
+---
+
+## 26. Final Operating Statement
+
+The Process v9.5 turns UI alignment, repository hygiene, requirements traceability, and deep user-outcome decomposition into measurable, enforceable, continuously refreshed delivery quality systems.
 
 The Requirements Ontology and Knowledge-Graph Layer ensures that strategic intent, requirements, capabilities, epics, tests, evidence, ownership, dependencies, conflicts, and current-state truth remain connected throughout delivery.
 

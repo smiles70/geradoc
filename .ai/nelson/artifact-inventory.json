@@ -375,6 +375,12 @@
       "status": "managed-risk-state-assessment",
       "description": "Ontology/knowledge-graph assessment of POC coverage against requirements, personas, and journeys"
     },
+    "deep-requirements-decomposition-audit.md": {
+      "location": "/.ai/production-readiness/deep-requirements-decomposition-audit.md",
+      "processed_date": "2026-08-19",
+      "status": "decomposition-audit",
+      "description": "Audit of high-level requirements lacking persona, journey, capability, code, test, evidence, owner, failure, and recovery decomposition"
+    },
     "requirements-ontology-skills": {
       "location": "/.devin/skills/",
       "processed_date": "2026-08-19",
