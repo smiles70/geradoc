@@ -34,7 +34,7 @@ export default function LandingPage() {
           </button>
         </div>
         <p className="mt-8 text-sm text-slate-400">
-          This is a demo. No real documents are processed.
+          This is a development POC. Use approved test documents only; do not upload personal documents.
         </p>
       </div>
     </div>
