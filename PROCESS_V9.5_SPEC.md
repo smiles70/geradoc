@@ -795,6 +795,23 @@ For a geragogy-based requirement, the graph must explicitly represent document-l
 
 Missing decomposition applies the graph evidence cap and prevents a `COMPLETE` verdict.
 
+### 25.4 Idempotent decomposition requirements
+
+Repeated decomposition of identical sources with identical versions must produce the same nodes, edges, statuses, and graph hash.
+
+Required controls:
+
+- Stable IDs from canonical source, entity type, and canonical key.
+- Upsert semantics rather than append-only graph writes.
+- Stable edge keys using `from::relation::to`.
+- Deterministic node and edge ordering.
+- Source, parser, ontology, and decomposition version hashes.
+- Explicit source-removal state before deletion.
+- Graph integrity validation before closeout.
+- Deterministic decomposition diff before accepting changes.
+
+Fuzzy similarity, embeddings, and impact mathematics may prioritize review, but cannot independently assign identity, delete requirements, or mark work complete.
+
 ---
 
 ## 26. Final Operating Statement

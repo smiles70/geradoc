@@ -147,6 +147,7 @@ Build and lint verification passed. Formal senior usability testing and comprehe
 - Assessed POC against all graph-mapped requirements, Margaret/David/enterprise personas, and first-time/returning/caregiver/health-plan journeys; verdict is Managed Risk with the core senior POC path functional and non-senior journeys incomplete.
 - Refreshed graph coverage from 40 nodes/27 edges to 47 nodes/35 edges to represent current async, source, session, language, layout, correlation, and accessibility capabilities.
 - Completed deep requirements decomposition audit; added geragogy capability nodes, under-decomposition gaps, and a permanent Process v9.5 deep-decomposition gate.
+- Created POC functional-closure epic portfolio with eight implementation epics, user stories, dependency order, and decomposition-based exit gates.
 - UX-BUG-001-C integrated validation remains open until slow-network, keyboard, screen-reader, and senior-user scenarios are executed.
 - PDF upload/full-document behavior was validated against BRD/FRD/PRD; PDF-001 through PDF-003 are implemented and PDF-004 real/degraded-document validation remains required.
 - POC now returns complete source/page text and the viewer exposes Original, Simple, Standard, Detailed, and full-document-by-page views.
