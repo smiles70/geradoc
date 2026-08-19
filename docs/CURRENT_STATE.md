@@ -70,6 +70,7 @@
 - ✅ POC branch and backend upload boundary created
 - ✅ POC document result contract defined
 - ✅ POC fixture and PDF extraction adapters created
+- ✅ Senior persona and bidirectional journey map created; reverse processing-loop fix implemented
 - ✅ NONI/IDD document simplification research memo created
 - ✅ APUCS shadow evaluation specification and synthetic corpus created
 - ✅ Shadow evaluator implemented without changing user-visible simplification

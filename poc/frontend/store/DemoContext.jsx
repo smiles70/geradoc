@@ -26,7 +26,9 @@ export function DemoProvider({ children }) {
         return previous;
       }
       const next = [...previous];
-      setViewState(next.pop());
+      let destination = next.pop();
+      if (destination === 'processing' && next.length) destination = next.pop();
+      setViewState(destination || 'landing');
       return next;
     });
   };

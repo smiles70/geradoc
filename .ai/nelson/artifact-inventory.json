@@ -339,6 +339,12 @@
       "status": "research-walkthroughs",
       "description": "Five end-to-end APUCS user journeys with illustrative math, review/override behavior, and implementation caveats"
     },
+    "senior-persona-journey-map.md": {
+      "location": "/.ai/production-readiness/senior-persona-journey-map.md",
+      "processed_date": "2026-08-19",
+      "status": "persona-and-journey-traceability",
+      "description": "Senior persona definition with forward/reverse journey mapping and current code coverage"
+    },
     "requirements-ontology-skills": {
       "location": "/.devin/skills/",
       "processed_date": "2026-08-19",
