@@ -201,6 +201,12 @@
       "status": "validated",
       "description": "Validation evidence for bridge epics A-D and POC frontend/API integration"
     },
+    "bridge-staging-validation.md": {
+      "location": "/.ai/production-readiness/bridge-staging-validation.md",
+      "processed_date": "2026-08-19",
+      "status": "validated",
+      "description": "Synthetic staging-like validation for health, readiness, upload, persistence, retrieval, frontend build, and lint"
+    },
     "noni-document-simplification-research.md": {
       "location": "/.ai/production-readiness/noni-document-simplification-research.md",
       "processed_date": "2026-08-16",

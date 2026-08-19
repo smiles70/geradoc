@@ -125,6 +125,15 @@ Build and lint verification passed. Formal senior usability testing and comprehe
 4. Run accessibility and senior-user validation before MVP claims.
 5. Re-run Nelson and PRA evidence after staging bridge validation.
 
+## BRIDGE-001-E Staging Validation
+
+- Added repeatable `poc/scripts/bridgeSmokeTest.mjs`.
+- Health and readiness passed.
+- Synthetic upload, processing, persistence, and retrieval passed.
+- Backend suite passed: 9 test files, 23 tests.
+- POC frontend build and lint passed with zero warnings/errors.
+- Validation remains synchronous and synthetic; async worker and production deployment remain open.
+
 ## 2026-08-16 POC Simplification Research Evidence
 
 - Reviewed the supplied IDD and NONI technical patterns.
