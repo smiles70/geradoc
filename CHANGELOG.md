@@ -18,7 +18,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Nelson scoring and reporting framework
 
 ### Changed
-- N/A
+- Closed EPC-001 mocked demo epic
+- Promoted demo status from development to complete
+- Documented demo-to-POC bridge readiness and scope boundary
 
 ### Deprecated
 - N/A
