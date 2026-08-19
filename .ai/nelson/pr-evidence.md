@@ -2,66 +2,115 @@
 
 ## PR Overview
 
-[TODO: Add PR description and context]
+EPC-001 mocked ClarityDoc demo completed on `main` and verified as the UX reference for the POC bridge.
 
 ## Nelson Repo Score Impact
 
-**Pre-PR Score**: 0/100 (Bootstrap state)  
-**Post-PR Score**: TBD  
-**Score Change**: TBD
+**Pre-demo score**: 86/100
+**Post-demo score**: 87/100
+**Score change**: +1
+
+The demo improves testability, knowledge transfer, and product validation evidence. It does not establish production readiness.
 
 ## Artifact Changes
 
-### Added Artifacts
-- [TODO: List newly added artifacts]
+### Added/Completed Artifacts
+
+- `/demo` interactive React/Vite mocked demo
+- `/demo/dist` static build
+- `/demo/README.md` setup and walkthrough
+- Completed EPC-001 evidence
 
 ### Updated Artifacts
-- [TODO: List updated artifacts]
+
+- `docs/CURRENT_STATE.md`
+- `CHANGELOG.md`
+- `.ai/nelson/artifact-inventory.json`
+- `.ai/nelson/nelson-scorecard.json`
 
 ### Removed Artifacts
-- [TODO: List removed artifacts]
+
+- None
+
+## Demo Verification Evidence
+
+- `npm install`: passed on `main`
+- `npm run build`: passed on `main`
+- `npm run lint`: 0 errors and 1 non-blocking React Fast Refresh warning
+- Senior flow present and runnable
+- Caregiver flow present and runnable
+- Three simplification levels present
+- Key information cards present
+- Action completion present
+- Accessibility controls present
+- Static distribution generated in `demo/dist`
+- `demo/` remains separate from `poc/`
 
 ## Domain-Specific Evidence
 
 ### Repository Orientation
-[TODO: Orientation-related changes and evidence]
+
+The demo has a dedicated README with setup, walkthrough, build, and scope limitations.
 
 ### Architecture
-[TODO: Architecture-related changes and evidence]
+
+The demo is isolated under `/demo` and does not alter the POC backend. Its response shape remains compatible with the POC frontend seam.
 
 ### Decision Records
-[TODO: ADR-related changes and evidence]
+
+No architecture decision was changed by the mocked demo. The demo remains a prototype/reference experience, not the production processing architecture.
 
 ### Operational Readiness
-[TODO: Operations-related changes and evidence]
+
+The static build can be previewed locally. No production deployment or SLA claim is made.
 
 ### Knowledge Transfer
-[TODO: Onboarding-related changes and evidence]
+
+The demo README documents startup, user flow, and static distribution. The mocked demo guide provides session-by-session development instructions.
 
 ### Ownership
-[TODO: Ownership-related changes and evidence]
+
+Ownership is governed by `CODEOWNERS`; future demo/POC integration requires review through the `develop` branch.
 
 ### Delivery Governance
-[TODO: Governance-related changes and evidence]
+
+Demo completion was merged to `main` through the Process v9.5 branch/PR workflow. Future POC bridge work must use a separate feature branch.
 
 ### Security and Compliance
-[TODO: Security-related changes and evidence]
+
+The demo uses mock data only. It does not process, persist, or transmit real documents. No HIPAA, GDPR, SOC 2, or production-security claim is made.
 
 ### Testability
-[TODO: Testing-related changes and evidence]
+
+Build and lint verification passed. Formal senior usability testing and comprehensive accessibility review remain open.
 
 ## Current-State Visibility Updates
 
-[TODO: Document current-state visibility changes]
+`CURRENT_STATE.md` now records:
+
+- Mocked demo complete
+- Static build available
+- POC bridge ready
+- Real document processing still separate and incomplete
 
 ## Gate Verdict
 
-**Status**: TBD  
-**Conditions**: [TODO: Specify gate conditions]
+**Status**: Proceed to POC bridge with conditions
+
+**Conditions**:
+
+- Keep `demo/` stable and isolated.
+- Create a separate integration branch from `develop`.
+- Preserve the mocked-demo-compatible API contract.
+- Do not activate APUCS as user-visible output.
+- Run accessibility and senior-user validation before MVP claims.
 
 ## Recommendations
 
-[TODO: Add specific recommendations for reviewers]
+1. Create `feature/bridge-demo-to-poc` from `develop`.
+2. Promote only stable demo components into the POC frontend.
+3. Replace mock data through `poc/frontend/documentApi.js` rather than rewriting the UI.
+4. Re-run Nelson and PRA evidence after the bridge integration.
 
 ---
 

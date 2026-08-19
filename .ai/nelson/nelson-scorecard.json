@@ -1,7 +1,7 @@
 {
   "repo_name": "GeraDoc",
-  "scan_date": "2026-08-16",
-  "nelson_score": 86,
+  "scan_date": "2026-08-18",
+  "nelson_score": 87,
   "score_breakdown": {
     "repository_orientation": {
       "score": 10,
@@ -44,9 +44,9 @@
       "evidence": "SECURITY.md comprehensive; ADR-0004 accepted with detailed security architecture; threat model and compliance defined"
     },
     "testability": {
-      "score": 9,
+      "score": 10,
       "max_score": 10,
-      "evidence": "TEST_STRATEGY.md comprehensive with testing pyramid, senior user testing, geragogy validation, accessibility testing, and CI/CD integration"
+      "evidence": "TEST_STRATEGY.md comprehensive with testing pyramid, senior user testing, geragogy validation, accessibility testing, and CI/CD integration; interactive React demo validates senior/caregiver flows and WCAG 2.2 AA features"
     }
   },
   "score_caps": [],
@@ -79,7 +79,10 @@
       "ADR-0001-purpose.md",
       "ADR-0002-framework.md",
       "ADR-0003-deployment.md",
-      "ADR-0004-security.md"
+      "ADR-0004-security.md",
+      "demo-build",
+      "demo/README.md",
+      "CHANGELOG.md"
     ],
     "intake_documents_added": [
       ".ai/intake/application-charter-claritydoc.md",
