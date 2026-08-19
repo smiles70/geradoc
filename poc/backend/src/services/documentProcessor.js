@@ -1,0 +1,28 @@
+class DocumentProcessor {
+  constructor({ extractor, simplifier }) {
+    this.extractor = extractor;
+    this.simplifier = simplifier;
+  }
+
+  async process({ buffer, fileName, mimeType }) {
+    const extracted = await this.extractor.extract({ buffer, fileName, mimeType });
+    const fullText = extracted.fullText || extracted.text || '';
+    const summaries = await this.simplifier.simplify(fullText);
+    return {
+      id: `poc-${Date.now()}`,
+      type: extracted.type || 'Unknown',
+      title: extracted.title || fileName,
+      fileName,
+      pages: extracted.pages || extracted.pageText?.length || 1,
+      originalText: fullText,
+      fullText,
+      pageText: extracted.pageText || [{ page: 1, text: fullText }],
+      sourceReferences: extracted.sourceReferences || [],
+      summary: summaries,
+      keyInfo: extracted.keyInfo || [],
+      actions: extracted.actions || [],
+      processingStatus: 'complete',
+    };
+  }
+}
+module.exports = DocumentProcessor;

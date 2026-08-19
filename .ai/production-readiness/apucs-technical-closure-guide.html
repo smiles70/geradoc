@@ -1,0 +1,62 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>APUCS Technical Closure — Process v9.5 Graph-Aware Guide</title><style>body{margin:0;background:#0b0d12;color:#edf3fa;font:16px/1.6 system-ui,sans-serif}header{padding:44px 20px;text-align:center;background:linear-gradient(135deg,#352074,#075d75)}main{max-width:960px;margin:auto;padding:20px}.card{background:#151b26;border:1px solid #34435a;border-radius:12px;padding:20px;margin:18px 0}h1,h2,h3{color:#2bd7ee}.code{background:#07090d;border:1px solid #34435a;border-radius:8px;margin:14px 0;overflow:auto}.bar{background:#202a3b;color:#aab7c8;padding:7px 12px}.copy{float:right;background:#8b5cf6;color:#fff;border:0;border-radius:5px;padding:4px 9px}.code pre{padding:14px;margin:0;color:#d9eaff;white-space:pre;overflow:auto}.gate{border-left:4px solid #42e29d;background:#073b2c66;padding:12px;margin:14px 0}.warn{border-left:4px solid #ffd166;background:#4d380a66;padding:12px;margin:14px 0}li{margin:6px 0}code{color:#2bd7ee}@media(max-width:600px){main{padding:12px}pre{font-size:12px}}</style></head><body><header><h1>APUCS Technical Closure</h1><p>Process v9.5 graph-aware developer guide for English and Spanish technical closure.</p></header><main><section class="card"><h2>Operating rule</h2><p>Every session updates both the implementation and the requirements knowledge graph. No epic is complete until the requirement-to-code-to-test-to-evidence path exists.</p><div class="code"><div class="bar">Graph lifecycle <button class="copy" onclick="copy(this)">Copy</button></div><pre>source artifact → requirement → epic/story → capability → test → evidence → owner/decision</pre></div><div class="warn"><b>Human/legal gates:</b> This guide closes technical traceability. Human evaluation, patent, inventorship, and legal gates remain separate.</div></section><section class="card"><h2>Session 0 — Start graph-aware Process v9.5</h2><ol><li>Create a Process todo list.</li><li>Read the source requirements and current graph.</li><li>Identify impacted nodes before editing code.</li></ol><div class="code"><div class="bar">Terminal <button class="copy" onclick="copy(this)">Copy</button></div><pre>cd /home/hazbyn/GeraDoc
+git checkout develop
+git pull origin develop
+python3 - &lt;&lt;'PY'
+import json
+with open('.ai/nelson/requirements-knowledge-graph.json') as f: json.load(f)
+print('requirements graph valid')
+PY</pre></div></section><section class="card"><h2>Session 1 — Schema profiles and contract</h2><h3>Code</h3><div class="code"><div class="bar">Create profile <button class="copy" onclick="copy(this)">Copy</button></div><pre>mkdir -p poc/config/profiles/insurance
+cat &gt; poc/config/profiles/insurance/es.json &lt;&lt; 'EOF'
+{"domain":"insurance","language":"es","version":"1.0","anchor_types":["DATE","AMOUNT","DEADLINE","ENTITY","OBLIGATION","NEGATION","CONDITION","CONTACT","IDENTIFIER"],"taxonomy_hash":"pending"}
+EOF</pre></div><h3>Graph update</h3><p>Add a SourceArtifact, Requirement, Capability, and planned Epic node. Link them with <code>defined_by</code>, <code>planned_by</code>, and <code>depends_on</code>.</p><div class="gate"><b>Close:</b> schema is valid, graph edge exists, and contract tests pass.</div></section><section class="card"><h2>Session 2 — Ingestion, layout, and provenance</h2><h3>Code</h3><div class="code"><div class="bar">Adapter contract <button class="copy" onclick="copy(this)">Copy</button></div><pre>class DocumentExtractor {
+  supports(mimeType, extension) { return false; }
+  async extract(input) {
+    return {
+      language: 'en',
+      layoutClass: 'single_column_prose',
+      fullText: '',
+      pageText: [],
+      sourceReferences: [],
+      anchors: [],
+      extractionConfidence: 0,
+    };
+  }
+}
+module.exports = DocumentExtractor;</pre></div><p>Implement PDF, OCR, DOCX, and HTML adapters behind this contract. Add graph edges from ingestion requirements to capabilities and tests.</p></section><section class="card"><h2>Session 3 — Candidate backends and hard constraints</h2><div class="code"><div class="bar">Registry and hard gate <button class="copy" onclick="copy(this)">Copy</button></div><pre>class BackendRegistry {
+  constructor() { this.backends = new Map(); }
+  register(id, backend) { this.backends.set(id, backend); }
+  get(id) { return this.backends.get(id); }
+}
+
+function hardGate(c) {
+  return c.anchorRecall === 1 && c.actionRecall === 1
+    && c.provenanceCoverage === 1 && c.contradictions === 0
+    && c.adviceViolations === 0;
+}</pre></div><p>Link each constraint to its test with <code>verified_by</code> and attach output to evidence.</p></section><section class="card"><h2>Session 4 — English and Spanish</h2><div class="code"><div class="bar">Language normalization <button class="copy" onclick="copy(this)">Copy</button></div><pre>function normalizeAmount(value, language) {
+  const raw = String(value).replace(/[^0-9,.-]/g, '');
+  return language === 'es'
+    ? Number(raw.replace(/\./g, '').replace(',', '.'))
+    : Number(raw.replace(/,/g, ''));
+}</pre></div><p>Add separate English and Spanish fixtures for dates, amounts, negation, conditions, entities, actions, and advice. Unsupported languages must produce an explicit gap/state node.</p></section><section class="card"><h2>Session 5 — State, demand, modalities, calibration</h2><div class="code"><div class="bar">Profile key <button class="copy" onclick="copy(this)">Copy</button></div><pre>{
+  "domain":"insurance",
+  "language":"es",
+  "modality":"screen_reader",
+  "version":"0.1",
+  "calibrationStatus":"uncalibrated",
+  "driftMetrics":{}
+}</pre></div><p>Keep state math modality-neutral; register modality-specific events and B mappings. Demand weights remain explicitly uncalibrated until evidence exists.</p></section><section class="card"><h2>Session 6 — Rendering and REVIEW</h2><div class="code"><div class="bar">Validated render contract <button class="copy" onclick="copy(this)">Copy</button></div><pre>function renderValidated(candidate, modality) {
+  if (!candidate.validated) throw new Error('Only validated content may render');
+  return renderers[modality](Object.freeze(candidate));
+}</pre></div><p>Build text, large-print, and TTS renderers that cannot mutate anchors, provenance, confidence, or review flags. Link REVIEW requirements to UI tests.</p></section><section class="card"><h2>Session 7 — Operations</h2><div class="code"><div class="bar">Verification <button class="copy" onclick="copy(this)">Copy</button></div><pre>npm --prefix poc/backend test
+npm --prefix poc/frontend run build
+npm --prefix poc/frontend run lint
+python3 scripts/validate-requirements-graph.py
+python3 scripts/find-requirement-conflicts.py
+python3 scripts/find-orphan-requirements.py
+python3 scripts/check-requirements-drift.py</pre></div><p>Implement async jobs, retry/dead-letter, idempotency, events, readiness, audit persistence, feature flags, and rollback. Every operational capability becomes a graph node with tests and evidence.</p></section><section class="card"><h2>Session 8 — Graph closeout</h2><div class="code"><div class="bar">Closeout checklist <button class="copy" onclick="copy(this)">Copy</button></div><pre>[ ] No critical requirement lacks an owner
+[ ] No completion claim lacks test/evidence
+[ ] No material conflict is unresolved without an owner
+[ ] No orphan capability exists
+[ ] Current state matches graph
+[ ] PR evidence includes graph findings
+[ ] JSON and graph validation pass</pre></div><div class="gate"><b>Verdict:</b> PROCEED only when graph coverage, conflict status, tests, evidence, and current-state synchronization all pass.</div></section></main><script>function copy(b){navigator.clipboard.writeText(b.closest('.code').querySelector('pre').innerText).then(()=>{let x=b.innerText;b.innerText='Copied!';setTimeout(()=>b.innerText=x,1200)})}</script></body></html>

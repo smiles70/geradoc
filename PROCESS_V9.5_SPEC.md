@@ -628,9 +628,127 @@ A v9.5 bootstrap is complete when:
 
 ---
 
-## 24. Final Operating Statement
+## 24. Requirements Ontology and Knowledge-Graph Layer
 
-The Process v9.5 turns UI alignment and repository hygiene into measurable, enforceable, continuously refreshed delivery quality systems.
+Process v9.5 permanently includes a Requirements Ontology and Knowledge-Graph Layer. This layer is cross-cutting and does not replace existing discovery, design, build, test, audit, certification, or closeout agents. It consumes their evidence and connects it to canonical requirements.
+
+### 24.1 Canonical ontology
+
+The minimum ontology includes:
+
+- `SourceArtifact`
+- `Requirement`
+- `Capability`
+- `Epic`
+- `UserStory`
+- `AcceptanceCriterion`
+- `Test`
+- `Evidence`
+- `Owner`
+- `Decision`
+- `Dependency`
+- `Gap`
+- `Conflict`
+- `Assumption`
+
+### 24.2 Required relationships
+
+The graph must support at least:
+
+- `defined_by`
+- `refines`
+- `implements`
+- `partially_implements`
+- `verified_by`
+- `evidenced_by`
+- `planned_by`
+- `owned_by`
+- `depends_on`
+- `blocked_by`
+- `conflicts_with`
+- `supersedes`
+- `derived_from`
+- `invalidated_by`
+
+### 24.3 Canonical graph artifacts
+
+The canonical graph and reports are stored under `.ai/nelson/`:
+
+- `requirements-knowledge-graph.json`
+- `requirements-graph-schema.json`
+- `requirements-conflicts.json`
+- `requirements-orphans.json`
+- `requirements-drift-report.json`
+- `requirements-traceability-report.md`
+
+### 24.4 Requirements Knowledge Steward
+
+Process v9.5 adds an orchestrated Requirements Knowledge Steward with the following non-duplicating capabilities:
+
+- Requirements discovery
+- Ontology modeling
+- Entity extraction
+- Knowledge-graph construction
+- Traceability auditing
+- Conflict detection
+- Orphan detection
+- Change-impact analysis
+- Evidence verification
+- Drift detection
+- Canonical synchronization
+- Graph QA and security validation
+
+### 24.5 Permanent graph gates
+
+For requirements-heavy work, session closeout must verify:
+
+- Every material requirement has an authoritative source.
+- Every implementable requirement maps to an epic or explicit deferment.
+- Every claimed capability maps to code or an explicit research artifact.
+- Every completed capability maps to a test or evidence record.
+- Every critical gap has an owner and next action.
+- Every material conflict is resolved, accepted, or escalated.
+- The graph matches current repository evidence.
+- Current-state and PR evidence artifacts are synchronized.
+
+### 24.6 Graph-driven scoring and caps
+
+The ontology layer is a cross-cutting Nelson gate rather than a new score bucket. Graph failures apply caps or block closeout in the relevant domains:
+
+- Missing critical traceability: cap testability and delivery governance.
+- Unresolved material conflict: cap architecture and delivery governance.
+- Orphan critical requirement: cap ownership and testability.
+- Unsupported completion claim: block certification.
+- Graph drift: require remediation before release.
+
+### 24.7 Refresh triggers
+
+The graph must refresh on:
+
+- New intake
+- BRD/FRD/PRD changes
+- Technical or operational specification changes
+- New or changed epics
+- New acceptance criteria
+- Code capability changes
+- Test changes
+- ADR changes
+- Pull-request creation and merge
+- Release or scheduled repository scan
+
+### 24.8 Process skills
+
+Reusable repository skills under `.devin/skills/` provide the operating procedures for ontology extraction, graph construction, conflict/orphan/drift detection, impact analysis, evidence gates, synchronization, and closeout.
+
+---
+
+## 25. Final Operating Statement
+
+The Process v9.5 turns UI alignment, repository hygiene, and requirements traceability into measurable, enforceable, continuously refreshed delivery quality systems.
+
+The Requirements Ontology and Knowledge-Graph Layer ensures that strategic intent, requirements, capabilities, epics, tests, evidence, ownership, dependencies, conflicts, and current-state truth remain connected throughout delivery.
+
+The result is a repository that is easier to onboard, safer to change, easier to support, cleaner to review, more consistent in UI delivery, more traceable in requirements delivery, and more suitable for human and AI-assisted development.
 
 MLDC Alignment ensures the UI is shaped by approved design-system components, patterns, themes, accessibility guidance, responsive behavior, and CI/CD expectations.
 

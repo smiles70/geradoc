@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ClarityDocDocumentResult",
+  "type": "object",
+  "required": ["id", "type", "title", "fileName", "pages", "summary", "keyInfo", "actions"],
+  "properties": {
+    "id": {"type": "string"},
+    "type": {"type": "string"},
+    "title": {"type": "string"},
+    "fileName": {"type": "string"},
+    "pages": {"type": "integer", "minimum": 1},
+    "summary": {
+      "type": "object",
+      "required": ["simple", "standard", "detailed"],
+      "properties": {
+        "simple": {"type": "string"},
+        "standard": {"type": "string"},
+        "detailed": {"type": "string"}
+      }
+    },
+    "keyInfo": {"type": "array"},
+    "actions": {"type": "array"},
+    "researchMetadata": {
+      "type": "object",
+      "properties": {
+        "algorithmVersion": {"type": "string"},
+        "mode": {"enum": ["baseline", "shadow-only", "production"]},
+        "presentationState": {"enum": ["SIMPLE", "STANDARD", "DETAILED", "REVIEW"]},
+        "preservedAnchors": {"type": "array"},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "sourceReferences": {"type": "array"},
+        "provenanceMap": {"type": "object"},
+        "reviewFlags": {"type": "array"},
+        "auditRecord": {"type": "object"}
+      }
+    }
+  }
+}

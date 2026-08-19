@@ -1,9 +1,17 @@
 # Code Owners
+# Application Owner: @Kmiles
+# Application Author: Kmiles
+
+* @Kmiles
+/demo/ @Kmiles
+/poc/ @Kmiles
+/docs/ @Kmiles
+/.ai/ @Kmiles
 
 ## Project Owners
 
 **Strategic Owner**
-- **Kimberly Miles** - Founder/CEO
+- **Kimberly Miles (@Kmiles)** - Founder/CEO
   - Final decision authority on strategic direction
   - Product vision and market positioning
   - Overall business and technical decisions
