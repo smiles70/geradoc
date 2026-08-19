@@ -20,6 +20,7 @@ export default function DocumentViewer() {
   const originalText = selectedDoc.originalText || selectedDoc.fullText || selectedDoc.summary?.detailed || '';
   const content = viewMode === 'original' ? originalText : selectedDoc.summary?.[approvedLevel || viewMode] || originalText;
   const pageText = selectedDoc.pageText || [{ page: 1, text: originalText }];
+  const sourceUrl = selectedDoc.sourceUrl;
   const tabs = [
     { key: 'original', label: 'Original' },
     { key: 'simple', label: 'Simple' },
@@ -35,7 +36,18 @@ export default function DocumentViewer() {
           <div className="text-cyan-400 font-semibold">{selectedDoc.type}</div>
           <h2 className="text-3xl font-bold text-white">{selectedDoc.title}</h2>
           <p className="text-slate-400">{selectedDoc.fileName} · {selectedDoc.pages || pageText.length} pages</p>
+          {selectedDoc.processingMode && <p className="mt-2 text-sm text-slate-400">Processing mode: {selectedDoc.processingMode}</p>}
         </div>
+
+        {sourceUrl && (
+          <section className="bg-slate-900 border border-slate-800 rounded-xl p-5 mb-6" aria-labelledby="source-preview-heading">
+            <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
+              <h3 id="source-preview-heading" className="text-lg font-bold text-white">Your uploaded document</h3>
+              <a href={sourceUrl} target="_blank" rel="noreferrer" className="min-h-11 px-4 py-2 rounded-lg bg-slate-700 text-white font-semibold">Open PDF</a>
+            </div>
+            <iframe title={`Uploaded document: ${selectedDoc.fileName}`} src={sourceUrl} className="w-full h-[32rem] rounded-lg bg-white" />
+          </section>
+        )}
 
         {review ? (
           <section role="alert" className="bg-amber-950/50 border border-amber-400 rounded-xl p-6 mb-6">

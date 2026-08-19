@@ -6,6 +6,7 @@ const extractor = process.env.POC_USE_REAL_PDF === 'true'
   : require('../services/fixtureExtractor');
 const simplifier = require('../services/plainLanguageSimplifier');
 const resultRepository = require('../services/resultRepository');
+const sourceRepository = require('../services/sourceRepository');
 
 const router = express.Router();
 const upload = multer({
@@ -31,8 +32,32 @@ router.post('/', upload.single('document'), async (req, res, next) => {
       fileName: req.file.originalname,
       mimeType: req.file.mimetype,
     });
-    const saved = await resultRepository.save(result);
+    const source = await sourceRepository.save({
+      id: result.id,
+      buffer: req.file.buffer,
+      fileName: req.file.originalname,
+      mimeType: req.file.mimetype,
+    });
+    const saved = await resultRepository.save({
+      ...result,
+      mimeType: req.file.mimetype,
+      sourceUrl: source.sourceUrl,
+      processingMode: process.env.POC_USE_REAL_PDF === 'true' ? 'real-pdf' : 'fixture',
+    });
     res.status(200).json(saved);
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.get('/:id/source', async (req, res, next) => {
+  try {
+    const result = await resultRepository.findById(req.params.id);
+    if (!result) return res.status(404).json({ error: 'Source document not found.' });
+    const source = await sourceRepository.read(req.params.id, result.fileName);
+    if (!source) return res.status(404).json({ error: 'Source document is no longer available.' });
+    res.set('Cache-Control', 'no-store');
+    res.type(result.mimeType || 'application/pdf').send(source.buffer);
   } catch (error) {
     next(error);
   }
