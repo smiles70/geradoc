@@ -133,6 +133,7 @@ Build and lint verification passed. Formal senior usability testing and comprehe
 - Backend suite passed: 9 test files, 23 tests.
 - POC frontend build and lint passed with zero warnings/errors.
 - Validation remains synchronous and synthetic; async worker and production deployment remain open.
+- Researched and planned P0/P1 UX bug epics for contextual Back navigation and upload/processing lifecycle feedback using W3C, DWP, GOV.UK, Nielsen Norman Group, and older-adult UX research.
 
 ## 2026-08-16 POC Simplification Research Evidence
 
