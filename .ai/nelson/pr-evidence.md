@@ -105,12 +105,25 @@ Build and lint verification passed. Formal senior usability testing and comprehe
 - Do not activate APUCS as user-visible output.
 - Run accessibility and senior-user validation before MVP claims.
 
+## Bridge Validation Evidence
+
+- BRIDGE-001-A through BRIDGE-001-D merged into `develop`.
+- Frozen bridge contract preserves legacy demo result fields.
+- Stable demo components promoted under `poc/frontend/components/` without modifying `demo/`.
+- POC frontend API seam connected to the real processing endpoint.
+- Backend-approved presentation state and REVIEW rendering added.
+- POC frontend build passed.
+- POC frontend lint passed with zero warnings/errors.
+- Backend suite passed: 8 test files, 21 tests.
+- APUCS remains shadow-only.
+
 ## Recommendations
 
-1. Create `feature/bridge-demo-to-poc` from `develop`.
-2. Promote only stable demo components into the POC frontend.
-3. Replace mock data through `poc/frontend/documentApi.js` rather than rewriting the UI.
-4. Re-run Nelson and PRA evidence after the bridge integration.
+1. Implement BRIDGE-001-E staging validation.
+2. Run approved synthetic end-to-end upload tests against the POC API.
+3. Complete async job-state UI after the operational worker is implemented.
+4. Run accessibility and senior-user validation before MVP claims.
+5. Re-run Nelson and PRA evidence after staging bridge validation.
 
 ## 2026-08-16 POC Simplification Research Evidence
 

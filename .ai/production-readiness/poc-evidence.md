@@ -9,6 +9,10 @@ One approved synthetic PDF processed through upload, extraction, simplification 
 - Processor returns the mocked-demo-compatible document contract.
 - Fixture and local extraction paths are replaceable through adapters.
 - Automated contract tests pass.
+- BRIDGE-001-A through BRIDGE-001-D merged into `develop`.
+- Promoted POC frontend builds and lints successfully.
+- Promoted DocumentViewer renders backend-approved REVIEW/presentation metadata.
+- Real upload path is available through `poc/frontend/documentApi.js`.
 
 ## Not Yet Proven
 - Production OCR quality across document classes.
