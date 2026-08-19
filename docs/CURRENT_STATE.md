@@ -73,6 +73,7 @@
 - ✅ Senior persona and bidirectional journey map created; reverse processing-loop fix implemented
 - ✅ True operational state assessed through ontology/knowledge graph; POC classified Managed Risk
 - ✅ Top 25 senior-journey failure and edge-case risk register created
+- ✅ Eight-epic plan created to close all 25 senior-journey risks
 - ✅ NONI/IDD document simplification research memo created
 - ✅ APUCS shadow evaluation specification and synthetic corpus created
 - ✅ Shadow evaluator implemented without changing user-visible simplification
