@@ -405,6 +405,18 @@
       "status": "ready-for-development",
       "description": "Ten-epic portfolio for OCR, Spanish, auth, caregiver, persistence, notifications, APUCS, accessibility, operations, and integrated closure"
     },
+    "rgc-production-gap-closure-developer-guide.md": {
+      "location": "/.ai/production-readiness/rgc-production-gap-closure-developer-guide.md",
+      "processed_date": "2026-08-19",
+      "status": "developer-guide",
+      "description": "Copy/paste developer guide with estimates for RGC-001 through RGC-010"
+    },
+    "rgc-production-gap-guide-execution.md": {
+      "location": "/.ai/production-readiness/rgc-production-gap-guide-execution.md",
+      "processed_date": "2026-08-19",
+      "status": "partially-executed-dependencies-recorded",
+      "description": "Execution record for locally runnable RGC guide sessions and blocked external dependencies"
+    },
     "requirements-ontology-skills": {
       "location": "/.devin/skills/",
       "processed_date": "2026-08-19",
