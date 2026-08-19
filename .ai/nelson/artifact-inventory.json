@@ -210,8 +210,14 @@
     "epic-bridge-ux-bugfixes.md": {
       "location": "/.ai/production-readiness/epic-bridge-ux-bugfixes.md",
       "processed_date": "2026-08-19",
-      "status": "ready-for-development",
+      "status": "in-progress-a-and-b-implemented",
       "description": "Research-backed P0/P1 epics for contextual back navigation and upload/processing feedback"
+    },
+    "bridge-ux-bugfix-validation.md": {
+      "location": "/.ai/production-readiness/bridge-ux-bugfix-validation.md",
+      "processed_date": "2026-08-19",
+      "status": "validation-ready",
+      "description": "Validation record for contextual Back navigation and upload lifecycle feedback fixes"
     },
     "noni-document-simplification-research.md": {
       "location": "/.ai/production-readiness/noni-document-simplification-research.md",

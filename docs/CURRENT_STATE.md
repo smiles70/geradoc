@@ -60,6 +60,7 @@
 - ✅ POC frontend build and lint validated
 - ✅ BRIDGE-001-E staging-like synthetic smoke validation passed
 - ✅ UX bug epics created for contextual Back navigation and upload/processing feedback
+- ✅ Contextual Back navigation and upload lifecycle feedback implemented in bridge branch
 - ✅ POC branch and backend upload boundary created
 - ✅ POC document result contract defined
 - ✅ POC fixture and PDF extraction adapters created

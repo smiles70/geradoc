@@ -4,14 +4,13 @@ import SeniorDashboard from './components/SeniorDashboard';
 import CaregiverDashboard from './components/CaregiverDashboard';
 import ProcessingScreen from './components/ProcessingScreen';
 import DocumentViewer from './components/DocumentViewer';
+import ContextualBackButton from './components/ContextualBackButton';
 
 function App() {
-  const { view, setView, setSelectedDoc, setCompletedActions, persona } = useDemo();
+  const { view, resetDemo, persona } = useDemo();
 
   const reset = () => {
-    setView('landing');
-    setSelectedDoc(null);
-    setCompletedActions(new Set());
+    if (window.confirm('Start over? Your current demo progress will be cleared.')) resetDemo();
   };
 
   const render = () => {
@@ -26,13 +25,17 @@ function App() {
 
   return (
     <div className="relative min-h-screen">
-      {view !== 'landing' && view !== 'processing' && (
-        <button
-          onClick={reset}
-          className="fixed top-4 right-4 z-50 px-4 py-2 bg-slate-800 text-slate-300 rounded-lg hover:bg-slate-700"
-        >
-          Start Over
-        </button>
+      {view !== 'landing' && (
+        <div className="absolute inset-x-4 top-4 z-50 flex items-center justify-between gap-4">
+          <ContextualBackButton />
+          <button
+            type="button"
+            onClick={reset}
+            className="min-h-11 px-4 py-2 bg-slate-800 text-slate-300 rounded-lg hover:bg-slate-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300"
+          >
+            Start Over
+          </button>
+        </div>
       )}
       {render()}
     </div>
