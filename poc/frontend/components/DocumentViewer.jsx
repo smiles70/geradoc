@@ -4,8 +4,6 @@ import KeyInfoCards from './KeyInfoCards';
 import ActionItems from './ActionItems';
 import AccessibilityControls from './AccessibilityControls';
 
-const stateToLevel = { SIMPLE: 'simple', STANDARD: 'standard', DETAILED: 'detailed' };
-
 export default function DocumentViewer() {
   const { selectedDoc, simplificationLevel, setSimplificationLevel } = useDemo();
   const [viewMode, setViewMode] = useState('simple');
@@ -14,11 +12,11 @@ export default function DocumentViewer() {
 
   const metadata = selectedDoc.researchMetadata;
   const approvedState = metadata?.presentationState;
-  const approvedLevel = stateToLevel[approvedState];
   const review = approvedState === 'REVIEW';
-  const level = approvedLevel || simplificationLevel;
+  const level = viewMode === 'original' ? simplificationLevel : viewMode;
   const originalText = selectedDoc.originalText || selectedDoc.fullText || selectedDoc.summary?.detailed || '';
-  const content = viewMode === 'original' ? originalText : selectedDoc.summary?.[approvedLevel || viewMode] || originalText;
+  const content = viewMode === 'original' ? originalText : selectedDoc.summary?.[viewMode] || originalText;
+  const contentParts = content.split(/\n\n|(?<=[.!?])\s+/).map(part => part.trim()).filter(Boolean);
   const pageText = selectedDoc.pageText || [{ page: 1, text: originalText }];
   const sourceUrl = selectedDoc.sourceUrl;
   const tabs = [
@@ -91,7 +89,14 @@ export default function DocumentViewer() {
                 <h3 className="text-xl font-bold text-white">{viewMode === 'original' ? 'Original document' : `${viewMode[0].toUpperCase()}${viewMode.slice(1)} explanation`}</h3>
                 {approvedState && <span className="text-cyan-300">Approved view: {approvedState.toLowerCase()}</span>}
               </div>
-              <div className="text-slate-200 text-lg leading-relaxed whitespace-pre-wrap">{content}</div>
+              <p className="mb-4 text-sm text-cyan-300">Selected view: {viewMode[0].toUpperCase() + viewMode.slice(1)}</p>
+              {viewMode === 'simple' ? (
+                <ul className="list-disc pl-6 text-slate-200 text-lg leading-relaxed space-y-3">
+                  {contentParts.map((part, index) => <li key={index}>{part}</li>)}
+                </ul>
+              ) : (
+                <div className="text-slate-200 text-lg leading-relaxed whitespace-pre-wrap">{content}</div>
+              )}
               {metadata?.confidence !== undefined && <p className="mt-3 text-sm text-slate-400">Processing confidence: {Math.round(metadata.confidence * 100)}%</p>}
             </div>
             <section className="bg-slate-900 border border-slate-800 rounded-xl p-6 mb-6" aria-labelledby="pages-heading">
