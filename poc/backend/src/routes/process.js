@@ -116,11 +116,10 @@ router.delete('/jobs/:id', async (req, res, next) => {
 router.get('/:id/source', async (req, res, next) => {
   try {
     const result = await resultRepository.findById(req.params.id);
-    if (!result) return res.status(404).json({ error: 'Source document not found.' });
-    const source = await sourceRepository.read(req.params.id, result.fileName);
+    const source = await sourceRepository.read(req.params.id, result?.fileName || 'source.pdf');
     if (!source) return res.status(404).json({ error: 'Source document is no longer available.' });
     res.set('Cache-Control', 'no-store');
-    res.type(result.mimeType || 'application/pdf').send(source.buffer);
+    res.type(result?.mimeType || 'application/pdf').send(source.buffer);
   } catch (error) {
     next(error);
   }

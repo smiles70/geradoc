@@ -46,6 +46,7 @@ Thumbs.db
 # Test coverage
 coverage/
 .nyc_output/
+poc/frontend/test-results/
 
 # POC runtime data
 poc/backend/data/results.json
