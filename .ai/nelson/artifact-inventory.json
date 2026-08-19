@@ -1,8 +1,8 @@
 {
   "repo_name": "GeraDoc",
-  "scan_date": "2026-08-16",
-  "current_nelson_score": 86,
-  "last_intake_update": "2026-08-16",
+  "scan_date": "2026-08-18",
+  "current_nelson_score": 87,
+  "last_intake_update": "2026-08-17",
   "artifacts": {
     "required": {
       "README.md": {
@@ -180,8 +180,20 @@
     "epic-mocked-demo.md": {
       "location": "/.ai/production-readiness/epic-mocked-demo.md",
       "processed_date": "2026-08-16",
-      "status": "processed",
-      "description": "Epic for creating a mocked, interactive demo for fundraising and user validation"
+      "status": "completed",
+      "description": "Completed Epic EPC-001 for the mocked interactive demo"
+    },
+    "demo-build": {
+      "location": "/demo",
+      "processed_date": "2026-08-18",
+      "status": "verified-complete",
+      "description": "Verified mocked React demo with senior/caregiver flows and static build"
+    },
+    "epic-demo-poc-bridge.md": {
+      "location": "/.ai/production-readiness/epic-demo-poc-bridge.md",
+      "processed_date": "2026-08-19",
+      "status": "ready-for-development",
+      "description": "Six-epic Process v9.5 plan for promoting completed demo UX into the real-document POC"
     }
   },
   "missing_artifacts": [],
