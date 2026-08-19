@@ -351,6 +351,12 @@
       "status": "managed-risk-operational-assessment",
       "description": "Ontology/knowledge-graph assessment of true POC operational capabilities, gaps, and conflicts"
     },
+    "senior-journey-top-25-risk-register.md": {
+      "location": "/.ai/production-readiness/senior-journey-top-25-risk-register.md",
+      "processed_date": "2026-08-19",
+      "status": "risk-register",
+      "description": "Top 25 senior journey failure and edge-case risks mapped to ontology requirements, gaps, controls, and evidence"
+    },
     "requirements-ontology-skills": {
       "location": "/.devin/skills/",
       "processed_date": "2026-08-19",
