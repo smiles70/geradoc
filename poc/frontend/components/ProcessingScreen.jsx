@@ -37,6 +37,9 @@ export default function ProcessingScreen() {
       <p className="mt-6 text-slate-400 text-sm max-w-md text-center">
         No need to do anything. We will show you the simplified version in a few seconds.
       </p>
+      <button type="button" onClick={() => setView('document')} className="mt-6 min-h-11 px-5 py-2 rounded-lg bg-cyan-500 text-slate-950 font-bold">
+        View your document now
+      </button>
     </div>
   );
 }
