@@ -192,8 +192,14 @@
     "epic-demo-poc-bridge.md": {
       "location": "/.ai/production-readiness/epic-demo-poc-bridge.md",
       "processed_date": "2026-08-19",
-      "status": "ready-for-development",
+      "status": "in-progress-epics-a-through-d-complete",
       "description": "Six-epic Process v9.5 plan for promoting completed demo UX into the real-document POC"
+    },
+    "bridge-validation.md": {
+      "location": "/.ai/production-readiness/bridge-validation.md",
+      "processed_date": "2026-08-19",
+      "status": "validated",
+      "description": "Validation evidence for bridge epics A-D and POC frontend/API integration"
     },
     "noni-document-simplification-research.md": {
       "location": "/.ai/production-readiness/noni-document-simplification-research.md",

@@ -55,6 +55,9 @@
 - ✅ Demo README and walkthrough completed
 - ✅ Demo lint/build validation completed
 - ✅ Six-epic demo-to-POC bridge plan created
+- ✅ BRIDGE-001-A through BRIDGE-001-D merged into `develop`
+- ✅ POC frontend components promoted and real API seam connected
+- ✅ POC frontend build and lint validated
 - ✅ POC branch and backend upload boundary created
 - ✅ POC document result contract defined
 - ✅ POC fixture and PDF extraction adapters created
