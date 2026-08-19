@@ -345,6 +345,12 @@
       "status": "persona-and-journey-traceability",
       "description": "Senior persona definition with forward/reverse journey mapping and current code coverage"
     },
+    "operational-state-ontology-assessment.md": {
+      "location": "/.ai/production-readiness/operational-state-ontology-assessment.md",
+      "processed_date": "2026-08-19",
+      "status": "managed-risk-operational-assessment",
+      "description": "Ontology/knowledge-graph assessment of true POC operational capabilities, gaps, and conflicts"
+    },
     "requirements-ontology-skills": {
       "location": "/.devin/skills/",
       "processed_date": "2026-08-19",
