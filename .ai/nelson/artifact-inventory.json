@@ -405,6 +405,12 @@
       "status": "technical-summary-not-legal-opinion",
       "description": "Non-legal technical summary of APUCS novelty hypothesis and external language-data options"
     },
+    "epic-computational-gap-api-closure-plan.md": {
+      "location": "/.ai/production-readiness/epic-computational-gap-api-closure-plan.md",
+      "processed_date": "2026-08-19",
+      "status": "api-first-closure-plan",
+      "description": "API/interface plan for computational and research-solvable decomposition and production gaps"
+    },
     "epic-poc-functional-closure-decomposition.md": {
       "location": "/.ai/production-readiness/epic-poc-functional-closure-decomposition.md",
       "processed_date": "2026-08-19",
@@ -475,7 +481,7 @@
       "location": "/.devin/skills/",
       "processed_date": "2026-08-19",
       "status": "permanent-operating-layer",
-      "description": "Ontology, traceability, conflict, impact, drift, evidence, canonical-sync, and closeout skills for Process v9.5"
+      "description": "Ontology, traceability, conflict, impact, drift, evidence, canonical-sync, decomposition, journey, E2E, and closeout skills for Process v9.5"
     }
   },
   "missing_artifacts": [],
