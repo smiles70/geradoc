@@ -369,6 +369,12 @@
       "status": "second-tranche-implemented",
       "description": "Evidence for executed senior journey closure tranches and remaining production blockers"
     },
+    "poc-ontology-requirements-persona-journey-assessment.md": {
+      "location": "/.ai/production-readiness/poc-ontology-requirements-persona-journey-assessment.md",
+      "processed_date": "2026-08-19",
+      "status": "managed-risk-state-assessment",
+      "description": "Ontology/knowledge-graph assessment of POC coverage against requirements, personas, and journeys"
+    },
     "requirements-ontology-skills": {
       "location": "/.devin/skills/",
       "processed_date": "2026-08-19",
