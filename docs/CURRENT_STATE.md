@@ -88,6 +88,7 @@
 - ✅ Geragogy synonymity rubric implemented in POC with versioned glossary/thesaurus agreement and idempotence tests
 - ✅ SYN-001 through SYN-006 POC synonymity execution evidence recorded
 - ✅ APUCS semantic condition-parsing intake and non-legal novelty/IP technical summary created; approval gates deferred
+- ✅ Process v9.5 API-first computational gap closure plan and user-outcome/epic-exit skills added
 - ✅ Playwright Firefox all-site button regression report created: before failures documented, after suite 3/3 passed
 - ✅ Epic exit validation/verification guide created for post-coding automated, visual, accessibility, regression, E2E, and Playwright gates
 - ✅ Epic exit test plan executed: backend 35 tests, Playwright 3 tests, build/lint/smoke passed

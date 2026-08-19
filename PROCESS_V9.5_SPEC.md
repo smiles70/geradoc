@@ -814,9 +814,67 @@ Fuzzy similarity, embeddings, and impact mathematics may prioritize review, but 
 
 ---
 
-## 26. Final Operating Statement
+## 26. User-Outcome and Epic-Exit Stewardship Layer
 
-The Process v9.5 turns UI alignment, repository hygiene, requirements traceability, and deep user-outcome decomposition into measurable, enforceable, continuously refreshed delivery quality systems.
+Process v9.5 adds a User-Outcome and Epic-Exit Stewardship Layer. It extends the Requirements Knowledge Steward with deterministic decomposition, state-machine coverage, real-data-path checks, browser E2E, visual/accessibility evidence, and truthful completion gates.
+
+### 26.1 Steward capabilities
+
+- Scope tiering: POC, MVP, production, enterprise, research-only, approval-only.
+- Atomic acceptance decomposition.
+- Persona and journey decomposition.
+- State-machine and recovery modeling.
+- Real-data-path verification.
+- Truthfulness and overclaim auditing.
+- Visual E2E and Playwright orchestration.
+- Accessibility journey orchestration.
+- Evidence freshness checking.
+- Graph idempotence and integrity checking.
+- Epic exit certification.
+
+### 26.2 Required epic exit path
+
+```text
+coding complete
+→ unit/contract tests
+→ integration/API tests
+→ regression suite
+→ Playwright E2E
+→ visual browser review
+→ accessibility journey
+→ failure/recovery matrix
+→ graph/evidence synchronization
+→ epic exit verdict
+```
+
+### 26.3 Epic exit verdicts
+
+- `COMPLETE`: all required P0 criteria and evidence pass.
+- `COMPLETE_WITH_ACCEPTED_RISK`: only documented non-P0 risks remain with owner and next action.
+- `BLOCKED`: provider, decision, approval, or technical dependency prevents closure.
+- `NOT_READY`: code or evidence is incomplete.
+
+A merged PR is not an epic exit by itself.
+
+### 26.4 API-first computational closure
+
+Computational and research-solvable gaps must receive an API/interface plan before being deferred. The plan must identify:
+
+- Endpoint or adapter boundary.
+- Input/output contract.
+- State transitions.
+- Failure and recovery behavior.
+- Security/data boundary.
+- Test fixture and evidence strategy.
+- Explicit external dependency or approval gate.
+
+Human, legal/IP, calibration approval, and production-release approval may be deferred, but their technical interfaces and evidence prerequisites must still be recorded.
+
+---
+
+## 27. Final Operating Statement
+
+The Process v9.5 turns UI alignment, repository hygiene, requirements traceability, deep user-outcome decomposition, user-outcome stewardship, and API-first epic closure into measurable, enforceable, continuously refreshed delivery quality systems.
 
 The Requirements Ontology and Knowledge-Graph Layer ensures that strategic intent, requirements, capabilities, epics, tests, evidence, ownership, dependencies, conflicts, and current-state truth remain connected throughout delivery.
 
