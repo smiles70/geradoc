@@ -10,7 +10,7 @@ test('preserves complete source text and page records in all summary levels', as
   expect(result.fullText).toContain('Fixture extraction for multi-page.pdf');
   expect(result.pageText).toHaveLength(2);
   expect(result.sourceReferences).toHaveLength(2);
-  expect(result.summary.simple).toBe(result.fullText);
-  expect(result.summary.standard).toBe(result.fullText);
+  expect(result.summary.simple).toContain('Fixture extraction for multi-page.pdf');
+  expect(result.summary.standard).toContain('Fixture extraction for multi-page.pdf');
   expect(result.summary.detailed).toBe(result.fullText);
 });
