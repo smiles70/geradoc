@@ -149,6 +149,24 @@ The requirement is not complete until:
 [ ] Screen-reader announcements exist for each state
 ```
 
+## Implementation update
+
+PDF-001 through PDF-003 are now implemented in the bridge branch at the contract and POC level:
+
+- The processor returns `originalText`, `fullText`, `pageText`, `sourceReferences`, `processingStatus`, and complete summary fields.
+- The PDF adapter uses the installed `pdf-parse` API to retain page records and full text.
+- The viewer provides Original, Simple, Standard, Detailed, and full-document-by-page views.
+- The frontend upload lifecycle remains visible with selected, uploading, processing, complete, and error states.
+- Full-document contract regression coverage was added.
+
+Validation after implementation:
+
+```text
+Backend: 10 test files / 24 tests passed
+Frontend build: passed
+Frontend lint: passed with 0 warnings/errors
+```
+
 ## Current conclusion
 
-The observed behavior is a real requirements miss, not merely a display preference. The current bridge passes basic file selection and API connection, but fails the charter's full-document processing and transparent status requirements. The corrective work should be implemented as PDF-001 through PDF-004 before declaring the PDF bridge complete.
+The original filename-only and summary-truncation gaps are addressed at the current POC contract/UI level. PDF-004 remains required for a complete requirement closure: run an approved multi-page PDF through the real extractor, verify late-page content and source references, validate degraded/scanned PDFs, and confirm that all three views preserve complete source meaning. The current baseline summaries are source-preserving and complete, but not yet a calibrated production-quality simplification model.

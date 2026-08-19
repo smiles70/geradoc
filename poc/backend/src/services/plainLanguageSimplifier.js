@@ -1,11 +1,16 @@
+function normalize(text) {
+  return String(text || '').replace(/\s+/g, ' ').trim();
+}
+
 const plainLanguageSimplifier = {
   async simplify(text) {
-    const cleaned = text.replace(/\s+/g, ' ').trim();
+    const fullText = normalize(text);
     return {
-      simple: cleaned.slice(0, 500),
-      standard: cleaned.slice(0, 1200),
-      detailed: cleaned.slice(0, 2500),
+      simple: fullText,
+      standard: fullText,
+      detailed: fullText,
     };
   },
 };
+
 module.exports = plainLanguageSimplifier;
