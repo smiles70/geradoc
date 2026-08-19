@@ -387,6 +387,12 @@
       "status": "ready-for-development",
       "description": "Eight-epic POC functional closure portfolio derived from deep requirements decomposition"
     },
+    "poc-functional-closure-developer-guide.md": {
+      "location": "/.ai/production-readiness/poc-functional-closure-developer-guide.md",
+      "processed_date": "2026-08-19",
+      "status": "developer-guide",
+      "description": "Step-by-step copy/paste implementation guide for POC functional closure under Process v9.5"
+    },
     "requirements-ontology-skills": {
       "location": "/.devin/skills/",
       "processed_date": "2026-08-19",
