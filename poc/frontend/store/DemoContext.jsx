@@ -52,7 +52,8 @@ export function DemoProvider({ children }) {
       }
       const next = [...previous];
       let destination = next.pop();
-      if (destination === 'processing' && next.length) destination = next.pop();
+      while (destination === 'processing' && next.length) destination = next.pop();
+      if (destination === 'processing') destination = 'dashboard';
       setViewState(destination || 'landing');
       return next;
     });
