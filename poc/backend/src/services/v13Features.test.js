@@ -10,6 +10,15 @@ describe('APUCS v1.3 features', () => {
     expect(readabilityGap('The deadline is October 15, 2027.', 0.5).gap).toBeGreaterThanOrEqual(0);
   });
 
+  it('records uncalibrated profile metadata and excludes override from capability estimation', async () => {
+    const observation = { comprehension: 0.6, efficacy: 0.5, strain: 0.2 };
+    const normal = await candidate.simplify('Review the plan.', { interactionObservation: observation });
+    const overridden = await candidate.simplify('Review the plan.', { interactionObservation: observation, userOverrideLevel: 'DETAILED' });
+    expect(normal.researchMetadata.calibrationStatus).toBe('uncalibrated');
+    expect(normal.researchMetadata.calibrationProfileVersion).toBe('uncalibrated-default-v1');
+    expect(overridden.metadata.interactionState.capability).toBe(normal.metadata.interactionState.capability);
+  });
+
   it('honors a valid user level override when hard constraints pass', async () => {
     const result = await candidate.simplify('Review the plan by October 15, 2027.', { userOverrideLevel: 'DETAILED' });
     expect(result.metadata.presentationState).toBe('DETAILED');

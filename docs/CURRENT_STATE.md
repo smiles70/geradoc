@@ -88,6 +88,7 @@
 - ✅ Geragogy synonymity rubric implemented in POC with versioned glossary/thesaurus agreement and idempotence tests
 - ✅ SYN-001 through SYN-006 POC synonymity execution evidence recorded
 - ✅ APUCS semantic condition-parsing intake and non-legal novelty/IP technical summary created; approval gates deferred
+- ✅ APUCS IDD v1.2 technical-closure addendum created with calibration, REVIEW, extraction, and monitoring controls
 - ✅ Process v9.5 API-first computational gap closure plan and user-outcome/epic-exit skills added
 - ✅ OCR provider research completed; PaddleOCR recommended as primary local structured OCR experiment
 - ✅ PaddleOCR benchmark harness executed; OCR dependencies unavailable in current environment and user-visible OCR remains disabled

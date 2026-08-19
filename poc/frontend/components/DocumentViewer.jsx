@@ -5,7 +5,7 @@ import ActionItems from './ActionItems';
 import AccessibilityControls from './AccessibilityControls';
 
 export default function DocumentViewer() {
-  const { selectedDoc, simplificationLevel, setSimplificationLevel } = useDemo();
+  const { selectedDoc, simplificationLevel, setSimplificationLevel, setView } = useDemo();
   const [viewMode, setViewMode] = useState('simple');
 
   if (!selectedDoc) return null;
@@ -63,6 +63,10 @@ export default function DocumentViewer() {
             <h3 className="text-xl font-bold text-amber-200 mb-2">We need to check this document</h3>
             <p className="text-slate-200">Some important information could not be confirmed safely. We will not guess. Please review the original document or try another scan.</p>
             {metadata.reviewFlags?.length > 0 && <ul className="mt-3 list-disc pl-5 text-amber-100">{metadata.reviewFlags.map(flag => <li key={flag}>{flag}</li>)}</ul>}
+            <div className="mt-4 flex flex-wrap gap-3">
+              {sourceUrl && <a href={sourceUrl} target="_blank" rel="noreferrer" className="min-h-11 px-4 py-2 rounded-lg bg-amber-700 text-white font-semibold">Inspect original</a>}
+              <button type="button" onClick={() => setView('dashboard')} className="min-h-11 px-4 py-2 rounded-lg bg-slate-700 text-white font-semibold">Try another document</button>
+            </div>
           </section>
         ) : (
           <>
