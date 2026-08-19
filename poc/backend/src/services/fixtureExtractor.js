@@ -1,4 +1,5 @@
 const fixtureExtractor = {
+  version: 'fixture-v1',
   async extract({ fileName }) {
     const text = `Fixture extraction for ${fileName}`;
     return {

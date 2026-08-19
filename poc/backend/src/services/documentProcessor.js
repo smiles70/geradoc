@@ -1,5 +1,6 @@
 const crypto = require('crypto');
 const { deriveGeragogicalFacts } = require('./geragogicalExtractor');
+const { fingerprint } = require('./configFingerprint');
 
 class DocumentProcessor {
   constructor({ extractor, simplifier }) {
@@ -15,7 +16,9 @@ class DocumentProcessor {
       error.code = 'EMPTY_EXTRACTION';
       throw error;
     }
-    const summaries = await this.simplifier.simplify(fullText, { language: extracted.language || 'en', domain: extracted.domain || 'general' });
+    const language = extracted.language || 'en';
+    const summaries = await this.simplifier.simplify(fullText, { language, domain: extracted.domain || 'general' });
+    const configuration = fingerprint({ algorithmVersion: this.simplifier.version || 'baseline-poc', processingMode: this.extractor.version || 'fixture', language });
     const derived = deriveGeragogicalFacts({ text: fullText, pageText: extracted.pageText, fileName });
     const keyInfo = extracted.keyInfo?.length ? extracted.keyInfo : derived.keyInfo;
     const actions = extracted.actions?.length ? extracted.actions : derived.actions;
@@ -27,7 +30,7 @@ class DocumentProcessor {
       pages: extracted.pages || extracted.pageText?.length || 1,
       originalText: fullText,
       fullText,
-      language: extracted.language || 'en',
+      language,
       layoutClass: extracted.layoutClass || 'unknown',
       extractionConfidence: extracted.extractionConfidence ?? 1,
       pageText: extracted.pageText || [{ page: 1, text: fullText }],
@@ -38,6 +41,7 @@ class DocumentProcessor {
       actions,
       reviewFlags: extracted.reviewFlags || derived.reviewFlags,
       processingStatus: 'complete',
+      configuration,
     };
   }
 }
