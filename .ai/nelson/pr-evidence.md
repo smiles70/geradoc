@@ -161,6 +161,8 @@ Build and lint verification passed. Formal senior usability testing and comprehe
 - Created APUCS semantic condition-parsing intake and non-legal novelty/IP technical summary; searched current free dictionary/thesaurus options and deferred legal/IP, human-equivalence, calibration, and production-release approvals.
 - Updated Process v9.5 with API-first computational closure and added scope-tiering, atomic acceptance, persona/journey, state-machine, real-data, truthfulness, visual E2E, and graph closeout skills.
 - Researched official OCR options against Charter/design: PaddleOCR recommended as primary local structured OCR experiment; Tesseract/OCRmyPDF retained as baseline/fallback; cloud OCR benchmark-only.
+- Executed PaddleOCR benchmark harness: PaddleOCR, Tesseract, and OCRmyPDF are unavailable in the current environment; adapter remains REVIEW-only and user-visible OCR is disabled.
+- Refreshed outstanding coding epic status report.
 - UX-BUG-001-C integrated validation remains open until slow-network, keyboard, screen-reader, and senior-user scenarios are executed.
 - PDF upload/full-document behavior was validated against BRD/FRD/PRD; PDF-001 through PDF-003 are implemented and PDF-004 real/degraded-document validation remains required.
 - POC now returns complete source/page text and the viewer exposes Original, Simple, Standard, Detailed, and full-document-by-page views.
