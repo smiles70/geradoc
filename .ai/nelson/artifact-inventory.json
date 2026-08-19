@@ -417,6 +417,18 @@
       "status": "technical-recommendation-paddleocr-primary",
       "description": "Official-source comparison of free/local OCR options against ClarityDoc Charter and design constraints"
     },
+    "outstanding-coding-epic-status.md": {
+      "location": "/.ai/production-readiness/outstanding-coding-epic-status.md",
+      "processed_date": "2026-08-19",
+      "status": "coding-status-report",
+      "description": "Status of implemented, partial, not-started, and externally blocked coding epics"
+    },
+    "paddleOcrBenchmark.mjs": {
+      "location": "/poc/scripts/paddleOcrBenchmark.mjs",
+      "processed_date": "2026-08-19",
+      "status": "dependency-inventory-harness",
+      "description": "PaddleOCR/Tesseract/OCRmyPDF availability and recommendation benchmark harness"
+    },
     "epic-poc-functional-closure-decomposition.md": {
       "location": "/.ai/production-readiness/epic-poc-functional-closure-decomposition.md",
       "processed_date": "2026-08-19",
