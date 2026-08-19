@@ -219,6 +219,12 @@
       "status": "validation-ready",
       "description": "Validation record for contextual Back navigation and upload lifecycle feedback fixes"
     },
+    "poc-ux-review.md": {
+      "location": "/.ai/production-readiness/poc-ux-review.md",
+      "processed_date": "2026-08-19",
+      "status": "critical-fixes-implemented",
+      "description": "Full POC UX review covering navigation, upload, processing, accessibility, caregiver, and full-document viewing"
+    },
     "bridge-pdf-upload-validation.md": {
       "location": "/.ai/production-readiness/bridge-pdf-upload-validation.md",
       "processed_date": "2026-08-19",
@@ -236,6 +242,18 @@
       "processed_date": "2026-08-19",
       "status": "developer-guide",
       "description": "Step-by-step Process v9.5 developer guide with copy/paste code blocks for technical closure"
+    },
+    "requirements-knowledge-graph.json": {
+      "location": "/.ai/nelson/requirements-knowledge-graph.json",
+      "processed_date": "2026-08-19",
+      "status": "traceability-graph",
+      "description": "Ontology and directed knowledge graph linking sources, requirements, capabilities, epics, tests, gaps, and conflicts"
+    },
+    "requirements-knowledge-graph-cross-check.md": {
+      "location": "/.ai/production-readiness/requirements-knowledge-graph-cross-check.md",
+      "processed_date": "2026-08-19",
+      "status": "cross-check-report",
+      "description": "Cross-check of BRD, FRD, PRD, technical, operational, bridge, PDF, and APUCS requirements"
     },
     "noni-document-simplification-research.md": {
       "location": "/.ai/production-readiness/noni-document-simplification-research.md",

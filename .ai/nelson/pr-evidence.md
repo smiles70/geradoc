@@ -135,10 +135,16 @@ Build and lint verification passed. Formal senior usability testing and comprehe
 - Validation remains synchronous and synthetic; async worker and production deployment remain open.
 - Researched and planned P0/P1 UX bug epics for contextual Back navigation and upload/processing lifecycle feedback using W3C, DWP, GOV.UK, Nielsen Norman Group, and older-adult UX research.
 - Implemented UX-BUG-001-A/B: contextual Back navigation, separated Start Over reset, upload/processing lifecycle status, completion confirmation, retry, and accessible announcements.
+- Full POC UX review completed; critical fixes include accessibility state wiring, actionable backend file errors, and truthful POC copy.
 - UX-BUG-001-C integrated validation remains open until slow-network, keyboard, screen-reader, and senior-user scenarios are executed.
 - PDF upload/full-document behavior was validated against BRD/FRD/PRD; PDF-001 through PDF-003 are implemented and PDF-004 real/degraded-document validation remains required.
 - POC now returns complete source/page text and the viewer exposes Original, Simple, Standard, Detailed, and full-document-by-page views.
 - Created an eight-epic English/Spanish technical closure portfolio with backlog user stories and a copy/paste developer guide.
+- Added ontology/knowledge-graph cross-check across BRD, FRD, PRD, technical, operational, bridge, PDF, and APUCS artifacts.
+- Recorded material conflicts: 50MB versus 10MB file limit, async architecture versus synchronous POC, and requirement-document authority/status mismatch.
+- Added permanent Process v9.5 ontology/knowledge-graph layer to `PROCESS_V9.5_SPEC.md`.
+- Added `.devin/skills/` for ontology, traceability, conflict, impact, drift, evidence, canonical sync, and closeout workflows.
+- Updated the APUCS technical closure guide to require graph updates and traceability gates in every session.
 - Validation: backend 10 test files/24 tests passed; frontend build and lint passed.
 
 ## 2026-08-16 POC Simplification Research Evidence
