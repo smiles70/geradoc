@@ -134,6 +134,8 @@ Build and lint verification passed. Formal senior usability testing and comprehe
 - POC frontend build and lint passed with zero warnings/errors.
 - Validation remains synchronous and synthetic; async worker and production deployment remain open.
 - Researched and planned P0/P1 UX bug epics for contextual Back navigation and upload/processing lifecycle feedback using W3C, DWP, GOV.UK, Nielsen Norman Group, and older-adult UX research.
+- Implemented UX-BUG-001-A/B: contextual Back navigation, separated Start Over reset, upload/processing lifecycle status, completion confirmation, retry, and accessible announcements.
+- UX-BUG-001-C integrated validation remains open until slow-network, keyboard, screen-reader, and senior-user scenarios are executed.
 
 ## 2026-08-16 POC Simplification Research Evidence
 

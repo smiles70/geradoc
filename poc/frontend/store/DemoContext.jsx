@@ -3,7 +3,8 @@ import { createContext, useContext, useState } from 'react';
 const DemoContext = createContext();
 
 export function DemoProvider({ children }) {
-  const [view, setView] = useState('landing');
+  const [view, setViewState] = useState('landing');
+  const [, setHistory] = useState([]);
   const [selectedDoc, setSelectedDoc] = useState(null);
   const [simplificationLevel, setSimplificationLevel] = useState('standard');
   const [completedActions, setCompletedActions] = useState(new Set());
@@ -11,12 +12,38 @@ export function DemoProvider({ children }) {
   const [fontSize, setFontSize] = useState('medium');
   const [highContrast, setHighContrast] = useState(false);
 
+  const setView = (nextView) => {
+    setViewState(current => {
+      if (current !== nextView) setHistory(previous => [...previous, current]);
+      return nextView;
+    });
+  };
+
+  const goBack = () => {
+    setHistory(previous => {
+      if (!previous.length) {
+        setViewState('landing');
+        return previous;
+      }
+      const next = [...previous];
+      setViewState(next.pop());
+      return next;
+    });
+  };
+
+  const resetDemo = () => {
+    setHistory([]);
+    setViewState('landing');
+    setSelectedDoc(null);
+    setCompletedActions(new Set());
+  };
+
   const markActionComplete = (id) => {
-    setCompletedActions(prev => new Set([...prev, id]));
+    setCompletedActions(previous => new Set([...previous, id]));
   };
 
   const value = {
-    view, setView,
+    view, setView, goBack, resetDemo,
     selectedDoc, setSelectedDoc,
     simplificationLevel, setSimplificationLevel,
     completedActions, setCompletedActions, markActionComplete,
