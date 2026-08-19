@@ -76,6 +76,8 @@
 - ✅ Eight-epic plan created to close all 25 senior-journey risks
 - ✅ First senior-journey closure tranche executed: async jobs, idempotency, empty-extraction gate, and browser-session recovery
 - ✅ Second closure tranche executed: language/layout metadata, correlation IDs, focus restoration, and document-tab semantics
+- ✅ POC assessed against all graph-mapped requirements, personas, and user journeys; classified Managed Risk
+- ✅ Requirements graph refreshed with current async, source, session, language, layout, correlation, and accessibility capabilities
 - ✅ NONI/IDD document simplification research memo created
 - ✅ APUCS shadow evaluation specification and synthetic corpus created
 - ✅ Shadow evaluator implemented without changing user-visible simplification
