@@ -357,6 +357,12 @@
       "status": "risk-register",
       "description": "Top 25 senior journey failure and edge-case risks mapped to ontology requirements, gaps, controls, and evidence"
     },
+    "epic-senior-journey-risk-closure.md": {
+      "location": "/.ai/production-readiness/epic-senior-journey-risk-closure.md",
+      "processed_date": "2026-08-19",
+      "status": "ready-for-development",
+      "description": "Eight-epic plan to close all 25 senior journey failure and edge-case risks"
+    },
     "requirements-ontology-skills": {
       "location": "/.devin/skills/",
       "processed_date": "2026-08-19",
