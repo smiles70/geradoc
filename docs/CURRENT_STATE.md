@@ -8,6 +8,7 @@
 **Phase**: Year 1 - Research & POC → MVP Development
 **Nelson Score**: 87/100 (Enterprise Mature)
 **PRA Score**: 72/100 (Production with Conditions)
+**POC Status**: D2 JSON persistence boundary implemented and tested; APUCS remains shadow-only pending human/IP gates
 
 ## Intake Summary
 
@@ -54,11 +55,38 @@
 - ✅ Demo README and walkthrough completed
 - ✅ Demo lint/build validation completed
 - ✅ Six-epic demo-to-POC bridge plan created
+- ✅ POC branch and backend upload boundary created
+- ✅ POC document result contract defined
+- ✅ POC fixture and PDF extraction adapters created
+- ✅ NONI/IDD document simplification research memo created
+- ✅ APUCS shadow evaluation specification and synthetic corpus created
+- ✅ Shadow evaluator implemented without changing user-visible simplification
+- ✅ Baseline-versus-candidate shadow report generated over 100 synthetic cases and 300 outputs
+- ✅ APUCS technical shadow gate passes anchor, action, provenance, and contradiction checks
+- ✅ APUCS typed anchors, structured actions, uncertainty decomposition, hysteresis, REVIEW routing, advice boundary, and audit chain implemented in research mode
+- ✅ APUCS versioned researchMetadata contract added without breaking the legacy summary contract
+- ✅ APUCS human evaluation protocol created with research safeguards
+- ✅ Seventeen backend tests pass across upload, persistence, estimator, candidate, technical gates, and evaluator paths
+- ✅ D2 JSON persistence boundary implemented with result retrieval endpoint
+- ✅ Supplied IDD prepared and archived to the project USB drive
+- ✅ Comprehensive APUCS IDD v1.0 prepared with USPTO criteria mapping and prior-art research library
+- ✅ APUCS IDD v1.1 prepared with gap-closure audit, revised math, expanded novelty analysis, and evidence log
+- ✅ APUCS Technical Specification v1.1 triple-checked with correction report
+- ✅ APUCS Technical Specification v1.2 generalization upgrade validated
+- ✅ APUCS Technical Specification v1.3 state, demand, and agency upgrade implemented in research mode
+- ✅ APUCS Technical Specification v1.3 validation report created and reconciled with current code
+- ✅ APUCS v1.3 user journeys with worked illustrative math ingested and reconciled
+- ✅ Application Charter technical functionality and capability status report created
 
 ## What Is Incomplete
 
 - ⏳ POC bridge from `demo/` components to real API
 - ⏳ Real document processing and production simplification
+- ⏳ Human evaluation of the NONI-derived research candidate
+- ⏳ Real/degraded document validation and estimator parameter calibration
+- ⏳ IP/patent review and freedom-to-operate analysis
+- ⏳ Provider evaluation and production API hardening
+- ⏳ PostgreSQL/S3/queue migration beyond the JSON POC repository
 - ⏳ CI/CD pipeline setup
 - ⏳ Development environment configuration
 - ⏳ External API integrations (GroupDocs, Stripe)
@@ -186,6 +214,14 @@
 - Monthly churn <4%
 - Health plans expressing interest in partnerships
 - 70%+ of users report ≥50% comprehension improvement
+
+## POC Progress
+
+- ✅ POC branch established under Process v9.5 feature workflow
+- ✅ Real-document upload and processing boundary implemented in `poc/`
+- ✅ Mocked-demo-compatible document result contract defined
+- ✅ Adapter and contract-test strategy established
+- ⏳ Production OCR/provider selection, auth, database, queue, and cloud storage remain future work
 
 ---
 

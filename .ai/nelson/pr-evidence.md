@@ -112,6 +112,44 @@ Build and lint verification passed. Formal senior usability testing and comprehe
 3. Replace mock data through `poc/frontend/documentApi.js` rather than rewriting the UI.
 4. Re-run Nelson and PRA evidence after the bridge integration.
 
+## 2026-08-16 POC Simplification Research Evidence
+
+- Reviewed the supplied IDD and NONI technical patterns.
+- Documented APUCS as a proposed anchor-preserving, uncertainty-constrained simplification research direction.
+- Recorded the distinction between source concepts, proposed adaptation, and unresolved patent/IP questions.
+- Paused D2 persistence implementation until simplification evaluation, legal/IP review, and acceptance gates are defined.
+- Current simplifier remains explicitly provisional truncation logic.
+- Added `apucs-evaluation.md` and synthetic corpus fixtures.
+- Added a shadow-only evaluator for anchor recall, readability, and divergence proxy metrics.
+- Tests pass: 6 test files, 12 tests.
+- Added a research-only APUCS candidate and generated a baseline-versus-candidate shadow report over 100 synthetic cases.
+- The shadow report preserves the user-visible placeholder and does not certify factuality or legal clearance.
+- Expanded corpus to 100 synthetic cases and 300 candidate outputs.
+- Technical shadow gate passed: minimum anchor recall 1.0, action recall 1.0, provenance coverage 1.0, contradictions 0.
+- Added interaction state estimator, APUCS v1 candidate, reproducibility digest, and human evaluation protocol.
+- Supplied IDD archived to the USB drive for traceability.
+- Comprehensive APUCS IDD prepared with USPTO criteria mapping, prior-art search library, claim themes, and unresolved counsel decisions.
+- APUCS IDD v1.1 adds concrete estimator structure, uncertainty decomposition, hysteresis, review state, audit-chain reproducibility, advice-boundary constraints, and expanded prior-art hypotheses.
+- v1.1 preserves open status for real-data calibration, human evaluation, inventorship, filing status, and freedom-to-operate.
+- Triple-check validation identified four normative corrections: covariance decomposition, observation mapping, JS soft/hard consistency, and versioned API compatibility.
+- Validation verdict: research implementation ready with corrections; not production-approved.
+- Added Application Charter technical functionality/capability status report, including legal, compliance, and human-validation boundaries.
+- Implemented technical gap closure in research mode: typed anchors, structured actions, uncertainty decomposition, hysteresis/REVIEW controller, advice boundary, audit chain, and versioned research metadata.
+- Technical verification: 7 test files, 17 tests passed; 100-case shadow corpus gate passed.
+- Validated APUCS v1.2 generalization upgrade: schema profiles, pluggable backends, multi-format/layout ingestion, English/Spanish boundary, modality decoupling, rendering separation, and calibration transfer.
+- v1.2 validation identified implementation-open items; the specification is research-ready but the added capabilities are not yet implemented.
+- v1.3 research update implemented six-dimensional state, self-efficacy bias correction, capability output, demand/load separation, and explicit user-agency override.
+- v1.3 tests pass: 8 test files, 21 tests; user-visible baseline remains unchanged and APUCS remains shadow-only.
+- Validated supplied v1.3 specification against implementation; clarified capability-gap versus semantic-divergence naming, H/telemetry mapping, Q/R calibration language, JS soft-signal conflict, and hard-constraint behavior for overrides.
+- Ingested APUCS v1.3 user journeys with five worked walkthroughs and marked all numerical values as illustrative placeholders.
+
+## 2026-08-16 D2 Persistence Evidence
+
+- Added JSON result repository with `save`, `findById`, and `readAll` operations.
+- Processing route now persists results and exposes `GET /api/process/:id`.
+- Runtime results are excluded from Git.
+- Repository and route tests pass.
+
 ---
 
 *Generated with Process v9.5 - Nelson Repo Hygiene*

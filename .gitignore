@@ -47,6 +47,9 @@ Thumbs.db
 coverage/
 .nyc_output/
 
+# POC runtime data
+poc/backend/data/results.json
+
 # Cache
 .cache/
 .parcel-cache/

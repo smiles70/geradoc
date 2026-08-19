@@ -202,6 +202,16 @@ All contributions should maintain or improve the Nelson Repo Score:
 
 ## Git Commit Standards
 
+**Future Commit Attribution**
+
+Application ownership is `@Kmiles`. Existing history is preserved. New commits should use the Kmiles identity explicitly in the commit environment or the contributor's approved local Git identity:
+
+```bash
+GIT_AUTHOR_NAME="Kmiles" GIT_COMMITTER_NAME="Kmiles" git commit -m "type(scope): subject"
+```
+
+Email may be omitted when the local Git environment permits it. Do not add Devin as an author or co-author to new commits.
+
 **Commit Message Format**
 ```
 type(scope): subject
