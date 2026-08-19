@@ -82,6 +82,7 @@
 - ✅ POC functional-closure epic portfolio created from the decomposition audit
 - ✅ POC functional-closure step-by-step developer guide created with copy/paste code blocks
 - ✅ POC functional-closure validation and visual verification guide created
+- ✅ Remaining production-gap epic portfolio RGC-001 through RGC-010 created and graph-mapped
 - ✅ NONI/IDD document simplification research memo created
 - ✅ APUCS shadow evaluation specification and synthetic corpus created
 - ✅ Shadow evaluator implemented without changing user-visible simplification
