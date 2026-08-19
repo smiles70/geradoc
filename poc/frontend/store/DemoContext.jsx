@@ -1,16 +1,41 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 
 const DemoContext = createContext();
+const SESSION_KEY = 'claritydoc-poc-session';
+
+function readSession() {
+  try {
+    return JSON.parse(window.localStorage.getItem(SESSION_KEY)) || {};
+  } catch {
+    return {};
+  }
+}
 
 export function DemoProvider({ children }) {
-  const [view, setViewState] = useState('landing');
+  const saved = readSession();
+  const [view, setViewState] = useState(saved.view || 'landing');
   const [, setHistory] = useState([]);
-  const [selectedDoc, setSelectedDoc] = useState(null);
-  const [simplificationLevel, setSimplificationLevel] = useState('standard');
-  const [completedActions, setCompletedActions] = useState(new Set());
-  const [persona, setPersona] = useState('senior');
-  const [fontSize, setFontSize] = useState('medium');
-  const [highContrast, setHighContrast] = useState(false);
+  const [selectedDoc, setSelectedDoc] = useState(saved.selectedDoc || null);
+  const [simplificationLevel, setSimplificationLevel] = useState(saved.simplificationLevel || 'standard');
+  const [completedActions, setCompletedActions] = useState(new Set(saved.completedActions || []));
+  const [persona, setPersona] = useState(saved.persona || 'senior');
+  const [fontSize, setFontSize] = useState(saved.fontSize || 'medium');
+  const [highContrast, setHighContrast] = useState(Boolean(saved.highContrast));
+
+  useEffect(() => {
+    try {
+      window.localStorage.setItem(SESSION_KEY, JSON.stringify({
+        view: view === 'processing' ? 'dashboard' : view,
+        selectedDoc,
+        simplificationLevel,
+        completedActions: [...completedActions],
+        persona,
+        fontSize,
+        highContrast,
+      }));
+    } catch {
+    }
+  }, [view, selectedDoc, simplificationLevel, completedActions, persona, fontSize, highContrast]);
 
   const setView = (nextView) => {
     setViewState(current => {
@@ -38,6 +63,7 @@ export function DemoProvider({ children }) {
     setViewState('landing');
     setSelectedDoc(null);
     setCompletedActions(new Set());
+    window.localStorage.removeItem(SESSION_KEY);
   };
 
   const markActionComplete = (id) => {

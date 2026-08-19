@@ -140,6 +140,8 @@ Build and lint verification passed. Formal senior usability testing and comprehe
 - Assessed true operational state through the ontology/knowledge graph: controlled research POC, Managed Risk, production blocked by five high-severity gaps and three material conflicts.
 - Created top-25 senior-journey failure/edge-case risk register mapped to requirements, graph gaps, controls, and evidence.
 - Created eight-epic closure portfolio mapping all 25 risks to implementation stories, dependencies, acceptance criteria, and final journey gates.
+- Executed first closure tranche: durable async job API, idempotency, empty-extraction rejection, source persistence boundary, and browser-session recovery.
+- Execution validation: backend 10 test files/27 tests passed; frontend build and lint passed.
 - UX-BUG-001-C integrated validation remains open until slow-network, keyboard, screen-reader, and senior-user scenarios are executed.
 - PDF upload/full-document behavior was validated against BRD/FRD/PRD; PDF-001 through PDF-003 are implemented and PDF-004 real/degraded-document validation remains required.
 - POC now returns complete source/page text and the viewer exposes Original, Simple, Standard, Detailed, and full-document-by-page views.

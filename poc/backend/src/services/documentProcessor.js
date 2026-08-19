@@ -7,6 +7,11 @@ class DocumentProcessor {
   async process({ buffer, fileName, mimeType }) {
     const extracted = await this.extractor.extract({ buffer, fileName, mimeType });
     const fullText = extracted.fullText || extracted.text || '';
+    if (!fullText.trim()) {
+      const error = new Error('We could not find readable text in this document.');
+      error.code = 'EMPTY_EXTRACTION';
+      throw error;
+    }
     const summaries = await this.simplifier.simplify(fullText);
     return {
       id: `poc-${Date.now()}`,
