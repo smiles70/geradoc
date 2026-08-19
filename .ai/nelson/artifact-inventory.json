@@ -207,6 +207,12 @@
       "status": "validated",
       "description": "Synthetic staging-like validation for health, readiness, upload, persistence, retrieval, frontend build, and lint"
     },
+    "epic-bridge-ux-bugfixes.md": {
+      "location": "/.ai/production-readiness/epic-bridge-ux-bugfixes.md",
+      "processed_date": "2026-08-19",
+      "status": "ready-for-development",
+      "description": "Research-backed P0/P1 epics for contextual back navigation and upload/processing feedback"
+    },
     "noni-document-simplification-research.md": {
       "location": "/.ai/production-readiness/noni-document-simplification-research.md",
       "processed_date": "2026-08-16",
