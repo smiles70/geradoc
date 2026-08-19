@@ -321,7 +321,6 @@
       "status": "research-walkthroughs",
       "description": "Five end-to-end APUCS user journeys with illustrative math, review/override behavior, and implementation caveats"
     }
-    }
   },
   "missing_artifacts": [],
   "stale_artifacts": [],
