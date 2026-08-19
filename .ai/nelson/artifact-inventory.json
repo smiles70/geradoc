@@ -399,6 +399,18 @@
       "status": "validation-and-visual-guide",
       "description": "Step-by-step automated, visual, accessibility, failure, recovery, and evidence guide for POC closure"
     },
+    "poc-operational-gate-plan.md": {
+      "location": "/.ai/production-readiness/poc-operational-gate-plan.md",
+      "processed_date": "2026-08-19",
+      "status": "ready-for-development",
+      "description": "Controlled POC operational gate plan and acceptance matrix"
+    },
+    "poc-operational-gate-reassessment.md": {
+      "location": "/.ai/production-readiness/poc-operational-gate-reassessment.md",
+      "processed_date": "2026-08-19",
+      "status": "automated-pass-visual-partial",
+      "description": "Reassessment after full automated suite and POC gate smoke test"
+    },
     "epic-remaining-production-gap-closure.md": {
       "location": "/.ai/production-readiness/epic-remaining-production-gap-closure.md",
       "processed_date": "2026-08-19",

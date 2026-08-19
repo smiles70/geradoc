@@ -28,6 +28,7 @@ describe('POST /api/process', () => {
       }),
       keyInfo: expect.any(Array),
       actions: expect.any(Array),
+      orientation: expect.objectContaining({ whyItMatters: expect.any(String) }),
     }));
 
     const retrieved = await request(app).get(`/api/process/${response.body.id}`);
