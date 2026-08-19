@@ -58,6 +58,7 @@
 - ✅ BRIDGE-001-A through BRIDGE-001-D merged into `develop`
 - ✅ POC frontend components promoted and real API seam connected
 - ✅ POC frontend build and lint validated
+- ✅ BRIDGE-001-E staging-like synthetic smoke validation passed
 - ✅ POC branch and backend upload boundary created
 - ✅ POC document result contract defined
 - ✅ POC fixture and PDF extraction adapters created

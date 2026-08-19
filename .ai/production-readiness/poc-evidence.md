@@ -13,6 +13,10 @@ One approved synthetic PDF processed through upload, extraction, simplification 
 - Promoted POC frontend builds and lints successfully.
 - Promoted DocumentViewer renders backend-approved REVIEW/presentation metadata.
 - Real upload path is available through `poc/frontend/documentApi.js`.
+- BRIDGE-001-E staging-like validation passed with synthetic input.
+- Backend: 9 test files and 23 tests passed.
+- POC frontend build and lint passed.
+- Health, readiness, synthetic processing, persistence, and retrieval smoke checks passed.
 
 ## Not Yet Proven
 - Production OCR quality across document classes.
