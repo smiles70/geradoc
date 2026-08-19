@@ -1,3 +1,6 @@
+const crypto = require('crypto');
+const { deriveGeragogicalFacts } = require('./geragogicalExtractor');
+
 class DocumentProcessor {
   constructor({ extractor, simplifier }) {
     this.extractor = extractor;
@@ -13,8 +16,11 @@ class DocumentProcessor {
       throw error;
     }
     const summaries = await this.simplifier.simplify(fullText);
+    const derived = deriveGeragogicalFacts({ text: fullText, pageText: extracted.pageText, fileName });
+    const keyInfo = extracted.keyInfo?.length ? extracted.keyInfo : derived.keyInfo;
+    const actions = extracted.actions?.length ? extracted.actions : derived.actions;
     return {
-      id: `poc-${Date.now()}`,
+      id: `poc-${crypto.randomUUID()}`,
       type: extracted.type || 'Unknown',
       title: extracted.title || fileName,
       fileName,
@@ -27,8 +33,10 @@ class DocumentProcessor {
       pageText: extracted.pageText || [{ page: 1, text: fullText }],
       sourceReferences: extracted.sourceReferences || [],
       summary: summaries,
-      keyInfo: extracted.keyInfo || [],
-      actions: extracted.actions || [],
+      orientation: extracted.orientation || derived.orientation,
+      keyInfo,
+      actions,
+      reviewFlags: extracted.reviewFlags || derived.reviewFlags,
       processingStatus: 'complete',
     };
   }
