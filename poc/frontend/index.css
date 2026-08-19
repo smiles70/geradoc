@@ -13,6 +13,19 @@ body {
 button, input { font: inherit; }
 :focus-visible { outline: 3px solid #22d3ee; outline-offset: 3px; }
 
+.font-scale-small .text-sm { font-size: 0.8rem !important; }
+.font-scale-small .text-lg { font-size: 1rem !important; }
+.font-scale-small .text-xl { font-size: 1.1rem !important; }
+.font-scale-small .text-2xl { font-size: 1.35rem !important; }
+.font-scale-small .text-3xl { font-size: 1.7rem !important; }
+.font-scale-small .text-4xl { font-size: 2rem !important; }
+.font-scale-large .text-sm { font-size: 1.1rem !important; }
+.font-scale-large .text-lg { font-size: 1.4rem !important; }
+.font-scale-large .text-xl { font-size: 1.65rem !important; }
+.font-scale-large .text-2xl { font-size: 2rem !important; }
+.font-scale-large .text-3xl { font-size: 2.5rem !important; }
+.font-scale-large .text-4xl { font-size: 3rem !important; }
+
 .high-contrast { background: #000; color: #fff; }
 .high-contrast .bg-slate-950,
 .high-contrast .bg-slate-900,

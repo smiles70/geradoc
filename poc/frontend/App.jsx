@@ -10,7 +10,7 @@ import ContextualBackButton from './components/ContextualBackButton';
 function App() {
   const { view, resetDemo, persona, fontSize, highContrast } = useDemo();
   const contentRef = useRef(null);
-  const fontClass = { small: 'text-base', medium: 'text-lg', large: 'text-xl' }[fontSize] || 'text-lg';
+  const fontClass = `font-scale-${fontSize || 'medium'}`;
 
   useEffect(() => {
     contentRef.current?.focus();
