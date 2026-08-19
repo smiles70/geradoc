@@ -53,6 +53,13 @@ export default function DocumentViewer() {
           </section>
         )}
 
+        {selectedDoc.orientation && (
+          <section className="bg-cyan-950/50 border border-cyan-500 rounded-xl p-5 mb-6" aria-labelledby="orientation-heading">
+            <h3 id="orientation-heading" className="text-xl font-bold text-cyan-200 mb-2">What this document is about</h3>
+            <p className="text-slate-200">{selectedDoc.orientation.whyItMatters}</p>
+          </section>
+        )}
+
         {review ? (
           <section role="alert" className="bg-amber-950/50 border border-amber-400 rounded-xl p-6 mb-6">
             <h3 className="text-xl font-bold text-amber-200 mb-2">We need to check this document</h3>

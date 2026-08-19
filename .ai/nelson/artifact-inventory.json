@@ -393,6 +393,12 @@
       "status": "developer-guide",
       "description": "Step-by-step copy/paste implementation guide for POC functional closure under Process v9.5"
     },
+    "poc-functional-closure-validation-and-visual-guide.md": {
+      "location": "/.ai/production-readiness/poc-functional-closure-validation-and-visual-guide.md",
+      "processed_date": "2026-08-19",
+      "status": "validation-and-visual-guide",
+      "description": "Step-by-step automated, visual, accessibility, failure, recovery, and evidence guide for POC closure"
+    },
     "requirements-ontology-skills": {
       "location": "/.devin/skills/",
       "processed_date": "2026-08-19",
