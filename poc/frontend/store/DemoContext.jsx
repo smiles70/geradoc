@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useState } from 'react';
 
 const DemoContext = createContext();
 const SESSION_KEY = 'claritydoc-poc-session';
@@ -37,14 +37,14 @@ export function DemoProvider({ children }) {
     }
   }, [view, selectedDoc, simplificationLevel, completedActions, persona, fontSize, highContrast]);
 
-  const setView = (nextView) => {
+  const setView = useCallback((nextView) => {
     setViewState(current => {
       if (current !== nextView) setHistory(previous => [...previous, current]);
       return nextView;
     });
-  };
+  }, []);
 
-  const goBack = () => {
+  const goBack = useCallback(() => {
     setHistory(previous => {
       if (!previous.length) {
         setViewState('landing');
@@ -57,19 +57,19 @@ export function DemoProvider({ children }) {
       setViewState(destination || 'landing');
       return next;
     });
-  };
+  }, []);
 
-  const resetDemo = () => {
+  const resetDemo = useCallback(() => {
     setHistory([]);
     setViewState('landing');
     setSelectedDoc(null);
     setCompletedActions(new Set());
     window.localStorage.removeItem(SESSION_KEY);
-  };
+  }, []);
 
-  const markActionComplete = (id) => {
+  const markActionComplete = useCallback((id) => {
     setCompletedActions(previous => new Set([...previous, id]));
-  };
+  }, []);
 
   const value = {
     view, setView, goBack, resetDemo,

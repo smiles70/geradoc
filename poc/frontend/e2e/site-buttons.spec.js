@@ -30,6 +30,7 @@ test('all landing, persona, sample, action, navigation, and reset buttons work',
   for (let index = 0; index < count; index += 1) {
     await startSenior(page);
     await samples.nth(index).click();
+    await page.getByRole('button', { name: 'View your document now' }).click();
     await expect(page.getByRole('heading', { name: /Medicare|Bank Statement|Property Tax/ })).toBeVisible({ timeout: 10000 });
     const done = page.getByRole('button', { name: 'Done' }).first();
     if (await done.count()) {
