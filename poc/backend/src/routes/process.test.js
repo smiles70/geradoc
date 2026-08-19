@@ -18,6 +18,8 @@ describe('POST /api/process', () => {
       title: 'Medicare Advantage Renewal Letter',
       fileName: 'sample.pdf',
       pages: 2,
+      sourceUrl: expect.stringContaining('/api/process/'),
+      processingMode: 'fixture',
       savedAt: expect.any(String),
       summary: expect.objectContaining({
         simple: expect.any(String),
@@ -31,6 +33,11 @@ describe('POST /api/process', () => {
     const retrieved = await request(app).get(`/api/process/${response.body.id}`);
     expect(retrieved.status).toBe(200);
     expect(retrieved.body.id).toBe(response.body.id);
+
+    const source = await request(app).get(`/api/process/${response.body.id}/source`);
+    expect(source.status).toBe(200);
+    expect(source.headers['content-type']).toContain('application/pdf');
+    expect(source.body).toEqual(Buffer.from('%PDF-1.4 test'));
   });
 
   it('rejects unsupported file types with an actionable error', async () => {

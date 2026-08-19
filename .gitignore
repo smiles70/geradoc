@@ -49,6 +49,9 @@ coverage/
 
 # POC runtime data
 poc/backend/data/results.json
+poc/backend/data/jobs.json
+poc/backend/data/events.json
+poc/backend/data/uploads/
 
 # Cache
 .cache/

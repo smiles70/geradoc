@@ -20,6 +20,9 @@
     },
     "keyInfo": {"type": "array"},
     "actions": {"type": "array"},
+    "mimeType": {"type": "string"},
+    "sourceUrl": {"type": "string"},
+    "processingMode": {"enum": ["fixture", "real-pdf"]},
     "researchMetadata": {
       "type": "object",
       "properties": {
