@@ -225,6 +225,18 @@
       "status": "partial-closure-pdf-001-through-003-complete",
       "description": "BRD/FRD/PRD validation of PDF upload progress, full-document extraction, and complete viewing behavior"
     },
+    "epic-apucs-technical-closure-en-es.md": {
+      "location": "/.ai/production-readiness/epic-apucs-technical-closure-en-es.md",
+      "processed_date": "2026-08-19",
+      "status": "ready-for-development",
+      "description": "Eight-epic English/Spanish technical closure portfolio with backlog user stories and gates"
+    },
+    "apucs-technical-closure-guide.html": {
+      "location": "/.ai/production-readiness/apucs-technical-closure-guide.html",
+      "processed_date": "2026-08-19",
+      "status": "developer-guide",
+      "description": "Step-by-step Process v9.5 developer guide with copy/paste code blocks for technical closure"
+    },
     "noni-document-simplification-research.md": {
       "location": "/.ai/production-readiness/noni-document-simplification-research.md",
       "processed_date": "2026-08-16",
