@@ -219,6 +219,12 @@
       "status": "validation-ready",
       "description": "Validation record for contextual Back navigation and upload lifecycle feedback fixes"
     },
+    "bridge-pdf-upload-validation.md": {
+      "location": "/.ai/production-readiness/bridge-pdf-upload-validation.md",
+      "processed_date": "2026-08-19",
+      "status": "requirements-failed-corrective-epics-required",
+      "description": "BRD/FRD/PRD validation of PDF upload progress, full-document extraction, and complete viewing behavior"
+    },
     "noni-document-simplification-research.md": {
       "location": "/.ai/production-readiness/noni-document-simplification-research.md",
       "processed_date": "2026-08-16",
