@@ -411,6 +411,12 @@
       "status": "automated-pass-visual-partial",
       "description": "Reassessment after full automated suite and POC gate smoke test"
     },
+    "playwright-before-after-report.html": {
+      "location": "/.ai/production-readiness/playwright-before-after-report.html",
+      "processed_date": "2026-08-19",
+      "status": "e2e-before-after-report",
+      "description": "HTML report documenting Playwright regressions, fixes, and final passing coverage"
+    },
     "epic-remaining-production-gap-closure.md": {
       "location": "/.ai/production-readiness/epic-remaining-production-gap-closure.md",
       "processed_date": "2026-08-19",
