@@ -148,6 +148,7 @@ Build and lint verification passed. Formal senior usability testing and comprehe
 - Refreshed graph coverage from 40 nodes/27 edges to 47 nodes/35 edges to represent current async, source, session, language, layout, correlation, and accessibility capabilities.
 - Completed deep requirements decomposition audit; added geragogy capability nodes, under-decomposition gaps, and a permanent Process v9.5 deep-decomposition gate.
 - Created POC functional-closure epic portfolio with eight implementation epics, user stories, dependency order, and decomposition-based exit gates.
+- Created copy/paste POC functional-closure developer guide covering idempotent graph decomposition, geragogy, extraction, jobs, recovery, accessibility, Spanish, authorization, observability, and final gates.
 - UX-BUG-001-C integrated validation remains open until slow-network, keyboard, screen-reader, and senior-user scenarios are executed.
 - PDF upload/full-document behavior was validated against BRD/FRD/PRD; PDF-001 through PDF-003 are implemented and PDF-004 real/degraded-document validation remains required.
 - POC now returns complete source/page text and the viewer exposes Original, Simple, Standard, Detailed, and full-document-by-page views.

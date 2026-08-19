@@ -80,6 +80,7 @@
 - ✅ Requirements graph refreshed with current async, source, session, language, layout, correlation, and accessibility capabilities
 - ✅ Deep requirements decomposition audit completed; geragogy and other under-decomposed areas added to the graph and Process gates
 - ✅ POC functional-closure epic portfolio created from the decomposition audit
+- ✅ POC functional-closure step-by-step developer guide created with copy/paste code blocks
 - ✅ NONI/IDD document simplification research memo created
 - ✅ APUCS shadow evaluation specification and synthetic corpus created
 - ✅ Shadow evaluator implemented without changing user-visible simplification
