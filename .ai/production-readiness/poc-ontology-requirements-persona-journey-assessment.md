@@ -26,7 +26,7 @@ The ontology confirms that the repository has a real working POC path, but it do
 
 ```text
 Graph nodes:       62
-Graph edges:       50
+Graph edges:       49
 Requirements:      12
 Capabilities:      22
 Artifacts:         10
