@@ -79,6 +79,7 @@
 - ✅ POC assessed against all graph-mapped requirements, personas, and user journeys; classified Managed Risk
 - ✅ Requirements graph refreshed with current async, source, session, language, layout, correlation, and accessibility capabilities
 - ✅ Deep requirements decomposition audit completed; geragogy and other under-decomposed areas added to the graph and Process gates
+- ✅ POC functional-closure epic portfolio created from the decomposition audit
 - ✅ NONI/IDD document simplification research memo created
 - ✅ APUCS shadow evaluation specification and synthetic corpus created
 - ✅ Shadow evaluator implemented without changing user-visible simplification

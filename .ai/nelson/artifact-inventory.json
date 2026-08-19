@@ -381,6 +381,12 @@
       "status": "decomposition-audit",
       "description": "Audit of high-level requirements lacking persona, journey, capability, code, test, evidence, owner, failure, and recovery decomposition"
     },
+    "epic-poc-functional-closure-decomposition.md": {
+      "location": "/.ai/production-readiness/epic-poc-functional-closure-decomposition.md",
+      "processed_date": "2026-08-19",
+      "status": "ready-for-development",
+      "description": "Eight-epic POC functional closure portfolio derived from deep requirements decomposition"
+    },
     "requirements-ontology-skills": {
       "location": "/.devin/skills/",
       "processed_date": "2026-08-19",
