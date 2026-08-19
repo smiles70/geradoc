@@ -399,6 +399,12 @@
       "status": "validation-and-visual-guide",
       "description": "Step-by-step automated, visual, accessibility, failure, recovery, and evidence guide for POC closure"
     },
+    "epic-remaining-production-gap-closure.md": {
+      "location": "/.ai/production-readiness/epic-remaining-production-gap-closure.md",
+      "processed_date": "2026-08-19",
+      "status": "ready-for-development",
+      "description": "Ten-epic portfolio for OCR, Spanish, auth, caregiver, persistence, notifications, APUCS, accessibility, operations, and integrated closure"
+    },
     "requirements-ontology-skills": {
       "location": "/.devin/skills/",
       "processed_date": "2026-08-19",

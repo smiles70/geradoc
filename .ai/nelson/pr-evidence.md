@@ -150,6 +150,7 @@ Build and lint verification passed. Formal senior usability testing and comprehe
 - Created POC functional-closure epic portfolio with eight implementation epics, user stories, dependency order, and decomposition-based exit gates.
 - Created copy/paste POC functional-closure developer guide covering idempotent graph decomposition, geragogy, extraction, jobs, recovery, accessibility, Spanish, authorization, observability, and final gates.
 - Created validation/visual verification guide covering automated checks, senior forward/reverse journey, uploaded-document geragogy, accessibility, failure/recovery matrix, screenshots, and evidence capture.
+- Created remaining production-gap portfolio RGC-001 through RGC-010 for OCR/layout, Spanish, identity, caregiver permissions, persistence, notifications, APUCS activation, accessibility, operations, and integrated closure.
 - UX-BUG-001-C integrated validation remains open until slow-network, keyboard, screen-reader, and senior-user scenarios are executed.
 - PDF upload/full-document behavior was validated against BRD/FRD/PRD; PDF-001 through PDF-003 are implemented and PDF-004 real/degraded-document validation remains required.
 - POC now returns complete source/page text and the viewer exposes Original, Simple, Standard, Detailed, and full-document-by-page views.
