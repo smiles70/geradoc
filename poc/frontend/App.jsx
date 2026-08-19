@@ -7,7 +7,8 @@ import DocumentViewer from './components/DocumentViewer';
 import ContextualBackButton from './components/ContextualBackButton';
 
 function App() {
-  const { view, resetDemo, persona } = useDemo();
+  const { view, resetDemo, persona, fontSize, highContrast } = useDemo();
+  const fontClass = { small: 'text-base', medium: 'text-lg', large: 'text-xl' }[fontSize] || 'text-lg';
 
   const reset = () => {
     if (window.confirm('Start over? Your current demo progress will be cleared.')) resetDemo();
@@ -24,7 +25,7 @@ function App() {
   };
 
   return (
-    <div className="relative min-h-screen">
+    <div className={`relative min-h-screen ${fontClass} ${highContrast ? 'high-contrast' : ''}`}>
       {view !== 'landing' && (
         <div className="absolute inset-x-4 top-4 z-50 flex items-center justify-between gap-4">
           <ContextualBackButton />

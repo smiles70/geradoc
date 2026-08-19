@@ -21,6 +21,16 @@ app.get('/ready', async (_req, res) => {
   }
 });
 app.use('/api/process', processRouter);
+app.use((error, _req, res, _next) => {
+  if (error.code === 'LIMIT_FILE_SIZE') {
+    return res.status(413).json({ error: 'This file is too large. Please choose a file smaller than 10 MB.', code: error.code });
+  }
+  if (error.code === 'UNSUPPORTED_FILE_TYPE') {
+    return res.status(415).json({ error: error.message, code: error.code });
+  }
+  console.error('POC request failed:', error.message);
+  return res.status(500).json({ error: 'We could not complete that request. Please try again.', code: 'INTERNAL_ERROR' });
+});
 
 if (require.main === module) {
   app.listen(process.env.PORT || 8000, () => console.log('POC API listening'));

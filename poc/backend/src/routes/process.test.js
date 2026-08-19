@@ -33,6 +33,14 @@ describe('POST /api/process', () => {
     expect(retrieved.body.id).toBe(response.body.id);
   });
 
+  it('rejects unsupported file types with an actionable error', async () => {
+    const response = await request(app)
+      .post('/api/process')
+      .attach('document', Buffer.from('not a supported document'), 'notes.txt');
+    expect(response.status).toBe(415);
+    expect(response.body.error).toContain('PDF');
+  });
+
   it('returns 404 for an unknown result', async () => {
     const response = await request(app).get('/api/process/missing-result');
     expect(response.status).toBe(404);
