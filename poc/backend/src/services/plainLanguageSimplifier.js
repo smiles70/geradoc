@@ -9,9 +9,9 @@ function sentenceBreaks(text) {
 }
 
 const plainLanguageSimplifier = {
-  async simplify(text) {
+  async simplify(text, { language = 'en', domain = 'general' } = {}) {
     const source = String(text || '').trim();
-    const transformed = applyApprovedSynonyms(source).text;
+    const transformed = applyApprovedSynonyms(source, { language, domain }).text;
     return {
       simple: sentenceBreaks(transformed),
       standard: normalize(transformed),

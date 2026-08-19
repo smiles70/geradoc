@@ -387,6 +387,12 @@
       "status": "partial-closure-poc-rubric-implemented",
       "description": "Idempotent glossary/thesaurus synonymity closure plan and rubric"
     },
+    "geragogy-synonymity-execution.md": {
+      "location": "/.ai/production-readiness/geragogy-synonymity-execution.md",
+      "processed_date": "2026-08-19",
+      "status": "poc-rubric-complete-production-pending",
+      "description": "Execution evidence for SYN-001 through SYN-006 POC synonymity rubric"
+    },
     "epic-poc-functional-closure-decomposition.md": {
       "location": "/.ai/production-readiness/epic-poc-functional-closure-decomposition.md",
       "processed_date": "2026-08-19",

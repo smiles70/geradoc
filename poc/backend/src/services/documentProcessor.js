@@ -15,7 +15,7 @@ class DocumentProcessor {
       error.code = 'EMPTY_EXTRACTION';
       throw error;
     }
-    const summaries = await this.simplifier.simplify(fullText);
+    const summaries = await this.simplifier.simplify(fullText, { language: extracted.language || 'en', domain: extracted.domain || 'general' });
     const derived = deriveGeragogicalFacts({ text: fullText, pageText: extracted.pageText, fileName });
     const keyInfo = extracted.keyInfo?.length ? extracted.keyInfo : derived.keyInfo;
     const actions = extracted.actions?.length ? extracted.actions : derived.actions;
