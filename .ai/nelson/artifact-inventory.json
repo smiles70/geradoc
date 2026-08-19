@@ -423,6 +423,12 @@
       "status": "validation-and-visual-guide",
       "description": "Step-by-step automated, visual, accessibility, failure, recovery, and evidence guide for POC closure"
     },
+    "epic-exit-validation-verification-guide.md": {
+      "location": "/.ai/production-readiness/epic-exit-validation-verification-guide.md",
+      "processed_date": "2026-08-19",
+      "status": "epic-exit-guide",
+      "description": "Post-coding exit guide for automated, visual, accessibility, regression, E2E, Playwright, and graph evidence closure"
+    },
     "poc-operational-gate-plan.md": {
       "location": "/.ai/production-readiness/poc-operational-gate-plan.md",
       "processed_date": "2026-08-19",
