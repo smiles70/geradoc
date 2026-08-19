@@ -136,7 +136,9 @@ Build and lint verification passed. Formal senior usability testing and comprehe
 - Researched and planned P0/P1 UX bug epics for contextual Back navigation and upload/processing lifecycle feedback using W3C, DWP, GOV.UK, Nielsen Norman Group, and older-adult UX research.
 - Implemented UX-BUG-001-A/B: contextual Back navigation, separated Start Over reset, upload/processing lifecycle status, completion confirmation, retry, and accessible announcements.
 - UX-BUG-001-C integrated validation remains open until slow-network, keyboard, screen-reader, and senior-user scenarios are executed.
-- PDF upload/full-document behavior was validated against BRD/FRD/PRD and failed the complete-document acceptance gate; corrective PDF-001 through PDF-004 epics are required.
+- PDF upload/full-document behavior was validated against BRD/FRD/PRD; PDF-001 through PDF-003 are implemented and PDF-004 real/degraded-document validation remains required.
+- POC now returns complete source/page text and the viewer exposes Original, Simple, Standard, Detailed, and full-document-by-page views.
+- Validation: backend 10 test files/24 tests passed; frontend build and lint passed.
 
 ## 2026-08-16 POC Simplification Research Evidence
 

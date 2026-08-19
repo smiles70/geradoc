@@ -222,7 +222,7 @@
     "bridge-pdf-upload-validation.md": {
       "location": "/.ai/production-readiness/bridge-pdf-upload-validation.md",
       "processed_date": "2026-08-19",
-      "status": "requirements-failed-corrective-epics-required",
+      "status": "partial-closure-pdf-001-through-003-complete",
       "description": "BRD/FRD/PRD validation of PDF upload progress, full-document extraction, and complete viewing behavior"
     },
     "noni-document-simplification-research.md": {
