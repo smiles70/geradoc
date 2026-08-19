@@ -66,6 +66,7 @@ Health:
 ```bash
 curl -fsS http://localhost:8000/health
 curl -fsS http://localhost:8000/ready
+POC_API_URL=http://localhost:8000 node poc/scripts/pocGateSmokeTest.mjs
 ```
 
 Async upload:
