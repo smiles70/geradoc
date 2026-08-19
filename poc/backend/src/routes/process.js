@@ -26,7 +26,7 @@ const upload = multer({
 });
 const processor = new DocumentProcessor({ extractor, simplifier });
 
-async function processUploadedFile(file, jobId = null) {
+async function processUploadedFile(file, jobId = null, requestId = null) {
   const result = await processor.process({
     buffer: file.buffer,
     fileName: file.originalname,
@@ -41,6 +41,7 @@ async function processUploadedFile(file, jobId = null) {
   return resultRepository.save({
     ...result,
     jobId,
+    requestId,
     mimeType: file.mimetype,
     sourceUrl: source.sourceUrl,
     processingMode: process.env.POC_USE_REAL_PDF === 'true' ? 'real-pdf' : 'fixture',
@@ -50,7 +51,7 @@ async function processUploadedFile(file, jobId = null) {
 router.post('/', upload.single('document'), async (req, res, next) => {
   try {
     if (!req.file) return res.status(400).json({ error: 'Upload a document.' });
-    const saved = await processUploadedFile(req.file);
+    const saved = await processUploadedFile(req.file, null, req.requestId);
     res.status(200).json(saved);
   } catch (error) {
     next(error);
@@ -66,6 +67,7 @@ router.post('/jobs', upload.single('document'), async (req, res, next) => {
     const job = await jobRepository.save({
       id: `job-${crypto.randomUUID()}`,
       idempotencyKey: idempotencyKey || null,
+      requestId: req.requestId,
       fileName: req.file.originalname,
       status: 'queued',
       createdAt: new Date().toISOString(),
@@ -74,7 +76,7 @@ router.post('/jobs', upload.single('document'), async (req, res, next) => {
     setImmediate(async () => {
       await jobRepository.update(job.id, { status: 'processing' });
       try {
-        const result = await processUploadedFile(req.file, job.id);
+        const result = await processUploadedFile(req.file, job.id, req.requestId);
         const current = await jobRepository.findById(job.id);
         if (current?.status !== 'cancelled') {
           await jobRepository.update(job.id, { status: 'complete', resultId: result.id, sourceUrl: result.sourceUrl });

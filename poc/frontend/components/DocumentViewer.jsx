@@ -36,7 +36,11 @@ export default function DocumentViewer() {
           <div className="text-cyan-400 font-semibold">{selectedDoc.type}</div>
           <h2 className="text-3xl font-bold text-white">{selectedDoc.title}</h2>
           <p className="text-slate-400">{selectedDoc.fileName} · {selectedDoc.pages || pageText.length} pages</p>
-          {selectedDoc.processingMode && <p className="mt-2 text-sm text-slate-400">Processing mode: {selectedDoc.processingMode}</p>}
+          <div className="mt-2 flex flex-wrap gap-3 text-sm text-slate-400">
+            {selectedDoc.processingMode && <span>Processing mode: {selectedDoc.processingMode}</span>}
+            {selectedDoc.language && <span>Language: {selectedDoc.language}</span>}
+            {selectedDoc.layoutClass && <span>Layout: {selectedDoc.layoutClass.replaceAll('_', ' ')}</span>}
+          </div>
         </div>
 
         {sourceUrl && (
