@@ -27,7 +27,7 @@ export default function DocumentViewer() {
   ];
 
   return (
-    <div className="min-h-screen p-6 bg-slate-950">
+    <div className="min-h-screen p-6 pt-20 bg-slate-950">
       <AccessibilityControls />
       <div className="max-w-4xl mx-auto">
         <div className="mb-6">
