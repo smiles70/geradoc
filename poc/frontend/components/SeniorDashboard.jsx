@@ -43,9 +43,9 @@ export default function SeniorDashboard() {
       setStatus('COMPLETE');
       setSelectedDoc(result);
       window.setTimeout(() => setView('document'), 500);
-    } catch {
+    } catch (processingError) {
       setStatus('ERROR');
-      setError('We could not process this document. You can try again or choose another file.');
+      setError(processingError.message || 'We could not process this document. You can try again or choose another file.');
     } finally {
       window.clearTimeout(processingTimer);
     }

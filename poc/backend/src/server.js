@@ -35,7 +35,7 @@ app.use((error, _req, res, _next) => {
   if (error.code === 'UNSUPPORTED_FILE_TYPE') {
     return res.status(415).json({ error: error.message, code: error.code });
   }
-  if (error.code === 'EMPTY_EXTRACTION') {
+  if (error.code === 'EMPTY_EXTRACTION' || error.code === 'PDF_PARSE_ERROR') {
     return res.status(422).json({ error: error.message, code: error.code });
   }
   console.error('POC request failed:', error.message);

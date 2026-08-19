@@ -25,6 +25,11 @@ const pdfExtractor = {
         keyInfo: [],
         actions: [],
       };
+    } catch (error) {
+      const normalized = new Error('We could not read this PDF. Please try a different PDF or scan.');
+      normalized.code = 'PDF_PARSE_ERROR';
+      normalized.cause = error;
+      throw normalized;
     } finally {
       await parser.destroy();
     }
