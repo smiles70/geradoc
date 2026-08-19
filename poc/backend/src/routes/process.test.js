@@ -1,5 +1,6 @@
 const request = require('supertest');
 const app = require('../server');
+const sourceRepository = require('../services/sourceRepository');
 
 describe('POST /api/process', () => {
   it('rejects a request without a document', async () => {
@@ -72,6 +73,13 @@ describe('POST /api/process', () => {
       .attach('document', Buffer.from('not a supported document'), 'notes.txt');
     expect(response.status).toBe(415);
     expect(response.body.error).toContain('PDF');
+  });
+
+  it('serves a persisted source even when a stale local result record is missing', async () => {
+    await sourceRepository.save({ id: 'stale-source', buffer: Buffer.from('%PDF-1.4 stale source'), fileName: 'stale.pdf', mimeType: 'application/pdf' });
+    const response = await request(app).get('/api/process/stale-source/source');
+    expect(response.status).toBe(200);
+    expect(response.headers['content-type']).toContain('application/pdf');
   });
 
   it('returns 404 for an unknown result', async () => {
