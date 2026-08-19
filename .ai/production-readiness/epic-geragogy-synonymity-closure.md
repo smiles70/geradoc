@@ -2,7 +2,7 @@
 
 **Portfolio ID**: GERAGOGY-SYN-001  
 **Process**: v9.5  
-**Status**: Ready for Development  
+**Status**: POC Rubric Implemented; Production/Calibrated Closure Pending  
 **Scope**: Safe POC transformation using approved glossary/thesaurus agreement; calibrated APUCS activation remains separate
 
 ## Objective

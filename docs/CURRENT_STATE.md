@@ -86,6 +86,7 @@
 - ✅ RGC copy/paste developer guide created and locally executable sessions run with blockers recorded
 - ✅ POC Operational Gate executed: automated gate PASS; visual/senior execution remains explicitly partial until checklist evidence is captured
 - ✅ Geragogy synonymity rubric implemented in POC with versioned glossary/thesaurus agreement and idempotence tests
+- ✅ SYN-001 through SYN-006 POC synonymity execution evidence recorded
 - ✅ Playwright Firefox all-site button regression report created: before failures documented, after suite 3/3 passed
 - ✅ NONI/IDD document simplification research memo created
 - ✅ APUCS shadow evaluation specification and synthetic corpus created

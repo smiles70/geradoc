@@ -155,6 +155,7 @@ Build and lint verification passed. Formal senior usability testing and comprehe
 - POC Operational Gate executed and reassessed: automated gate PASS, fixture smoke PASS, visual/senior execution remains partial pending evidence capture.
 - Playwright Firefox regression completed: before failures documented; after suite covers 3 tests and passes all site button/journey checks.
 - Implemented POC geragogy synonymity rubric with versioned approved pairs, glossary/thesaurus cross-agreement, protected-anchor rejection, and idempotence tests.
+- SYN-001 through SYN-006 POC rubric execution complete: English/Spanish pair tests, idempotence, anchor preservation, and full suite passed; calibrated/production gates remain separate.
 - UX-BUG-001-C integrated validation remains open until slow-network, keyboard, screen-reader, and senior-user scenarios are executed.
 - PDF upload/full-document behavior was validated against BRD/FRD/PRD; PDF-001 through PDF-003 are implemented and PDF-004 real/degraded-document validation remains required.
 - POC now returns complete source/page text and the viewer exposes Original, Simple, Standard, Detailed, and full-document-by-page views.
