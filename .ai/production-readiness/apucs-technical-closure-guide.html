@@ -1,0 +1,119 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>APUCS Technical Closure Guide</title><style>:root{--bg:#0b0d12;--p:#151b26;--p2:#202a3b;--line:#35445b;--text:#eef5ff;--muted:#aab7c8;--cyan:#28d7ee;--green:#42e29d;--purple:#9b78ff;--amber:#ffd166}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#17243b,#0b0d12 48%);color:var(--text);font:16px/1.65 system-ui,sans-serif}header{padding:54px 22px;text-align:center;background:linear-gradient(135deg,#39207a,#086378)}h1{font-size:clamp(1.8rem,5vw,3rem);margin:0}header p{max-width:850px;margin:12px auto;color:#e1fbff}.wrap{max-width:1000px;margin:auto;padding:22px}.intro,.epic,.check{background:#151b26f5;border:1px solid var(--line);border-radius:14px;margin:20px 0;box-shadow:0 12px 40px #0007}.intro,.check{padding:23px}h2,h3{color:var(--cyan)}.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px}.stat{background:var(--p2);border-radius:9px;padding:12px;text-align:center}.stat b{display:block;color:var(--green);font-size:1.5rem}.stat small{color:var(--muted);text-transform:uppercase}.bar{position:sticky;top:0;z-index:5;padding:11px 22px;background:#0b0d12ed;border-bottom:1px solid var(--line)}.track{height:8px;background:#26344b;border-radius:9px}.fill{height:100%;width:0;background:linear-gradient(90deg,var(--purple),var(--cyan),var(--green));transition:.2s}.pct{text-align:right;color:var(--muted);font-size:.8rem}.epic{overflow:hidden}.head{display:flex;align-items:center;gap:12px;padding:18px;background:var(--p2);cursor:pointer}.head h2,.head h3{margin:0;flex:1}.num{width:34px;height:34px;border-radius:50%;background:var(--purple);display:grid;place-items:center;font-weight:800;flex:none}.arrow{color:var(--cyan)}.body{display:none;padding:20px}.open>.body{display:block}.open .arrow{transform:rotate(180deg)}.session{border:1px solid var(--line);border-radius:10px;margin:14px 0;overflow:hidden}.session .head{padding:14px}.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:9px;margin-bottom:16px}.meta div{padding:9px;background:var(--p2);border-radius:7px}.meta small{display:block;color:var(--muted);text-transform:uppercase;font-size:.68rem}.meta strong{color:var(--cyan)}.code{background:#080a0f;border:1px solid var(--line);border-radius:8px;margin:15px 0;overflow:hidden}.codebar{display:flex;justify-content:space-between;padding:7px 11px;background:var(--p2);color:var(--muted);font-size:.8rem}.copy{background:var(--purple);color:#fff;border:0;border-radius:5px;padding:5px 10px;cursor:pointer}.code pre{margin:0;padding:14px;overflow:auto;color:#d9eaff;font:12px/1.5 ui-monospace,Consolas,monospace}.tag{display:inline-block;border-radius:20px;padding:3px 9px;font-size:.7rem;font-weight:800;text-transform:uppercase}.human{background:#513b08;color:#ffe18a}.code-tag{background:#104050;color:#79edff}.gate{padding:13px 15px;background:#073b2c66;border-left:4px solid var(--green);border-radius:0 8px 8px 0;margin:15px 0}.warn{padding:13px 15px;background:#4d380a66;border-left:4px solid var(--amber);border-radius:0 8px 8px 0;margin:15px 0}.item{display:flex;gap:10px;padding:7px 0}.item input{width:20px;height:20px;accent-color:var(--green)}code{color:var(--cyan)}footer{text-align:center;color:var(--muted);padding:30px}@media(max-width:620px){.wrap{padding:12px}.body{padding:15px}pre{font-size:11px}}</style></head><body><header><h1>APUCS Technical Closure</h1><p>Process v9.5 developer guide for closing the English and Spanish technical capability gaps. Human/legal/comprehension gates are intentionally outside this guide.</p></header><div class="bar"><div class="track"><div id="fill" class="fill"></div></div><div id="pct" class="pct">0% complete</div></div><main class="wrap"><section class="intro"><h2>Outcome</h2><p>After these sessions, the repository will have schema-driven anchors, pluggable candidate backends, full ingestion boundaries, English/Spanish profiles, modality/calibration infrastructure, content/rendering separation, and operational closure evidence. Keep APUCS shadow-only until separately approved.</p><div class="stats"><div class="stat"><b>8</b><small>Epics</small></div><div class="stat"><b>16</b><small>Sessions</small></div><div class="stat"><b>EN/ES</b><small>Languages</small></div><div class="stat"><b>~2–4 wk</b><small>Engineering</small></div></div><div class="warn"><b>Important:</b> Calibration values are configuration placeholders until approved outcome data exists. Do not activate uncalibrated thresholds or expose APUCS as user-visible output.</div></section>
+<section class="check"><h2>Start checklist</h2><div class="item"><input type="checkbox" class="done">Read APUCS v1.3 validation</div><div class="item"><input type="checkbox" class="done">Use a feature branch from develop</div><div class="item"><input type="checkbox" class="done">Run backend and frontend tests before changes</div><div class="item"><input type="checkbox" class="done">Use synthetic or approved documents only</div></section>
+<section class="epic open"><div class="head" onclick="toggle(this)"><span class="num">1</span><h2>Epic — Contract and Schema Foundation</h2><span class="arrow">⌄</span></div><div class="body"><div class="session open"><div class="head" onclick="toggle(this)"><span class="num">1</span><h3>Session 1.1 — Create English/Spanish domain profiles</h3><span class="tag code-tag">Code</span><span class="arrow">⌄</span></div><div class="body"><div class="meta"><div><small>Time</small><strong>30m</strong></div><div><small>Tokens</small><strong>~8K</strong></div></div><p>Create profiles as data, not hardcoded branch logic.</p><div class="code"><div class="codebar">Terminal <button class="copy" onclick="copy(this)">Copy</button></div><pre>mkdir -p poc/config/profiles/insurance poc/config/profiles/legal
+cat &gt; poc/config/profiles/insurance/en.json &lt;&lt; 'EOF'
+{"domain":"insurance","language":"en","version":"1.0","anchor_types":["DATE","AMOUNT","DEADLINE","ENTITY","OBLIGATION","NEGATION","CONDITION","CONTACT","IDENTIFIER"]}
+EOF
+cat &gt; poc/config/profiles/insurance/es.json &lt;&lt; 'EOF'
+{"domain":"insurance","language":"es","version":"1.0","anchor_types":["DATE","AMOUNT","DEADLINE","ENTITY","OBLIGATION","NEGATION","CONDITION","CONTACT","IDENTIFIER"]}
+EOF
+</pre></div><div class="gate"><b>Close:</b> profile schema and taxonomy version are loadable and included in audit metadata.</div></div></div><div class="session"><div class="head" onclick="toggle(this)"><span class="num">2</span><h3>Session 1.2 — Freeze versioned output contract</h3><span class="tag code-tag">Code</span><span class="arrow">⌄</span></div><div class="body"><div class="meta"><div><small>Time</small><strong>25m</strong></div><div><small>Tokens</small><strong>~6K</strong></div></div><div class="code"><div class="codebar">Contract checklist <button class="copy" onclick="copy(this)">Copy</button></div><pre>Required legacy fields:
+id, type, title, fileName, pages, summary, keyInfo, actions
+
+Optional research fields:
+originalText, fullText, pageText, sourceReferences,
+processingStatus, researchMetadata, reviewFlags
+</pre></div><div class="gate"><b>Close:</b> legacy demo fields remain required; research fields remain additive.</div></div></div></div></section>
+<section class="epic"><div class="head" onclick="toggle(this)"><span class="num">2</span><h2>Epic — Ingestion, Layout, and Provenance</h2><span class="arrow">⌄</span></div><div class="body"><div class="session"><div class="head" onclick="toggle(this)"><span class="num">3</span><h3>Session 2.1 — Add format adapters</h3><span class="tag code-tag">Code</span><span class="arrow">⌄</span></div><div class="body"><div class="meta"><div><small>Time</small><strong>90m</strong></div><div><small>Tokens</small><strong>~20K</strong></div></div><div class="code"><div class="codebar">Adapter contract <button class="copy" onclick="copy(this)">Copy</button></div><pre>class DocumentExtractor {
+  supports(mimeType, extension) { return false; }
+  async extract({ buffer, fileName, mimeType }) {
+    throw new Error('Not implemented');
+  }
+}
+
+// Every adapter returns:
+// { language, layoutClass, fullText, pageText, sourceReferences,
+//   anchors, extractionConfidence }
+</pre></div><p>Implement PDF native text first, then scanned PDF/OCR, DOCX XML, and HTML DOM. Preserve one downstream contract.</p></div></div><div class="session"><div class="head" onclick="toggle(this)"><span class="num">4</span><h3>Session 2.2 — Classify layout and retain page provenance</h3><span class="tag code-tag">Code</span><span class="arrow">⌄</span></div><div class="body"><div class="meta"><div><small>Time</small><strong>60m</strong></div><div><small>Tokens</small><strong>~14K</strong></div></div><div class="code"><div class="codebar">Layout profile <button class="copy" onclick="copy(this)">Copy</button></div><pre>const LAYOUTS = ['single_column_prose', 'multi_column', 'form', 'table_heavy', 'mixed'];
+
+function classifyLayout(signal) {
+  if (signal.tables &gt; 3) return 'table_heavy';
+  if (signal.columns &gt; 1) return 'multi_column';
+  if (signal.formFields &gt; 5) return 'form';
+  return 'single_column_prose';
+}
+module.exports = { LAYOUTS, classifyLayout };
+</pre></div><div class="gate"><b>Close:</b> later-page deadlines and obligations remain in `pageText` and `sourceReferences`.</div></div></div></div></section>
+<section class="epic"><div class="head" onclick="toggle(this)"><span class="num">3</span><h2>Epic — Candidate Backends and Constraints</h2><span class="arrow">⌄</span></div><div class="body"><div class="session"><div class="head" onclick="toggle(this)"><span class="num">5</span><h3>Session 3.1 — Register interchangeable backends</h3><span class="tag code-tag">Code</span><span class="arrow">⌄</span></div><div class="body"><div class="meta"><div><small>Time</small><strong>45m</strong></div><div><small>Tokens</small><strong>~10K</strong></div></div><div class="code"><div class="codebar">Backend registry <button class="copy" onclick="copy(this)">Copy</button></div><pre>class BackendRegistry {
+  constructor() { this.backends = new Map(); }
+  register(id, backend) { this.backends.set(id, backend); }
+  get(id) {
+    const backend = this.backends.get(id);
+    if (!backend) throw new Error(`Unknown backend: ${id}`);
+    return backend;
+  }
+}
+
+module.exports = { BackendRegistry };
+</pre></div></div></div><div class="session"><div class="head" onclick="toggle(this)"><span class="num">6</span><h3>Session 3.2 — Complete hard constraints and selection</h3><span class="tag code-tag">Code</span><span class="arrow">⌄</span></div><div class="body"><div class="meta"><div><small>Time</small><strong>90m</strong></div><div><small>Tokens</small><strong>~20K</strong></div></div><div class="code"><div class="codebar">Selection gate <button class="copy" onclick="copy(this)">Copy</button></div><pre>function hardGate(candidate) {
+  return candidate.anchorRecall === 1
+    && candidate.actionRecall === 1
+    && candidate.provenanceCoverage === 1
+    && candidate.contradictions === 0
+    && candidate.adviceViolations === 0;
+}
+
+function selectCandidate(candidates) {
+  const eligible = candidates.filter(hardGate);
+  return eligible.sort((a, b) => a.totalCost - b.totalCost)[0] || { state: 'REVIEW' };
+}
+</pre></div><div class="gate"><b>Close:</b> JS divergence/demand gap remains a soft selection term; hard safety checks cannot be bypassed.</div></div></div></div></section>
+<section class="epic"><div class="head" onclick="toggle(this)"><span class="num">4</span><h2>Epic — English and Spanish Profiles</h2><span class="arrow">⌄</span></div><div class="body"><div class="session"><div class="head" onclick="toggle(this)"><span class="num">7</span><h3>Session 4.1 — Language detection and normalized values</h3><span class="tag code-tag">Code</span><span class="arrow">⌄</span></div><div class="body"><div class="meta"><div><small>Time</small><strong>75m</strong></div><div><small>Tokens</small><strong>~16K</strong></div></div><div class="code"><div class="codebar">Locale normalization <button class="copy" onclick="copy(this)">Copy</button></div><pre>function normalizeAmount(value, language) {
+  const raw = String(value).replace(/[^0-9,.-]/g, '');
+  if (language === 'es') return Number(raw.replace(/\./g, '').replace(',', '.'));
+  return Number(raw.replace(/,/g, ''));
+}
+
+function languageProfile(language) {
+  if (!['en', 'es'].includes(language)) throw new Error('Unsupported language');
+  return require(`../../config/profiles/insurance/${language}.json`);
+}
+
+module.exports = { normalizeAmount, languageProfile };
+</pre></div><div class="gate"><b>Close:</b> English and Spanish normalize dates, amounts, negation, conditions, and entities into the same downstream contract.</div></div></div><div class="session"><div class="head" onclick="toggle(this)"><span class="num">8</span><h3>Session 4.2 — Domain-conditioned advice boundary</h3><span class="tag code-tag">Code</span><span class="arrow">⌄</span></div><div class="body"><div class="meta"><div><small>Time</small><strong>60m</strong></div><div><small>Tokens</small><strong>~14K</strong></div></div><div class="code"><div class="codebar">Three-outcome classifier contract <button class="copy" onclick="copy(this)">Copy</button></div><pre>function classifyAdvice(sentence, { language, domain }) {
+  const result = model.predict({ sentence, language, domain });
+  if (result.confidence &lt; 0.7) return { state: 'REVIEW', confidence: result.confidence };
+  return result.adviceLike
+    ? { state: 'ADVICE_LIKE', confidence: result.confidence }
+    : { state: 'SOURCE_GROUNDED', confidence: result.confidence };
+}
+</pre></div></div></div></div></section>
+<section class="epic"><div class="head" onclick="toggle(this)"><span class="num">5</span><h2>Epic — State, Modality, Demand, and Calibration Infrastructure</h2><span class="arrow">⌄</span></div><div class="body"><div class="session"><div class="head" onclick="toggle(this)"><span class="num">9</span><h3>Session 5.1 — Register modality profiles</h3><span class="tag code-tag">Code</span><span class="arrow">⌄</span></div><div class="body"><div class="meta"><div><small>Time</small><strong>45m</strong></div><div><small>Tokens</small><strong>~10K</strong></div></div><div class="code"><div class="codebar">Modality profile <button class="copy" onclick="copy(this)">Copy</button></div><pre>const modalityProfiles = {
+  touch_app: { events: ['help_request', 'nav_reversal', 'task_complete', 'error'], B: {} },
+  voice: { events: ['re_asked', 'pause', 'task_complete', 'error'], B: {} },
+  screen_reader: { events: ['repeat_region', 'focus_reversal', 'task_complete', 'error'], B: {} },
+};
+module.exports = modalityProfiles;
+</pre></div></div></div><div class="session"><div class="head" onclick="toggle(this)"><span class="num">10</span><h3>Session 5.2 — Make calibration status explicit</h3><span class="tag code-tag">Code</span><span class="arrow">⌄</span></div><div class="body"><div class="meta"><div><small>Time</small><strong>35m</strong></div><div><small>Tokens</small><strong>~8K</strong></div></div><div class="code"><div class="codebar">Calibration profile <button class="copy" onclick="copy(this)">Copy</button></div><pre>{
+  "domain": "insurance",
+  "language": "en",
+  "modality": "touch_app",
+  "version": "0.1",
+  "calibrationStatus": "uncalibrated",
+  "driftMetrics": {}
+}
+</pre></div><div class="warn"><b>Do not ship defaults as calibrated.</b> Keep a feature flag and explicit status until outcome data is available.</div></div></div></div></section>
+<section class="epic"><div class="head" onclick="toggle(this)"><span class="num">6</span><h2>Epic — Rendering, REVIEW, and API Integration</h2><span class="arrow">⌄</span></div><div class="body"><div class="session"><div class="head" onclick="toggle(this)"><span class="num">11</span><h3>Session 6.1 — Validate content before rendering</h3><span class="tag code-tag">Code</span><span class="arrow">⌄</span></div><div class="body"><div class="meta"><div><small>Time</small><strong>60m</strong></div><div><small>Tokens</small><strong>~12K</strong></div></div><div class="code"><div class="codebar">Immutable renderer contract <button class="copy" onclick="copy(this)">Copy</button></div><pre>function renderValidated(selectedCandidate, targetModality) {
+  if (!selectedCandidate.validated) throw new Error('Only validated content may render');
+  return renderers[targetModality](Object.freeze({ ...selectedCandidate }));
+}
+</pre></div></div></div><div class="session"><div class="head" onclick="toggle(this)"><span class="num">12</span><h3>Session 6.2 — Complete Original/Simple/Standard/Detailed/REVIEW UI</h3><span class="tag code-tag">Code</span><span class="arrow">⌄</span></div><div class="body"><div class="meta"><div><small>Time</small><strong>60m</strong></div><div><small>Tokens</small><strong>~12K</strong></div></div><p>Connect the approved backend state to the promoted DocumentViewer. Ensure a REVIEW result never falls through to a guessed summary. Test source references and later pages.</p><div class="gate"><b>Close:</b> frontend renders backend state and does not infer or override it.</div></div></div></div></section>
+<section class="epic"><div class="head" onclick="toggle(this)"><span class="num">7</span><h2>Epic — Operations and Reliability</h2><span class="arrow">⌄</span></div><div class="body"><div class="session"><div class="head" onclick="toggle(this)"><span class="num">13</span><h3>Session 7.1 — Async jobs, retry, idempotency, observability</h3><span class="tag code-tag">Code</span><span class="arrow">⌄</span></div><div class="body"><div class="meta"><div><small>Time</small><strong>3h</strong></div><div><small>Tokens</small><strong>~30K</strong></div></div><div class="code"><div class="codebar">Operational configuration <button class="copy" onclick="copy(this)">Copy</button></div><pre>POC_PROCESSING_MODE=async
+POC_MAX_RETRIES=3
+POC_JOB_TIMEOUT_MS=30000
+POC_APUCS_MODE=shadow
+POC_SIMPLIFIER_PROVIDER=baseline
+</pre></div><p>Implement job states, worker polling, retry/backoff, dead-letter, idempotency keys, structured events, readiness, and rollback. Keep APUCS shadow-only.</p></div></div></div></section>
+<section class="epic"><div class="head" onclick="toggle(this)"><span class="num">8</span><h2>Epic — Technical Closure and Evidence</h2><span class="arrow">⌄</span></div><div class="body"><div class="session"><div class="head" onclick="toggle(this)"><span class="num">14</span><h3>Session 8.1 — Run the technical gate</h3><span class="tag verify">Verify</span><span class="arrow">⌄</span></div><div class="body"><div class="meta"><div><small>Time</small><strong>60m</strong></div><div><small>Tokens</small><strong>~8K</strong></div></div><div class="code"><div class="codebar">Verification <button class="copy" onclick="copy(this)">Copy</button></div><pre>npm --prefix poc/backend test
+npm --prefix poc/frontend run build
+npm --prefix poc/frontend run lint
+git diff --check
+</pre></div><div class="gate"><b>Close:</b> update CURRENT_STATE, artifact inventory, PR evidence, architecture, runbook, rollback, and technical closure report.</div></div></div><div class="session"><div class="head" onclick="toggle(this)"><span class="num">15</span><h3>Session 8.2 — Commit and open PR</h3><span class="tag code-tag">Code</span><span class="arrow">⌄</span></div><div class="body"><div class="meta"><div><small>Time</small><strong>20m</strong></div><div><small>Tokens</small><strong>~3K</strong></div></div><div class="code"><div class="codebar">Terminal <button class="copy" onclick="copy(this)">Copy</button></div><pre>git add poc/ docs/ .ai/
+GIT_AUTHOR_NAME="Kmiles" GIT_COMMITTER_NAME="Kmiles" git commit -m "Close APUCS technical closure portfolio"
+git push
+export PATH="$HOME/.local/bin:$PATH"
+gh pr create --base develop --head feature/apucs-technical-closure \
+  --title "Close APUCS English and Spanish technical portfolio" \
+  --body-file .ai/production-readiness/apucs-technical-closure-evidence.md
+</pre></div></div></div></div></section>
+<section class="check"><h2>Technical closure checklist</h2><div class="item"><input type="checkbox" class="done">English profile complete</div><div class="item"><input type="checkbox" class="done">Spanish profile complete</div><div class="item"><input type="checkbox" class="done">Multi-format ingestion complete</div><div class="item"><input type="checkbox" class="done">Layout classification complete</div><div class="item"><input type="checkbox" class="done">Provenance complete</div><div class="item"><input type="checkbox" class="done">Candidate backend registry complete</div><div class="item"><input type="checkbox" class="done">Demand/capability selection complete</div><div class="item"><input type="checkbox" class="done">Modality profiles complete</div><div class="item"><input type="checkbox" class="done">Rendering separation complete</div><div class="item"><input type="checkbox" class="done">Calibration infrastructure complete</div><div class="item"><input type="checkbox" class="done">Async operations complete</div><div class="item"><input type="checkbox" class="done">Technical tests and Process evidence complete</div></section></main><footer>APUCS Technical Closure Guide · Process v9.5 · English and Spanish technical scope · Human/legal gates excluded</footer><script>function toggle(x){x.parentElement.classList.toggle('open');update()}function copy(b){navigator.clipboard.writeText(b.closest('.code').querySelector('pre').innerText).then(()=>{let t=b.textContent;b.textContent='Copied!';setTimeout(()=>b.textContent=t,1200)})}function update(){let a=document.querySelectorAll('.epic,.session,.done'),d=[...a].filter(x=>x.classList.contains('open')||x.checked).length,p=Math.round(d/a.length*100);document.querySelector('#fill').style.width=p+'%';document.querySelector('#pct').textContent=p+'% complete'}document.querySelectorAll('.done').forEach(x=>x.addEventListener('change',update));update()</script></body></html>

@@ -63,6 +63,7 @@
 - ✅ Contextual Back navigation and upload lifecycle feedback implemented in bridge branch
 - ✅ PDF upload/full-document requirements validation completed; PDF-001 through PDF-003 implemented
 - ✅ POC full-document contract and Original/Simple/Standard/Detailed viewer added
+- ✅ APUCS English/Spanish technical closure portfolio and developer guide created
 - ✅ POC branch and backend upload boundary created
 - ✅ POC document result contract defined
 - ✅ POC fixture and PDF extraction adapters created
