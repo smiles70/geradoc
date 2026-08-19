@@ -320,6 +320,12 @@
       "processed_date": "2026-08-16",
       "status": "research-walkthroughs",
       "description": "Five end-to-end APUCS user journeys with illustrative math, review/override behavior, and implementation caveats"
+    },
+    "requirements-ontology-skills": {
+      "location": "/.devin/skills/",
+      "processed_date": "2026-08-19",
+      "status": "permanent-operating-layer",
+      "description": "Ontology, traceability, conflict, impact, drift, evidence, canonical-sync, and closeout skills for Process v9.5"
     }
   },
   "missing_artifacts": [],
