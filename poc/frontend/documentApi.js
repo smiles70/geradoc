@@ -10,6 +10,8 @@ async function parseError(response, fallback) {
   }
 }
 
+const wait = milliseconds => new Promise(resolve => window.setTimeout(resolve, milliseconds));
+
 export function createDocumentApi({ baseUrl = DEFAULT_API_BASE, fetchImpl = fetch } = {}) {
   const url = path => `${baseUrl}${path}`;
 
@@ -17,9 +19,23 @@ export function createDocumentApi({ baseUrl = DEFAULT_API_BASE, fetchImpl = fetc
     async processDocument(file) {
       const form = new FormData();
       form.append('document', file);
-      const response = await fetchImpl(url('/api/process'), { method: 'POST', body: form });
+      const idempotencyKey = window.crypto?.randomUUID?.() || `${Date.now()}-${file.name}`;
+      const response = await fetchImpl(url('/api/process/jobs'), {
+        method: 'POST',
+        headers: { 'Idempotency-Key': idempotencyKey },
+        body: form,
+      });
       if (!response.ok) await parseError(response, 'The document could not be processed.');
-      return response.json();
+      const job = await response.json();
+      for (let attempt = 0; attempt < 120; attempt += 1) {
+        if (job.status === 'complete') return this.getProcessResult(job.resultId);
+        if (['failed', 'review', 'cancelled'].includes(job.status)) throw new Error(job.error || 'The document needs review before it can be shown.');
+        await wait(250);
+        const statusResponse = await fetchImpl(url(`/api/process/jobs/${encodeURIComponent(job.id)}`));
+        if (!statusResponse.ok) await parseError(statusResponse, 'The processing status could not be loaded.');
+        Object.assign(job, await statusResponse.json());
+      }
+      throw new Error('Processing is taking longer than expected. Please try again.');
     },
 
     async getProcessResult(id) {

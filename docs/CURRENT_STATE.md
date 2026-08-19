@@ -74,6 +74,7 @@
 - ✅ True operational state assessed through ontology/knowledge graph; POC classified Managed Risk
 - ✅ Top 25 senior-journey failure and edge-case risk register created
 - ✅ Eight-epic plan created to close all 25 senior-journey risks
+- ✅ First senior-journey closure tranche executed: async jobs, idempotency, empty-extraction gate, and browser-session recovery
 - ✅ NONI/IDD document simplification research memo created
 - ✅ APUCS shadow evaluation specification and synthetic corpus created
 - ✅ Shadow evaluator implemented without changing user-visible simplification

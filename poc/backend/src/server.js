@@ -28,6 +28,9 @@ app.use((error, _req, res, _next) => {
   if (error.code === 'UNSUPPORTED_FILE_TYPE') {
     return res.status(415).json({ error: error.message, code: error.code });
   }
+  if (error.code === 'EMPTY_EXTRACTION') {
+    return res.status(422).json({ error: error.message, code: error.code });
+  }
   console.error('POC request failed:', error.message);
   return res.status(500).json({ error: 'We could not complete that request. Please try again.', code: 'INTERNAL_ERROR' });
 });

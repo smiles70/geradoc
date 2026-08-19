@@ -40,6 +40,31 @@ describe('POST /api/process', () => {
     expect(source.body).toEqual(Buffer.from('%PDF-1.4 test'));
   });
 
+  it('creates and completes an idempotent asynchronous processing job', async () => {
+    const key = `test-${Date.now()}`;
+    const created = await request(app)
+      .post('/api/process/jobs')
+      .set('Idempotency-Key', key)
+      .attach('document', Buffer.from('%PDF-1.4 async test'), 'async.pdf');
+    expect(created.status).toBe(202);
+    expect(created.body.status).toBe('queued');
+
+    const duplicate = await request(app)
+      .post('/api/process/jobs')
+      .set('Idempotency-Key', key)
+      .attach('document', Buffer.from('%PDF-1.4 async test'), 'async.pdf');
+    expect(duplicate.status).toBe(202);
+    expect(duplicate.body.id).toBe(created.body.id);
+
+    let status = created.body;
+    for (let attempt = 0; attempt < 20 && status.status !== 'complete'; attempt += 1) {
+      await new Promise(resolve => setTimeout(resolve, 20));
+      status = (await request(app).get(`/api/process/jobs/${created.body.id}`)).body;
+    }
+    expect(status.status).toBe('complete');
+    expect(status.resultId).toEqual(expect.any(String));
+  });
+
   it('rejects unsupported file types with an actionable error', async () => {
     const response = await request(app)
       .post('/api/process')

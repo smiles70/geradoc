@@ -1,3 +1,4 @@
+const crypto = require('crypto');
 const express = require('express');
 const multer = require('multer');
 const DocumentProcessor = require('../services/documentProcessor');
@@ -7,6 +8,7 @@ const extractor = process.env.POC_USE_REAL_PDF === 'true'
 const simplifier = require('../services/plainLanguageSimplifier');
 const resultRepository = require('../services/resultRepository');
 const sourceRepository = require('../services/sourceRepository');
+const jobRepository = require('../services/jobRepository');
 
 const router = express.Router();
 const upload = multer({
@@ -24,27 +26,86 @@ const upload = multer({
 });
 const processor = new DocumentProcessor({ extractor, simplifier });
 
+async function processUploadedFile(file, jobId = null) {
+  const result = await processor.process({
+    buffer: file.buffer,
+    fileName: file.originalname,
+    mimeType: file.mimetype,
+  });
+  const source = await sourceRepository.save({
+    id: result.id,
+    buffer: file.buffer,
+    fileName: file.originalname,
+    mimeType: file.mimetype,
+  });
+  return resultRepository.save({
+    ...result,
+    jobId,
+    mimeType: file.mimetype,
+    sourceUrl: source.sourceUrl,
+    processingMode: process.env.POC_USE_REAL_PDF === 'true' ? 'real-pdf' : 'fixture',
+  });
+}
+
 router.post('/', upload.single('document'), async (req, res, next) => {
   try {
     if (!req.file) return res.status(400).json({ error: 'Upload a document.' });
-    const result = await processor.process({
-      buffer: req.file.buffer,
-      fileName: req.file.originalname,
-      mimeType: req.file.mimetype,
-    });
-    const source = await sourceRepository.save({
-      id: result.id,
-      buffer: req.file.buffer,
-      fileName: req.file.originalname,
-      mimeType: req.file.mimetype,
-    });
-    const saved = await resultRepository.save({
-      ...result,
-      mimeType: req.file.mimetype,
-      sourceUrl: source.sourceUrl,
-      processingMode: process.env.POC_USE_REAL_PDF === 'true' ? 'real-pdf' : 'fixture',
-    });
+    const saved = await processUploadedFile(req.file);
     res.status(200).json(saved);
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.post('/jobs', upload.single('document'), async (req, res, next) => {
+  try {
+    if (!req.file) return res.status(400).json({ error: 'Upload a document.' });
+    const idempotencyKey = req.get('Idempotency-Key');
+    const existing = await jobRepository.findByIdempotencyKey(idempotencyKey);
+    if (existing) return res.status(202).json(existing);
+    const job = await jobRepository.save({
+      id: `job-${crypto.randomUUID()}`,
+      idempotencyKey: idempotencyKey || null,
+      fileName: req.file.originalname,
+      status: 'queued',
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    });
+    setImmediate(async () => {
+      await jobRepository.update(job.id, { status: 'processing' });
+      try {
+        const result = await processUploadedFile(req.file, job.id);
+        const current = await jobRepository.findById(job.id);
+        if (current?.status !== 'cancelled') {
+          await jobRepository.update(job.id, { status: 'complete', resultId: result.id, sourceUrl: result.sourceUrl });
+        }
+      } catch (error) {
+        await jobRepository.update(job.id, { status: error.code === 'EMPTY_EXTRACTION' ? 'review' : 'failed', error: error.message, errorCode: error.code || 'PROCESSING_ERROR' });
+      }
+    });
+    res.status(202).json(job);
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.get('/jobs/:id', async (req, res, next) => {
+  try {
+    const job = await jobRepository.findById(req.params.id);
+    if (!job) return res.status(404).json({ error: 'Processing job not found.' });
+    res.json(job);
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.delete('/jobs/:id', async (req, res, next) => {
+  try {
+    const job = await jobRepository.findById(req.params.id);
+    if (!job) return res.status(404).json({ error: 'Processing job not found.' });
+    if (['complete', 'failed', 'review', 'cancelled'].includes(job.status)) return res.status(409).json({ error: 'This job can no longer be cancelled.' });
+    const cancelled = await jobRepository.update(job.id, { status: 'cancelled' });
+    res.json(cancelled);
   } catch (error) {
     next(error);
   }
