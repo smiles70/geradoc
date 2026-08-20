@@ -441,6 +441,12 @@
       "status": "gate-pass-fixture-mode",
       "description": "Execution evidence for the executable Process v9.5 graph/test/build/lint/smoke/Playwright gate"
     },
+    "document-agnostic-regression-assessment.md": {
+      "location": "/.ai/production-readiness/document-agnostic-regression-assessment.md",
+      "processed_date": "2026-08-19",
+      "status": "regression-assessment-fixed",
+      "description": "Repository rescan and regression assessment for mocked Medicare leakage into uploaded-document behavior"
+    },
     "epic-poc-functional-closure-decomposition.md": {
       "location": "/.ai/production-readiness/epic-poc-functional-closure-decomposition.md",
       "processed_date": "2026-08-19",
