@@ -536,6 +536,12 @@
       "processed_date": "2026-08-19",
       "status": "authoritative-process-specification",
       "description": "Complete v9.51 operating specification with MLDC, Nelson, Tokenomics, calibration, grader accuracy, and self-governance"
+    },
+    "v951-runtime-governance-execution.md": {
+      "location": "/.ai/production-readiness/v951-runtime-governance-execution.md",
+      "processed_date": "2026-08-19",
+      "status": "local-runtime-governance-partial",
+      "description": "Execution evidence for locally runnable v9.51 self-check and Tokenomics runtime foundations"
     }
   },
   "missing_artifacts": [],

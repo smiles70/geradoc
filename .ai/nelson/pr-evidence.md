@@ -165,6 +165,7 @@ Build and lint verification passed. Formal senior usability testing and comprehe
 - Added APUCS IDD v1.2 technical-closure addendum documenting calibration-profile traceability, bounded efficacy correction, candidate monitoring, REVIEW recovery, extraction-error distinctions, and non-content operational counters.
 - Updated Process v9.5 with API-first computational closure and added scope-tiering, atomic acceptance, persona/journey, state-machine, real-data, truthfulness, visual E2E, and graph closeout skills.
 - Initialized authoritative Process v9.51 specification with unified score composition, calibration, grader accuracy, maturity staging, tokenomics governance, agent ownership, and self-governance artifacts.
+- Executed local v9.51 runtime governance: self-check pass, deterministic graph hash, Tokenomics foundations, backend 42 tests, Playwright 3 tests, build/lint/smoke pass.
 - Researched official OCR options against Charter/design: PaddleOCR recommended as primary local structured OCR experiment; Tesseract/OCRmyPDF retained as baseline/fallback; cloud OCR benchmark-only.
 - Executed PaddleOCR benchmark harness: PaddleOCR, Tesseract, and OCRmyPDF are unavailable in the current environment; adapter remains REVIEW-only and user-visible OCR is disabled.
 - Refreshed outstanding coding epic status report.

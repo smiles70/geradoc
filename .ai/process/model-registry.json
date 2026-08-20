@@ -1,0 +1,32 @@
+{
+  "version": "v9.51-model-registry-v1",
+  "models": [
+    {
+      "id": "local-small-v1",
+      "provider": "local",
+      "costClass": "free-compute",
+      "capabilities": ["classification", "simple-rewrite"],
+      "maxRisk": "low",
+      "languages": ["en", "es"],
+      "status": "research-only"
+    },
+    {
+      "id": "baseline-poc-v1",
+      "provider": "repository",
+      "costClass": "zero-api-cost",
+      "capabilities": ["source-preserving-transform"],
+      "maxRisk": "medium",
+      "languages": ["en", "es"],
+      "status": "approved-poc"
+    },
+    {
+      "id": "strong-model-v1",
+      "provider": "external-or-local",
+      "costClass": "high",
+      "capabilities": ["complex-rewrite", "semantic-check"],
+      "maxRisk": "high",
+      "languages": ["en", "es"],
+      "status": "approval-required"
+    }
+  ]
+}
