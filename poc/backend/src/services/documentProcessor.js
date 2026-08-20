@@ -22,6 +22,9 @@ class DocumentProcessor {
     const derived = deriveGeragogicalFacts({ text: fullText, pageText: extracted.pageText, fileName });
     const keyInfo = extracted.keyInfo?.length ? extracted.keyInfo : derived.keyInfo;
     const actions = extracted.actions?.length ? extracted.actions : derived.actions;
+    const orientation = extracted.orientation || (keyInfo.length || actions.length
+      ? { title: extracted.title || fileName, whyItMatters: 'This document contains information or actions that may affect you.' }
+      : derived.orientation);
     return {
       id: `poc-${crypto.randomUUID()}`,
       type: extracted.type || 'Unknown',
@@ -36,7 +39,7 @@ class DocumentProcessor {
       pageText: extracted.pageText || [{ page: 1, text: fullText }],
       sourceReferences: extracted.sourceReferences || [],
       summary: summaries,
-      orientation: extracted.orientation || derived.orientation,
+      orientation,
       keyInfo,
       actions,
       reviewFlags: extracted.reviewFlags || derived.reviewFlags,
