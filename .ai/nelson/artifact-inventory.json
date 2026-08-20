@@ -518,6 +518,18 @@
       "processed_date": "2026-08-19",
       "status": "permanent-operating-layer",
       "description": "Ontology, traceability, conflict, impact, drift, evidence, canonical-sync, decomposition, journey, E2E, and closeout skills for Process v9.5"
+    },
+    "process-v951-governance-skills": {
+      "location": "/.devin/skills/",
+      "processed_date": "2026-08-19",
+      "status": "permanent-v951-operating-layer",
+      "description": "Tokenomics, grader accuracy, and Process self-check skills introduced by v9.51"
+    },
+    "PROCESS_V9.51_SPEC.md": {
+      "location": "/PROCESS_V9.51_SPEC.md",
+      "processed_date": "2026-08-19",
+      "status": "authoritative-process-specification",
+      "description": "Complete v9.51 operating specification with MLDC, Nelson, Tokenomics, calibration, grader accuracy, and self-governance"
     }
   },
   "missing_artifacts": [],
