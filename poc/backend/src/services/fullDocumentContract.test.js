@@ -7,10 +7,10 @@ test('preserves complete source text and page records in all summary levels', as
   const result = await processor.process({ buffer: Buffer.from('%PDF synthetic'), fileName: 'multi-page.pdf', mimeType: 'application/pdf' });
 
   expect(result.processingStatus).toBe('complete');
-  expect(result.fullText).toContain('Your Medicare plan shall renew');
+  expect(result.fullText).toContain('Your document shall be reviewed');
   expect(result.pageText).toHaveLength(2);
   expect(result.sourceReferences).toHaveLength(2);
-  expect(result.summary.simple).toContain('Your Medicare plan must renew');
-  expect(result.summary.standard).toContain('Your Medicare plan must renew');
+  expect(result.summary.simple).toContain('Your document must be reviewed');
+  expect(result.summary.standard).toContain('Your document must be reviewed');
   expect(result.summary.detailed).toBe(result.fullText);
 });

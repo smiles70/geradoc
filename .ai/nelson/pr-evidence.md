@@ -157,6 +157,7 @@ Build and lint verification passed. Formal senior usability testing and comprehe
 - Created epic exit validation/verification guide covering automated tests, visual evidence, accessibility, failure/recovery, full E2E, Playwright, graph, and exit verdict gates.
 - Executed current POC epic-exit plan: backend 15 files/35 tests passed, Playwright 3 passed, build/lint/smoke/JSON validation passed; manual visual/screen-reader evidence remains separate.
 - Executable Process v9.5 gate passed in deterministic fixture mode: graph integrity, artifacts, backend 40 tests, build, lint, smoke, and Playwright 3 tests.
+- Rescanned repository for document-agnostic regressions; isolated Medicare to sample fixtures, made uploaded fixture content generic and explicit, and verified with 40 backend tests plus 3 Playwright tests.
 - Implemented POC geragogy synonymity rubric with versioned approved pairs, glossary/thesaurus cross-agreement, protected-anchor rejection, and idempotence tests.
 - SYN-001 through SYN-006 POC rubric execution complete: English/Spanish pair tests, idempotence, anchor preservation, and full suite passed; calibrated/production gates remain separate.
 - Created APUCS semantic condition-parsing intake and non-legal novelty/IP technical summary; searched current free dictionary/thesaurus options and deferred legal/IP, human-equivalence, calibration, and production-release approvals.

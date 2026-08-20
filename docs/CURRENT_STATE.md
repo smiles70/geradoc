@@ -97,6 +97,7 @@
 - ✅ Epic exit validation/verification guide created for post-coding automated, visual, accessibility, regression, E2E, and Playwright gates
 - ✅ Epic exit test plan executed: backend 35 tests, Playwright 3 tests, build/lint/smoke passed
 - ✅ Executable Process v9.5 gate added and passed: graph, artifacts, backend, build, lint, smoke, and Playwright
+- ✅ Document-agnostic regression rescan completed; Medicare/mock leakage fixed and verified
 - ✅ NONI/IDD document simplification research memo created
 - ✅ APUCS shadow evaluation specification and synthetic corpus created
 - ✅ Shadow evaluator implemented without changing user-visible simplification

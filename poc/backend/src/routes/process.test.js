@@ -15,8 +15,8 @@ describe('POST /api/process', () => {
     expect(response.status).toBe(200);
     expect(response.body).toEqual(expect.objectContaining({
       id: expect.any(String),
-      type: 'Insurance',
-      title: 'Medicare Advantage Renewal Letter',
+      type: 'Synthetic document',
+      title: 'Synthetic POC Upload Fixture',
       fileName: 'sample.pdf',
       pages: 2,
       sourceUrl: expect.stringContaining('/api/process/'),
