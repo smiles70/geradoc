@@ -52,6 +52,7 @@ poc/frontend/test-results/
 poc/backend/data/results.json
 poc/backend/data/jobs.json
 poc/backend/data/events.json
+poc/backend/data/token-ledger.json
 poc/backend/data/uploads/
 
 # Cache
