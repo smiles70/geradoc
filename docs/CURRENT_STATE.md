@@ -96,6 +96,7 @@
 - ✅ Playwright Firefox all-site button regression report created: before failures documented, after suite 3/3 passed
 - ✅ Epic exit validation/verification guide created for post-coding automated, visual, accessibility, regression, E2E, and Playwright gates
 - ✅ Epic exit test plan executed: backend 35 tests, Playwright 3 tests, build/lint/smoke passed
+- ✅ Executable Process v9.5 gate added and passed: graph, artifacts, backend, build, lint, smoke, and Playwright
 - ✅ NONI/IDD document simplification research memo created
 - ✅ APUCS shadow evaluation specification and synthetic corpus created
 - ✅ Shadow evaluator implemented without changing user-visible simplification

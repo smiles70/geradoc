@@ -435,6 +435,12 @@
       "status": "dependency-inventory-harness",
       "description": "PaddleOCR/Tesseract/OCRmyPDF availability and recommendation benchmark harness"
     },
+    "process-v95-gate-execution.md": {
+      "location": "/.ai/production-readiness/process-v95-gate-execution.md",
+      "processed_date": "2026-08-19",
+      "status": "gate-pass-fixture-mode",
+      "description": "Execution evidence for the executable Process v9.5 graph/test/build/lint/smoke/Playwright gate"
+    },
     "epic-poc-functional-closure-decomposition.md": {
       "location": "/.ai/production-readiness/epic-poc-functional-closure-decomposition.md",
       "processed_date": "2026-08-19",
