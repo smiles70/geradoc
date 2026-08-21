@@ -8,7 +8,7 @@ test('routes low and high risk work inside v9.51 policy', () => {
 });
 
 test('cost events are deterministic and ledger records are idempotent', async () => {
-  const event = costEvent({ requestId: 'test-request', modelId: 'baseline-poc-v1', inputTokens: 10, outputTokens: 5, epicId: 'TEST' });
+  const event = costEvent({ requestId: `test-request-${Date.now()}-${Math.random()}`, modelId: 'baseline-poc-v1', inputTokens: 10, outputTokens: 5, epicId: 'TEST' });
   const first = await ledger.record(event);
   const second = await ledger.record(event);
   expect(first.replay).toBe(false);
